@@ -1,0 +1,310 @@
+html {
+  box-sizing: border-box; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+body {
+  background-color: #fff;
+  font-family: 'Circular', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; }
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  position: relative; }
+
+a {
+  text-decoration: none; }
+
+a {
+  color: #297cbc; }
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1290px;
+  width: 100%; }
+
+.date {
+  color: #afafaf;
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: .4px;
+  text-transform: uppercase; }
+
+.title {
+  color: #323232;
+  font-size: 42px;
+  line-height: 1.04762;
+  margin: 0.2381em 0 0.64286em; }
+
+.intro {
+  color: #3c4143;
+  font-family: serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0 0 1.54167em; }
+
+.headroom {
+  transition: transform 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  will-change: transform; }
+
+.headroom--pinned {
+  transform: translateY(0%); }
+
+.headroom--unpinned {
+  transform: translateY(-100%); }
+
+.hamburger {
+  padding: 13px 13px 12px; }
+  .Nav .hamburger {
+    float: right; }
+
+.hamburger-box {
+  height: 20px;
+  width: 35px; }
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  background-color: #5e5e5e;
+  height: 1px;
+  width: 100%; }
+
+.swiper-container {
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; }
+
+.swiper-slide {
+  background-color: #fff; }
+
+.swiper-container-vertical > .swiper-pagination-bullets {
+  left: 56px;
+  right: auto; }
+
+.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 6px 0; }
+
+.swiper-pagination-bullet {
+  height: 10px;
+  width: 10px; }
+
+.swiper-pagination-bullet-active {
+  background: #3aa7e8; }
+
+.Nav {
+  overflow: hidden;
+  padding: 52px 56px; }
+
+.Nav-fixed {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10; }
+
+.Logo {
+  background-color: #3aa7e8;
+  border-radius: 100%;
+  display: inline-block;
+  height: 48px;
+  width: 48px; }
+  .Nav .Logo {
+    float: left; }
+
+.Button {
+  background-color: #323232;
+  background-image: none;
+  border: 0;
+  border-radius: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1;
+  padding: 0.8125em 2.1875em 0.75em;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap; }
+
+.Masthead {
+  align-items: center;
+  display: flex;
+  justify-content: center; }
+
+.Masthead-container h1 {
+  color: #323232;
+  font-size: 72px;
+  font-weight: 500;
+  letter-spacing: -.4px;
+  line-height: 1;
+  margin: 0;
+  max-width: 80%; }
+
+.Masthead-container p {
+  color: #656565;
+  font-size: 32px;
+  font-family: serif;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 1.25em 0 0; }
+
+.image-LonelyPlanet-1,
+.image-Airbnb-1 {
+  box-shadow: 0 15px 90px 23px rgba(0, 0, 0, 0.14);
+  display: block;
+  height: 62vh;
+  max-height: 713px;
+  position: absolute;
+  right: 57.36434vh;
+  top: 21vh;
+  transition: opacity 400ms ease-in-out 400ms, transform 400ms ease-in-out 400ms;
+  z-index: 2; }
+  .not-animated .image-LonelyPlanet-1,
+  .not-animated .image-Airbnb-1 {
+    opacity: 0;
+    transform: translateX(10px); }
+  .animated .image-LonelyPlanet-1,
+  .animated .image-Airbnb-1 {
+    opacity: 1;
+    transform: translateX(0); }
+
+.image-LonelyPlanet-2,
+.image-Airbnb-2 {
+  box-shadow: 0 33px 114px 32px rgba(0, 0, 0, 0.11);
+  display: block;
+  height: 90vh;
+  max-height: 1059px;
+  position: absolute;
+  right: 0;
+  top: 5vh;
+  transition: opacity 400ms ease-in-out 800ms, transform 400ms ease-in-out 800ms;
+  z-index: 1; }
+  .not-animated .image-LonelyPlanet-2,
+  .not-animated .image-Airbnb-2 {
+    opacity: 0;
+    transform: translateX(10px); }
+  .animated .image-LonelyPlanet-2,
+  .animated .image-Airbnb-2 {
+    opacity: 1;
+    transform: translateX(0); }
+
+.image-Salesforce {
+  display: block;
+  max-height: 1116px;
+  position: absolute;
+  right: 0;
+  transition: opacity 400ms ease-in-out 400ms, transform 400ms ease-in-out 400ms; }
+  .not-animated .image-Salesforce {
+    opacity: 0;
+    transform: translateX(40px); }
+  .animated .image-Salesforce {
+    opacity: 1;
+    transform: translateX(0); }
+
+.CaseStudy {
+  align-items: center;
+  display: flex; }
+
+.CaseStudy-description {
+  transition: opacity 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 200ms, transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 200ms;
+  width: 330px; }
+  .not-animated .CaseStudy-description {
+    opacity: 0;
+    transform: translateX(-100%); }
+  .animated .CaseStudy-description {
+    opacity: 1;
+    transform: translateX(0); }
+
+.Footer {
+  background-color: #f1f1f1;
+  padding-bottom: 124px;
+  padding-top: 230px; }
+  .Footer .container {
+    max-width: 1070px; }
+  .Footer header {
+    position: relative;
+    text-align: center; }
+    .Footer header::before {
+      background-color: #3aa7e8;
+      content: '';
+      display: block;
+      height: 4px;
+      left: 50%;
+      margin-left: -15px;
+      position: absolute;
+      top: -94px;
+      width: 30px; }
+  .Footer h2 {
+    color: #323232;
+    font-size: 50px;
+    font-weight: 500;
+    letter-spacing: -.4px;
+    line-height: 1.08;
+    margin: 0; }
+  .Footer p {
+    color: #4e5254;
+    font-family: serif;
+    font-size: 32px;
+    letter-spacing: -.25px;
+    line-height: 1.5;
+    margin-bottom: 65px;
+    margin-top: 17px; }
+  .Footer fieldset {
+    border: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0; }
+  .Footer fieldset + fieldset {
+    margin-top: 2.80374%; }
+  .Footer legend,
+  .Footer label {
+    display: none; }
+  .Footer input,
+  .Footer textarea {
+    background-color: #fff;
+    border: 0;
+    display: block;
+    font-size: 24px;
+    padding: 21px 30px;
+    width: 100%; }
+  .Footer textarea {
+    height: 316px;
+    resize: none; }
+  .Footer button {
+    background-color: #3aa7e8;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 20px;
+    line-height: 1;
+    margin-top: 2.80374%;
+    padding: 25px 0 23px;
+    text-align: center;
+    width: 100%; }
+  .Footer .column {
+    float: left;
+    width: 48.59813%; }
+  .Footer .column + .column {
+    margin-left: 2.80374%; }
+
+.th-bg-lonelyPlanet {
+  background-color: #297cbc; }
+
+.th-bg-salesforce {
+  background-color: #00a1e0; }
+
+.th-bg-airbnb {
+  background-color: #ff5459; }

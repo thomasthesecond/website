@@ -1,0 +1,478 @@
+/// Imports
+
+@import "../node_modules/susy/sass/susy";
+
+
+/// Settings
+
+$colors: (
+  White         : #fff,
+  PictonBlue    : #3aa7e8,
+  MineShaft     : #323232, // 3a3a3a
+  CapeCod       : #3c4143,
+  DoveGray      : #656565,
+  Mariner       : #297cbc, // LP
+  Cerulean      : #00a1e0, // Salesforce
+  Persimmon     : #ff5459, // Airbnb
+  Seashell      : #f1f1f1,
+  SilverChalice : #afafaf,
+  Scorpion      : #5e5e5e
+);
+
+$fonts: ();
+
+$layout: (
+  columns: 12,
+  column-width: 80px,
+  container: 1290px,
+  gutter-position: before,
+  gutters: 3 / 8,
+  math: static,
+  output: float
+);
+
+$susy: $layout;
+
+
+/// Base
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: map-get($colors, 'White');
+  font-family: 'Circular', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+// a:link,
+// a:visited {
+a {
+  color: map-get($colors, 'Mariner');
+}
+
+
+/// Objects
+
+.container {
+  // @include container;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: container();
+  width: 100%;
+}
+
+.date {
+  color: map-get($colors, 'SilverChalice');
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+}
+
+.title {
+  color: map-get($colors, 'MineShaft');
+  font-size: 42px;
+  line-height: (44 / 42);
+  margin: #{(10 / 42)}em 0 #{(27 / 42)}em;
+}
+
+.intro {
+  color: map-get($colors, 'CapeCod');
+  font-family: serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: (36 / 24);
+  margin: 0 0 #{(37 / 24)}em;
+}
+
+.headroom {
+  transition: transform 800ms cubic-bezier(.68, -.55, .265, 1.55);
+  will-change: transform;
+}
+
+.headroom--pinned {
+  transform: translateY(0%);
+}
+
+.headroom--unpinned {
+  transform: translateY(-100%);
+}
+
+.hamburger {
+  padding: 13px 13px 12px;
+
+  .Nav & {
+    float: right;
+  }
+}
+
+.hamburger-box {
+  height: 20px;
+  width: 35px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  background-color: map-get($colors, 'Scorpion');
+  height: 1px;
+  width: 100%;
+}
+
+.swiper-container {
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.swiper-slide {
+  // -webkit-box-align: center;
+  // -ms-flex-align: center;
+  // -webkit-align-items: center;
+  // align-items: center;
+  background-color: map-get($colors, 'White');
+  // display: -webkit-box;
+  // display: -ms-flexbox;
+  // display: -webkit-flex;
+  // display: flex;
+  // -webkit-box-pack: center;
+  // -ms-flex-pack: center;
+  // -webkit-justify-content: center;
+  // justify-content: center;
+}
+
+.swiper-container-vertical > .swiper-pagination-bullets {
+  left: 56px;
+  right: auto;
+}
+
+.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 6px 0;
+}
+
+.swiper-pagination-bullet {
+  height: 10px;
+  width: 10px;
+}
+
+.swiper-pagination-bullet-active {
+  background: map-get($colors, 'PictonBlue');
+}
+
+
+// Components
+
+.Main {
+  // padding-bottom: 152px;
+  // padding-top: 152px;
+}
+
+.Nav {
+  // background-color: rgba(255, 255, 255, .6);
+  overflow: hidden;
+  padding: 52px 56px;
+}
+
+.Nav-fixed {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.Logo {
+  background-color: map-get($colors, 'PictonBlue');
+  border-radius: 100%;
+  display: inline-block;
+  height: 48px;
+  width: 48px;
+
+  .Nav & {
+    float: left;
+  }
+}
+
+.Button {
+  background-color: map-get($colors, 'MineShaft');
+  background-image: none;
+  border: 0;
+  border-radius: 0;
+  color: map-get($colors, 'White');
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1;
+  padding: #{(13 / 16)}em #{(35 / 16)}em #{(12 / 16)}em;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.Masthead {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.Masthead-container {
+  h1 {
+    color: map-get($colors, 'MineShaft');
+    font-size: 72px;
+    font-weight: 500;
+    letter-spacing: -.4px;
+    line-height: 1;
+    margin: 0;
+    max-width: 80%;
+  }
+
+  p {
+    color: map-get($colors, 'DoveGray');
+    font-size: 32px;
+    font-family: serif;
+    font-weight: 300;
+    line-height: (48 / 32);
+    margin: #{(40 / 32)}em 0 0;
+  }
+}
+
+.image-LonelyPlanet-1,
+.image-Airbnb-1 {
+  box-shadow: 0 15px 90px 23px rgba(0,0,0, .14);
+  display: block;
+  // height: calc(72vh - 152px);
+  height: 72vh - 10;
+  max-height: 713px;
+  position: absolute;
+  // right: #{(696 / 1800) * 100}vh;
+  right: (span(7) / span(12)) * 100vh;
+  // top: 152px + 150px;
+  top: 16vh + 5;
+  transition: opacity 400ms ease-in-out 400ms,
+    transform 400ms ease-in-out 400ms;
+  z-index: 2;
+
+  .not-animated & {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+
+  .animated & {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.image-LonelyPlanet-2,
+.image-Airbnb-2 {
+  box-shadow: 0 33px 114px 32px rgba(0,0,0, .11);
+  display: block;
+  // height: calc(100vh - 152px);
+  height: 100vh - 10;
+  max-height: 1059px;
+  position: absolute;
+  right: 0;
+  // top: 152px;
+  top: 5vh;
+  transition: opacity 400ms ease-in-out 800ms,
+    transform 400ms ease-in-out 800ms;
+  z-index: 1;
+
+  .not-animated & {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+
+  .animated & {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.image-Salesforce {
+  display: block;
+  // height: 100vh - 10;
+  max-height: 1116px;
+  position: absolute;
+  right: 0;
+  // top: 152px;
+  // top: 5vh;
+  transition: opacity 400ms ease-in-out 400ms,
+    transform 400ms ease-in-out 400ms;
+  // z-index: 1;
+
+  .not-animated & {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  .animated & {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.CaseStudy {
+  align-items: center;
+  display: flex;
+  // justify-content: center;
+}
+
+.CaseStudy-container {}
+
+.CaseStudy-description {
+  transition: opacity 400ms cubic-bezier(.68, -.55, .265, 1.55) 200ms,
+    transform 400ms cubic-bezier(.68, -.55, .265, 1.55) 200ms;
+  width: span(3) + gutter();
+
+  .not-animated & {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  .animated & {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.Footer {
+  background-color: map-get($colors, 'Seashell');
+  padding-bottom: 124px;
+  padding-top: 230px;
+
+  .container {
+    max-width: span(10);
+  }
+
+  header {
+    position: relative;
+    text-align: center;
+
+    &::before {
+      background-color: map-get($colors, 'PictonBlue');
+      content: '';
+      display: block;
+      height: 4px;
+      left: 50%;
+      margin-left: -15px;
+      position: absolute;
+      top: -94px;
+      width: 30px;
+    }
+  }
+
+  h2 {
+    color: map-get($colors, 'MineShaft');
+    font-size: 50px;
+    font-weight: 500;
+    letter-spacing: -.4px;
+    line-height: (54 / 50);
+    margin: 0;
+  }
+
+  p {
+    color: #4e5254;
+    font-family: serif;
+    font-size: 32px;
+    letter-spacing: -.25px;
+    line-height: (48 / 32);
+    margin-bottom: 65px;
+    margin-top: 17px;
+  }
+
+  form {}
+
+  fieldset {
+    border: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  fieldset + fieldset {
+    margin-top: gutter(10 fluid);
+  }
+
+  legend,
+  label {
+    display: none;
+  }
+
+  input,
+  textarea {
+    background-color: map-get($colors, 'White');
+    border: 0;
+    display: block;
+    font-size: 24px;
+    padding: 21px 30px;
+    width: 100%;
+  }
+
+  textarea {
+    height: 316px;
+    resize: none;
+  }
+
+  button {
+    background-color: map-get($colors, 'PictonBlue');
+    border: 0;
+    color: map-get($colors, 'White');
+    cursor: pointer;
+    display: block;
+    font-size: 20px;
+    line-height: 1;
+    margin-top: gutter(10 fluid);
+    padding: 25px 0 23px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .column {
+    float: left;
+    width: span(5 of 10 fluid);
+  }
+
+  .column + .column {
+    margin-left: gutter(10 fluid);
+  }
+}
+
+
+/// Themes
+
+.th-bg-lonelyPlanet {
+  background-color: map-get($colors, 'Mariner');
+}
+
+.th-bg-salesforce {
+  background-color: map-get($colors, 'Cerulean');
+}
+
+.th-bg-airbnb {
+  background-color: map-get($colors, 'Persimmon');
+}

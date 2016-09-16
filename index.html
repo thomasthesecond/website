@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="public/hamburgers.css">
+    <link rel="stylesheet" href="public/swiper.css">
+    <link rel="stylesheet" href="public/main.css">
+  </head>
+  <body>
+    <nav class="Nav Nav-fixed headroom js-nav">
+      <a class="Logo" href="/"></a>
+
+      <div class="hamburger hamburger--elastic js-hamburger">
+        <div class="hamburger-box">
+          <div class="hamburger-inner"></div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="Main">
+
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="Masthead swiper-slide slide-0" data-index="0">
+            <div class="Masthead-container container">
+              <h1>I design apps and websites for global brands and startups.</h1>
+              <p>
+                Recent projects include
+                <a href="#">Lonely Planet</a>,
+                <a href="#">Airbnb</a>, and
+                <a href="#">Salesforce</a>.
+              </p>
+            </div>
+          </div>
+
+          <div class="CaseStudy swiper-slide slide-1 not-animated" data-index="1">
+            <div class="CaseStudy-container container">
+              <div class="CaseStudy-description">
+                <time class="date" datetime="2015-12">December 2015</time>
+                <h2 class="title">Lonely Planet Destinations &amp; Guides</h2>
+                <p class="intro">
+                  Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id
+                  ligula porta felis euismod semper.
+                </p>
+                <a href="#" role="button" class="Button th-bg-lonelyPlanet">
+                  Read case study
+                </a>
+              </div>
+
+              <img class="image-LonelyPlanet-1"
+                src="public/images/lp-mobile.jpg"
+                alt="Lonely Planet Guides app home screen" />
+
+              <img class="image-LonelyPlanet-2"
+                src="public/images/lp-website.jpg"
+                alt="Lonely Planet Asia landing page" />
+            </div>
+          </div>
+
+          <div class="CaseStudy swiper-slide slide-2 not-animated" data-index="2">
+            <div class="CaseStudy-container container">
+              <div class="CaseStudy-description">
+                <time class="date" datetime="2014-08">August 2014</time>
+                <h2 class="title">Airbnb Rebrand</h2>
+                <p class="intro">
+                  Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id
+                  ligula porta felis euismod semper.
+                </p>
+                <a href="#" role="button" class="Button th-bg-airbnb">
+                  Read case study
+                </a>
+              </div>
+
+              <img class="image-Airbnb-1"
+                src="public/images/airbnb-mobile.jpg"
+                alt="Airbnb mobile app home screen" />
+
+              <img class="image-Airbnb-2"
+                src="public/images/airbnb-website.jpg"
+                alt="Airbnb home page" />
+            </div>
+          </div>
+
+          <div class="CaseStudy swiper-slide slide-3 not-animated" data-index="3">
+            <div class="CaseStudy-container container">
+              <div class="CaseStudy-description">
+                <time class="date" datetime="2013-11">November 2013</time>
+                <h2 class="title">Salesforce1 &amp; Styleguide</h2>
+                <p class="intro">
+                  Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id
+                  ligula porta felis euismod semper.
+                </p>
+                <a href="#" role="button" class="Button th-bg-salesforce">
+                  Read case study
+                </a>
+              </div>
+            </div>
+
+            <img class="image-Salesforce"
+              src="public/images/salesforce.png"
+              alt="Salesforce" />
+          </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <footer class="Footer">
+        <div class="container">
+          <header>
+            <h2>Want to work together?</h2>
+            <p>
+              <em>Great!</em> Just tell me a little about yourself and the project
+              at hand.
+            </p>
+          </header>
+
+          <form>
+            <fieldset>
+              <legend>Contact information</legend>
+              <div class="column">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name">
+              </div>
+
+              <div class="column">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email address">
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Project information</legend>
+              <div>
+                <label for="description">Description</label>
+                <textarea id="description" name="description" placeholder="Project description"></textarea>
+              </div>
+            </fieldset>
+
+            <button type="submit">Let’s get started!</button>
+          </form>
+        </div>
+      </footer>
+    </main>
+
+    <script src="public/headroom.js"></script>
+    <script src="public/swiper.js"></script>
+    <script src="public/main.js"></script>
+  </body>
+</html>

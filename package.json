@@ -1,0 +1,21 @@
+{
+  "name": "bradleyhaynes",
+  "version": "0.0.1",
+  "description": "I design apps and websites for global brands and startups",
+  "main": "src/main.js",
+  "scripts": {
+    "styles": "node-sass --include-path src/main.scss public/main.css",
+    "watch": "nodemon -e src -x \"npm run styles\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^3.9.3",
+    "nodemon": "^1.10.2"
+  },
+  "dependencies": {
+    "normalize.css": "^4.2.0",
+    "susy": "^2.2.12"
+  }
+}
