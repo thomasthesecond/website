@@ -28,6 +28,14 @@ a {
   max-width: 1290px;
   width: 100%; }
 
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  stroke: currentColor;
+  stroke-width: 0;
+  width: 1em; }
+
 .date {
   color: #afafaf;
   display: inline-block;
@@ -113,8 +121,18 @@ a {
   background-color: #3aa7e8;
   border-radius: 100%;
   display: inline-block;
-  height: 48px;
-  width: 48px; }
+  font-size: 48px;
+  height: 1em;
+  text-align: center;
+  width: 1em; }
+  .Logo .icon {
+    opacity: .8;
+    padding-left: 2px;
+    transition: opacity 200ms ease-in-out; }
+  .Logo:hover .icon,
+  .Logo:active .icon,
+  .Logo:focus .icon {
+    opacity: 1; }
   .Nav .Logo {
     float: left; }
 

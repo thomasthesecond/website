@@ -79,6 +79,15 @@ a {
   width: 100%;
 }
 
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  stroke: currentColor;
+  stroke-width: 0;
+  width: 1em;
+}
+
 .date {
   color: map-get($colors, 'SilverChalice');
   display: inline-block;
@@ -204,8 +213,24 @@ a {
   background-color: map-get($colors, 'PictonBlue');
   border-radius: 100%;
   display: inline-block;
-  height: 48px;
-  width: 48px;
+  font-size: 48px;
+  height: 1em;
+  text-align: center;
+  width: 1em;
+
+  .icon {
+    opacity: .8;
+    padding-left: 2px;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    .icon {
+      opacity: 1;
+    }
+  }
 
   .Nav & {
     float: left;
