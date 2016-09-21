@@ -1,0 +1,5 @@
+@element ".container" and (min-width: 500px) {
+  .container {
+    background: gold;
+  }
+}

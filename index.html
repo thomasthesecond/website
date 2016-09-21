@@ -9,6 +9,68 @@
     <link rel="stylesheet" href="public/hamburgers.css">
     <link rel="stylesheet" href="public/swiper.css">
     <link rel="stylesheet" href="public/main.css">
+
+    <script src="public/eqcss.js"></script>
+    <!-- <script type="text/eqcss" src="public/main.eqcss"></script> -->
+    <script type="text/eqcss">
+      @element ".Masthead-container" and (max-width: 220px) {
+        .Masthead-container h1 {
+          font-size: 36px;
+        }
+
+        .Masthead-container p {
+          font-size: 20px;
+        }
+      }
+
+      @element ".Masthead-container" and (min-width: 221px) and (max-width: 399px) {
+        .Masthead-container h1 {
+          font-size: 45px;
+        }
+
+        .Masthead-container p {
+          font-size: 20px;
+        }
+      }
+
+      @element ".Masthead-container" and (min-width: 400px) and (max-width: 889px) {
+        .Masthead-container h1 {
+          font-size: 63px;
+        }
+
+        .Masthead-container p {
+          font-size: 28px;
+        }
+      }
+
+      @element ".CaseStudy-description" and (max-width: 214px) {
+        .CaseStudy-description .title {
+          font-size: 28px;
+        }
+
+        .CaseStudy-description .intro {
+          font-size: 16px;
+        }
+
+        .CaseStudy-description .Button {
+          font-size: 12px;
+        }
+      }
+
+      @element ".CaseStudy-description" and (min-width: 215px) and (max-width: 329px) {
+        .CaseStudy-description .title {
+          font-size: 35px;
+        }
+
+        .CaseStudy-description .intro {
+          font-size: 20px;
+        }
+
+        .CaseStudy-description .Button {
+          font-size: 14px;
+        }
+      }
+    </script>
   </head>
   <body>
     <nav class="Nav Nav-fixed headroom js-nav">
@@ -55,13 +117,15 @@
                 </a>
               </div>
 
-              <img class="image-LonelyPlanet-1"
-                src="public/images/lp-mobile.jpg"
-                alt="Lonely Planet Guides app home screen" />
+              <div class="CaseStudy-images">
+                <img class="image-LonelyPlanet-1"
+                  src="public/images/lp-mobile.jpg"
+                  alt="Lonely Planet Guides app home screen" />
 
-              <img class="image-LonelyPlanet-2"
-                src="public/images/lp-website.jpg"
-                alt="Lonely Planet Asia landing page" />
+                <img class="image-LonelyPlanet-2"
+                  src="public/images/lp-website.jpg"
+                  alt="Lonely Planet Asia landing page" />
+              </div>
             </div>
           </div>
 
