@@ -82,7 +82,21 @@ a {
   max-width: container();
   // overflow: hidden;
   position: relative;
-  width: 100%;
+  // width: 100%;
+
+  // padding-left: 20px;
+  // padding-right: 20px;
+  width: auto;
+
+  // @media (max-width: 571px) {
+  //   padding-left: 20px;
+  //   padding-right: 20px;
+  //   width: auto;
+  // }
+  //
+  // @media (min-width: 572px) {
+  //   width: 100%;
+  // }
 
   // @media (max-width: 1402px) {
   // @media (max-width: 1534px) {
@@ -92,14 +106,23 @@ a {
   // }
 
   // background-color: gray;
-  padding-left: 50px;
-  padding-right: 50px;
+  // padding-left: 50px;
+  // padding-right: 50px;
 
-  @media (min-width: 572px) {
+  // @media (min-width: 572px) {
+  //   padding-left: #{(56 / 1600) * 100%};
+  //   padding-right: #{(56 / 1600) * 100%};
+  // }
+
+  @media (max-width: 669px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  // @media (min-width: 572px) {
+  @media (min-width: 670px) {
     // padding-left: #{(56 / 1600) * 100%};
     // padding-right: #{(56 / 1600) * 100%};
-    padding-left: 0;
-    padding-right: 0;
     width: #{(1290 / 1600) * 100%};
   }
 
@@ -135,6 +158,21 @@ a {
   font-size: 42px;
   line-height: (44 / 42);
   margin: #{(10 / 42)}em 0 #{(27 / 42)}em;
+
+  @media (max-width: 445px) {
+    font-size: 26px !important; // override element query
+    line-height: 1.2 !important; // override element query
+  }
+
+  @media (min-width: 446px) and (max-width: 571px) {
+    font-size: 35px !important; // override element query
+  }
+
+  @media (min-width: 509px) and (max-width: 669px) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+  }
 }
 
 .intro {
@@ -144,6 +182,14 @@ a {
   font-weight: 300;
   line-height: (36 / 24);
   margin: 0 0 #{(37 / 24)}em;
+
+  @media (max-width: 445px) {
+    font-size: 16px !important; // override element query
+  }
+
+  @media (min-width: 446px) and (max-width: 571px) {
+    font-size: 20px !important; // override element query
+  }
 }
 
 .headroom {
@@ -164,16 +210,50 @@ a {
 }
 
 .hamburger {
-  padding: 13px 13px 12px;
+  display: block;
+  padding: 8px 9px 7px;
+
+  @media (min-width: 446px) {
+    padding: 11px 9px 10px;
+  }
+
+  @media (min-width: 572px) {
+    padding: 14px 13px 13px;
+  }
+
+  @media (max-width: 571px) {
+    // margin-right: -17px;
+    // margin-top: -6px;
+  }
 
   .Nav & {
     float: right;
+
+    @media (max-width: 571px) {
+      // transform: scale(.75);
+    }
   }
 }
 
 .hamburger-box {
-  height: 20px;
-  width: 35px;
+  display: block;
+  height: 15px;
+  width: 29px;
+
+  @media (min-width: 446px) {
+    height: 17px;
+    width: 31px;
+  }
+
+  @media (min-width: 572px) {
+    height: 21px;
+    width: 35px;
+  }
+}
+
+.hamburger-inner {
+  border-radius: 0;
+  margin-top: 0;
 }
 
 .hamburger-inner,
@@ -182,6 +262,48 @@ a {
   background-color: map-get($colors, 'Scorpion');
   height: 1px;
   width: 100%;
+}
+
+.hamburger--elastic {
+  .hamburger-inner {
+    top: 0;
+  }
+
+  &.is-active .hamburger-inner {
+    top: -3px;
+
+    @media (min-width: 446px) {
+      top: -2px;
+    }
+  }
+
+  .hamburger-inner::before {
+    top: 7px;
+
+    @media (min-width: 446px) {
+      top: 8px;
+    }
+
+    @media (min-width: 572px) {
+      top: 10px;
+    }
+  }
+
+  .hamburger-inner::after {
+    top: 14px;
+
+    @media (min-width: 446px) {
+      top: 16px;
+    }
+
+    @media (min-width: 572px) {
+      top: 20px;
+    }
+  }
+
+  &.is-active .hamburger-inner::after {
+    top: 20px;
+  }
 }
 
 .swiper-container {
@@ -205,6 +327,12 @@ a {
   // -ms-flex-pack: center;
   // -webkit-justify-content: center;
   // justify-content: center;
+}
+
+.swiper-pagination {
+  @media (max-width: 669px) {
+    display: none;
+  }
 }
 
 .swiper-container-vertical > .swiper-pagination-bullets {
@@ -262,7 +390,8 @@ a {
   overflow: hidden;
   padding: 20px;
 
-  @media (min-width: 572px) {
+  // @media (min-width: 572px) {
+  @media (min-width: 670px) {
     padding-left: #{(56 / 1600) * 100%};
     padding-right: #{(56 / 1600) * 100%};
   }
@@ -289,15 +418,26 @@ a {
   background-color: map-get($colors, 'PictonBlue');
   border-radius: 100%;
   display: inline-block;
-  font-size: 48px;
+  font-size: 30px;
   height: 1em;
   text-align: center;
   width: 1em;
 
+  @media (min-width: 446px) {
+    font-size: 38px;
+  }
+
+  @media (min-width: 572px) {
+    font-size: 48px;
+  }
+
   .icon {
     opacity: .8;
-    padding-left: 2px;
     transition: opacity 200ms ease-in-out;
+
+    // @media (min-width: 572px) {
+    //   padding-left: 2px;
+    // }
   }
 
   &:hover,
@@ -385,8 +525,12 @@ a {
   height: auto;
 
   @media (max-width: 669px) {
-    left: 0;
-    width: span(3);
+    // left: 0;
+    // width: span(3);
+    left: 20px;
+    margin-top: #{(41 / 320) * 100%};
+    right: auto;
+    width: #{(118 / 320) * 100%};
   }
 
   @media (min-width: 670px) {
@@ -439,8 +583,10 @@ a {
   height: auto;
 
   @media (max-width: 669px) {
-    right: -25px;
-    width: calc(100% + 50px);
+    // right: -25px;
+    // width: calc(100% + 50px);
+    right: 20px;
+    width: #{(255 / 320) * 100%};
   }
 
   @media (min-width: 670px) {
@@ -497,10 +643,16 @@ a {
 }
 
 .CaseStudy {
-  align-items: center;
-  display: flex;
+  // align-items: center;
+  // display: flex;
+  padding-top: 70px;
 
-  @media (max-width: 669px) {
+  @media (min-width: 446px) {
+    padding-top: 78px;
+  }
+
+  @media (min-width: 572px) {
+    padding-top: 88px;
   }
 
   @media (min-width: 670px) {
@@ -510,15 +662,40 @@ a {
   }
 }
 
-.CaseStudy-container {}
+.CaseStudy-container {
+  // @media (max-width: 571px) {
+  //   text-align: center;
+  // }
+
+  @media (max-width: 445px) {
+    height: calc(100vh - 70px);
+  }
+
+  @media (min-width: 446px) and (max-width: 571px) {
+    height: calc(100vh - 78px);
+  }
+
+  @media (min-width: 572px) and (max-width: 669px) {
+    height: calc(100vh - 88px);
+  }
+
+  @media (max-width: 669px) {
+    text-align: center;
+    width: auto;
+  }
+}
 
 .CaseStudy-description {
   transition: opacity 400ms cubic-bezier(.68, -.55, .265, 1.55) 200ms,
     transform 400ms cubic-bezier(.68, -.55, .265, 1.55) 200ms;
 
   @media (max-width: 669px) {
-    margin-bottom: 100px;
-    margin-top: -200px;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 669px) {
+    // margin-bottom: 100px;
+    // margin-top: -200px;
   }
 
   @media (min-width: 670px) {
@@ -556,7 +733,7 @@ a {
 }
 
 .CaseStudy-images {
-  // @media (max-width: 670px) {
+  // @media (max-width: 669px) {
   //   position: relative;
   // }
 }
