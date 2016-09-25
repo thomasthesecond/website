@@ -1,7 +1,17 @@
 /// Imports
 
-@import "../node_modules/susy/sass/susy";
+@import '../node_modules/susy/sass/susy';
 
+@font-face { font-family: 'sans-Black'; src: url('./font/sans-Black.woff') format('woff2'); }
+@font-face { font-family: 'sans-BlackItalic'; src: url('./font/sans-BlackItalic.woff') format('woff2'); }
+@font-face { font-family: 'sans-Bold'; src: url('./font/sans-Bold.woff') format('woff2'); }
+@font-face { font-family: 'sans-BoldItalic'; src: url('./font/sans-BoldItalic.woff') format('woff2'); }
+@font-face { font-family: 'sans-Book'; src: url('./font/sans-Book.woff') format('woff2'); }
+@font-face { font-family: 'sans-BookItalic'; src: url('./font/sans-BookItalic.woff') format('woff2'); }
+@font-face { font-family: 'sans-Light'; src: url('./font/sans-Light.woff') format('woff2'); }
+@font-face { font-family: 'sans-LightItalic'; src: url('./font/sans-LightItalic.woff') format('woff2'); }
+@font-face { font-family: 'sans-Medium'; src: url('./font/sans-Medium.woff') format('woff2'); }
+@font-face { font-family: 'sans-MediumItalic'; src: url('./font/sans-MediumItalic.woff') format('woff2'); }
 
 /// Settings
 
@@ -19,7 +29,20 @@ $colors: (
   Scorpion      : #5e5e5e
 );
 
-$fonts: ();
+@function sans-serif($weight: 'Book') {
+  @return 'sans-#{$weight}', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+@function serif() {
+  @return 'Georgia', sans-serif; // TODO: Use FreightText
+}
+
+$fonts: (
+  SansSerifLight: sans-serif('Light'),
+  SansSerifBook: sans-serif('Book'),
+  SansSerifMedium: sans-serif('Medium'),
+  Serif: serif()
+);
 
 $layout: (
   columns: 12,
@@ -52,7 +75,8 @@ html {
 
 body {
   background-color: map-get($colors, 'White');
-  font-family: 'Circular', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: map-get($fonts, 'Serif');
+  text-rendering: optimizeLegibility;
 }
 
 html,
@@ -148,6 +172,7 @@ a {
 .date {
   color: map-get($colors, 'SilverChalice');
   display: inline-block;
+  font-family: map-get($fonts, 'SansSerifLight');
   font-size: 12px;
   letter-spacing: .4px;
   text-transform: uppercase;
@@ -155,7 +180,9 @@ a {
 
 .title {
   color: map-get($colors, 'MineShaft');
+  font-family: map-get($fonts, 'SansSerifBook');
   font-size: 42px;
+  letter-spacing: -.4px;
   line-height: (44 / 42);
   margin: #{(10 / 42)}em 0 #{(27 / 42)}em;
 
@@ -177,7 +204,7 @@ a {
 
 .intro {
   color: map-get($colors, 'CapeCod');
-  font-family: serif;
+  // font-family: serif;
   font-size: 24px;
   font-weight: 300;
   line-height: (36 / 24);
@@ -461,8 +488,8 @@ a {
   color: map-get($colors, 'White');
   cursor: pointer;
   display: inline-block;
+  font-family: map-get($fonts, 'SansSerifMedium');
   font-size: 16px;
-  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   line-height: 1;
   padding: #{(13 / 16)}em #{(35 / 16)}em #{(13 / 16)}em;
@@ -483,8 +510,8 @@ a {
 .Masthead-container {
   h1 {
     color: map-get($colors, 'MineShaft');
+    font-family: map-get($fonts, 'SansSerifBook');
     font-size: 72px;
-    font-weight: 500;
     letter-spacing: -.4px;
     line-height: 1;
     margin: 0;
@@ -497,7 +524,7 @@ a {
   p {
     color: map-get($colors, 'DoveGray');
     font-size: 32px;
-    font-family: serif;
+    // font-family: serif;
     font-weight: 300;
     line-height: (48 / 32);
     margin: #{(40 / 32)}em 0 0;
@@ -743,6 +770,12 @@ a {
   padding-bottom: 124px;
   padding-top: 230px;
 
+  // position: fixed;
+  // width: 100%;
+  // height: 100%;
+  // z-index: 2;
+  // top: 0;
+
   .container {
     max-width: span(10);
   }
@@ -766,8 +799,8 @@ a {
 
   h2 {
     color: map-get($colors, 'MineShaft');
+    font-family: map-get($fonts, 'SansSerifBook');
     font-size: 50px;
-    font-weight: 500;
     letter-spacing: -.4px;
     line-height: (54 / 50);
     margin: 0;
@@ -775,7 +808,7 @@ a {
 
   p {
     color: #4e5254;
-    font-family: serif;
+    // font-family: serif;
     font-size: 32px;
     letter-spacing: -.25px;
     line-height: (48 / 32);
@@ -783,7 +816,10 @@ a {
     margin-top: 17px;
   }
 
-  form {}
+  form {
+    font-family: map-get($fonts, 'SansSerifLight');
+    letter-spacing: -.25px;
+  }
 
   fieldset {
     border: 0;

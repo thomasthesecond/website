@@ -1,3 +1,43 @@
+@font-face {
+  font-family: 'sans-Black';
+  src: url("./font/sans-Black.woff") format("woff2"); }
+
+@font-face {
+  font-family: 'sans-BlackItalic';
+  src: url("./font/sans-BlackItalic.woff") format("woff2"); }
+
+@font-face {
+  font-family: 'sans-Bold';
+  src: url("./font/sans-Bold.woff") format("woff2"); }
+
+@font-face {
+  font-family: 'sans-BoldItalic';
+  src: url("./font/sans-BoldItalic.woff") format("woff2"); }
+
+@font-face {
+  font-family: 'sans-Book';
+  src: url("./font/sans-Book.woff") format("woff2"); }
+
+@font-face {
+  font-family: 'sans-BookItalic';
+  src: url("./font/sans-BookItalic.woff") format("woff2"); }
+
+@font-face {
+  font-family: 'sans-Light';
+  src: url("./font/sans-Light.woff") format("woff2"); }
+
+@font-face {
+  font-family: 'sans-LightItalic';
+  src: url("./font/sans-LightItalic.woff") format("woff2"); }
+
+@font-face {
+  font-family: 'sans-Medium';
+  src: url("./font/sans-Medium.woff") format("woff2"); }
+
+@font-face {
+  font-family: 'sans-MediumItalic';
+  src: url("./font/sans-MediumItalic.woff") format("woff2"); }
+
 html {
   box-sizing: border-box; }
 
@@ -8,7 +48,8 @@ html {
 
 body {
   background-color: #fff;
-  font-family: 'Circular', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; }
+  font-family: "Georgia", sans-serif;
+  text-rendering: optimizeLegibility; }
 
 html,
 body {
@@ -50,13 +91,16 @@ a {
 .date {
   color: #afafaf;
   display: inline-block;
+  font-family: "sans-Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 12px;
   letter-spacing: .4px;
   text-transform: uppercase; }
 
 .title {
   color: #323232;
+  font-family: "sans-Book", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 42px;
+  letter-spacing: -.4px;
   line-height: 1.04762;
   margin: 0.2381em 0 0.64286em; }
   @media (max-width: 445px) {
@@ -74,7 +118,6 @@ a {
 
 .intro {
   color: #3c4143;
-  font-family: serif;
   font-size: 24px;
   font-weight: 300;
   line-height: 1.5;
@@ -264,8 +307,8 @@ a {
   color: #fff;
   cursor: pointer;
   display: inline-block;
+  font-family: "sans-Medium", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 16px;
-  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   line-height: 1;
   padding: 0.8125em 2.1875em 0.8125em;
@@ -283,8 +326,8 @@ a {
 
 .Masthead-container h1 {
   color: #323232;
+  font-family: "sans-Book", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 72px;
-  font-weight: 500;
   letter-spacing: -.4px;
   line-height: 1;
   margin: 0; }
@@ -295,7 +338,6 @@ a {
 .Masthead-container p {
   color: #656565;
   font-size: 32px;
-  font-family: serif;
   font-weight: 300;
   line-height: 1.5;
   margin: 1.25em 0 0; }
@@ -483,19 +525,21 @@ a {
       width: 30px; }
   .Footer h2 {
     color: #323232;
+    font-family: "sans-Book", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     font-size: 50px;
-    font-weight: 500;
     letter-spacing: -.4px;
     line-height: 1.08;
     margin: 0; }
   .Footer p {
     color: #4e5254;
-    font-family: serif;
     font-size: 32px;
     letter-spacing: -.25px;
     line-height: 1.5;
     margin-bottom: 65px;
     margin-top: 17px; }
+  .Footer form {
+    font-family: "sans-Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    letter-spacing: -.25px; }
   .Footer fieldset {
     border: 0;
     margin: 0;
