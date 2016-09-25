@@ -56,6 +56,39 @@ $layout: (
 
 $susy: $layout;
 
+@mixin underlined-link() {
+  background-image: linear-gradient(
+    to top,
+    transparent,
+    transparent 2px,
+    rgba(map-get($colors, 'Mariner'), .8) 3px,
+    rgba(map-get($colors, 'Mariner'), .8) (3px + 1px),
+    transparent (3px + 1px)
+  );
+  color: rgba(map-get($colors, 'Mariner'), .8);
+  position: relative;
+  text-decoration: none;
+  text-shadow: -1px -1px 0 map-get($colors, 'White'),
+     1px -1px 0 map-get($colors, 'White'),
+     -1px 1px 0 map-get($colors, 'White'),
+     1px 1px 0 map-get($colors, 'White');
+  transition: color 200ms ease;
+
+  // &:hover,
+  // &:active,
+  // &:focus {
+  //   background-image: linear-gradient(
+  //     to top,
+  //     transparent,
+  //     transparent 3px,
+  //     rgba(red, .4) 3px,
+  //     rgba(red, .4) (3px + 1px),
+  //     transparent (3px + 1px)
+  //   );
+  //   color: red;
+  // }
+}
+
 
 /// Base
 
@@ -96,6 +129,17 @@ a {
   color: map-get($colors, 'Mariner');
 }
 
+.Masthead {
+  transition: background-image 200ms ease-in-out,
+    color 200ms ease-in-out,
+    text-shadow 200ms ease-in-out;
+
+  a:hover,
+  a:active,
+  a:focus {
+    @include underlined-link;
+  }
+}
 
 /// Objects
 
@@ -481,7 +525,8 @@ a {
 }
 
 .Button {
-  background-color: map-get($colors, 'MineShaft');
+  $color: map-get($colors, 'MineShaft');
+  background-color: $color;
   background-image: none;
   border: 0;
   border-radius: 0;
@@ -496,9 +541,16 @@ a {
   text-align: center;
   text-decoration: none;
   touch-action: manipulation;
+  transition: background-color 200ms ease-in-out;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $color + 30;
+  }
 }
 
 .Masthead {
@@ -651,21 +703,44 @@ a {
   // height: 100vh - 10;
   max-height: 1116px;
   position: absolute;
-  right: 0;
+  // right: 0;
   // top: 152px;
   // top: 5vh;
   transition: opacity 400ms ease-in-out 400ms,
     transform 400ms ease-in-out 400ms;
   // z-index: 1;
 
+  height: auto;
+  max-width: span(8 static) + 256px;
+  width: calc(#{span(8)} + 256px);
+
+  @media (max-width: 669px) {
+    // bottom: 0;
+  }
+
+  @media (min-width: 670px) {
+    right: -256px;
+    top: 50%;
+  }
+
   .not-animated & {
     opacity: 0;
     transform: translateX(40px);
+
+    @media (min-width: 670px) {
+      transform: translateX(40px) translateY(-50%);
+    }
   }
 
   .animated & {
+    left: 50%;
     opacity: 1;
-    transform: translateX(0);
+    // transform: translateX(0);
+    transform: translateX(-50%);
+
+    @media (min-width: 670px) {
+      transform: translateX(0) translateY(-50%);
+    }
   }
 }
 
@@ -880,13 +955,43 @@ a {
 /// Themes
 
 .th-bg-lonelyPlanet {
-  background-color: map-get($colors, 'Mariner');
+  $color: map-get($colors, 'Mariner');
+
+  &.Button {
+    background-color: $color;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color + 30;
+    }
+  }
 }
 
 .th-bg-salesforce {
-  background-color: map-get($colors, 'Cerulean');
+  $color: map-get($colors, 'Cerulean');
+
+  &.Button {
+    background-color: $color;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color + 30;
+    }
+  }
 }
 
 .th-bg-airbnb {
-  background-color: map-get($colors, 'Persimmon');
+  $color: map-get($colors, 'Persimmon');
+
+  &.Button {
+    background-color: $color;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color + 30;
+    }
+  }
 }

@@ -63,6 +63,18 @@ a {
 a {
   color: #297cbc; }
 
+.Masthead {
+  transition: background-image 200ms ease-in-out, color 200ms ease-in-out, text-shadow 200ms ease-in-out; }
+  .Masthead a:hover,
+  .Masthead a:active,
+  .Masthead a:focus {
+    background-image: linear-gradient(to top, transparent, transparent 2px, rgba(41, 124, 188, 0.8) 3px, rgba(41, 124, 188, 0.8) 4px, transparent 4px);
+    color: rgba(41, 124, 188, 0.8);
+    position: relative;
+    text-decoration: none;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    transition: color 200ms ease; }
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -315,9 +327,14 @@ a {
   text-align: center;
   text-decoration: none;
   touch-action: manipulation;
+  transition: background-color 200ms ease-in-out;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap; }
+  .Button:hover,
+  .Button:active,
+  .Button:focus {
+    background-color: #505050; }
 
 .Masthead {
   align-items: center;
@@ -436,14 +453,27 @@ a {
   display: block;
   max-height: 1116px;
   position: absolute;
-  right: 0;
-  transition: opacity 400ms ease-in-out 400ms, transform 400ms ease-in-out 400ms; }
+  transition: opacity 400ms ease-in-out 400ms, transform 400ms ease-in-out 400ms;
+  height: auto;
+  max-width: 1106px;
+  width: calc(65.89147% + 256px); }
+  @media (min-width: 670px) {
+    .image-Salesforce {
+      right: -256px;
+      top: 50%; } }
   .not-animated .image-Salesforce {
     opacity: 0;
     transform: translateX(40px); }
+    @media (min-width: 670px) {
+      .not-animated .image-Salesforce {
+        transform: translateX(40px) translateY(-50%); } }
   .animated .image-Salesforce {
+    left: 50%;
     opacity: 1;
-    transform: translateX(0); }
+    transform: translateX(-50%); }
+    @media (min-width: 670px) {
+      .animated .image-Salesforce {
+        transform: translateX(0) translateY(-50%); } }
 
 .CaseStudy {
   padding-top: 70px; }
@@ -579,11 +609,23 @@ a {
   .Footer .column + .column {
     margin-left: 2.80374%; }
 
-.th-bg-lonelyPlanet {
+.th-bg-lonelyPlanet.Button {
   background-color: #297cbc; }
+  .th-bg-lonelyPlanet.Button:hover,
+  .th-bg-lonelyPlanet.Button:active,
+  .th-bg-lonelyPlanet.Button:focus {
+    background-color: #479ada; }
 
-.th-bg-salesforce {
+.th-bg-salesforce.Button {
   background-color: #00a1e0; }
+  .th-bg-salesforce.Button:hover,
+  .th-bg-salesforce.Button:active,
+  .th-bg-salesforce.Button:focus {
+    background-color: #1ebffe; }
 
-.th-bg-airbnb {
+.th-bg-airbnb.Button {
   background-color: #ff5459; }
+  .th-bg-airbnb.Button:hover,
+  .th-bg-airbnb.Button:active,
+  .th-bg-airbnb.Button:focus {
+    background-color: #ff7277; }
