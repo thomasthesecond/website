@@ -26,8 +26,13 @@ $colors: (
   Persimmon     : #ff5459, // Airbnb
   Seashell      : #f1f1f1,
   SilverChalice : #afafaf,
-  Scorpion      : #5e5e5e
+  Scorpion      : #5e5e5e,
+  Gray          : #868686
 );
+
+@function helvetica() {
+  @return 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
 
 @function sans-serif($weight: 'Book') {
   @return 'sans-#{$weight}', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
@@ -38,6 +43,7 @@ $colors: (
 }
 
 $fonts: (
+  Helvetica: helvetica(),
   SansSerifLight: sans-serif('Light'),
   SansSerifBook: sans-serif('Book'),
   SansSerifMedium: sans-serif('Medium'),
@@ -55,6 +61,8 @@ $layout: (
 );
 
 $susy: $layout;
+
+$base-size: 16;
 
 @mixin underlined-link() {
   background-image: linear-gradient(
@@ -108,12 +116,20 @@ html {
 
 body {
   background-color: map-get($colors, 'White');
+  color: map-get($colors, 'Gray');
   font-family: map-get($fonts, 'Serif');
+  font-size: #{$base-size}px;
   text-rendering: optimizeLegibility;
 }
 
 html,
 body {
+  // height: 100%;
+  // overflow: hidden;
+  // position: relative;
+}
+
+.home {
   height: 100%;
   overflow: hidden;
   position: relative;
@@ -143,7 +159,7 @@ a {
 
 /// Objects
 
-.container {
+.wrap {
   // @include container;
   margin-left: auto;
   margin-right: auto;
@@ -202,6 +218,10 @@ a {
     // padding-right: 0;
     width: 100%;
   }
+}
+
+.container {
+  @include container;
 }
 
 .icon {
@@ -448,6 +468,128 @@ a {
   background: map-get($colors, 'PictonBlue');
 }
 
+.copy {
+  // base ----------------------------------------------------------------------
+
+  color: map-get($colors, 'Gray');
+  font-family: map-get($fonts, 'Helvetica');
+  font-size: #{(32 / $base-size)}em;
+  line-height: (48 / 32);
+  margin: 0;
+
+  @media (max-width: 669px) {
+    font-size: 24px;
+  }
+
+  // sizes ---------------------------------------------------------------------
+
+  &.-small {
+    font-size: #{(24 / 16)}em;
+    line-height: (48 / 24);
+
+    @media (max-width: 669px) {
+      font-size: 18px;
+    }
+  }
+
+  // colors --------------------------------------------------------------------
+
+  &.-white {
+    color: map-get($colors, 'White');
+  }
+}
+
+.heading {
+  // base ----------------------------------------------------------------------
+
+  color: map-get($colors, 'MineShaft');
+  font-family: map-get($fonts, 'SansSerifMedium');
+  margin: 0;
+
+  // sizes ---------------------------------------------------------------------
+
+  &.-huge {
+    font-size: #{(64 / $base-size)}em;
+    letter-spacing: -2.84px;
+    line-height: (71 / 64);
+  }
+
+  &.-large {
+    font-size: #{(50 / $base-size)}em;
+    letter-spacing: -1.6px;
+    line-height: (54 / 50);
+  }
+
+  &.-tiny {
+    font-size: 1em;
+    letter-spacing: .7px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  // colors --------------------------------------------------------------------
+
+  &.-light {
+    color: rgba(map-get($colors, 'MineShaft'), .69);
+  }
+
+  &.-white {
+    color: map-get($colors, 'White');
+  }
+}
+
+.IntroHeader {
+  text-align: center;
+  margin-bottom: #{(82 / $base-size)}em;
+
+  @media (max-width: 669px) {
+    font-size: 12px;
+  }
+
+  // .heading.-tiny {
+  //   margin-bottom: #{(20 / $base-size)}em;
+  // }
+}
+
+// @mixin nested-span($n) {
+//   .span-#{$n} {
+//     @for $i from 1 through $n {
+//       .span-#{$i} {
+//         @media (min-width: 670px) {
+//           width: span($i of $n);
+//         }
+//       }
+//     }
+//   }
+// }
+
+// $floats: left right;
+// @each $float in $floats {
+//   .#{$float} {
+//     @media (min-width: 670px) {
+//       float: #{$float};
+//     }
+//   }
+// }
+
+@for $i from 1 through 12 {
+  .span-#{$i} {
+    @media (min-width: 670px) {
+      width: span($i);
+    }
+  }
+}
+
+.span-10 {
+  @for $i from 1 through 10 {
+    .span-#{$i} {
+      @media (min-width: 670px) {
+        width: span($i of 10);
+      }
+    }
+  }
+}
+
 
 // Components
 
@@ -559,7 +701,7 @@ a {
   justify-content: center;
 }
 
-.Masthead-container {
+.Masthead-wrap {
   h1 {
     color: map-get($colors, 'MineShaft');
     font-family: map-get($fonts, 'SansSerifBook');
@@ -764,7 +906,7 @@ a {
   }
 }
 
-.CaseStudy-container {
+.CaseStudy-wrap {
   // @media (max-width: 571px) {
   //   text-align: center;
   // }
@@ -851,7 +993,7 @@ a {
   // z-index: 2;
   // top: 0;
 
-  .container {
+  .wrap {
     max-width: span(10);
   }
 
@@ -951,15 +1093,87 @@ a {
   }
 }
 
+.HeaderImage {
+  background-color: map-get($colors, 'MineShaft');
+  height: 400px;
+  // margin-top: 152px;
+  max-height: 400px;
+}
+
+.PullImage {
+  position: relative;
+  z-index: 2;
+}
+
+.Section {
+  height: 200px;
+  position: relative;
+  z-index: 1;
+
+  &.angled-top::before,
+  &.angled-bottom::after {
+    background-color: inherit;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: skewY(-5deg);
+    transform-origin: 0;
+    z-index: -1;
+    width: 100%;
+  }
+
+  &.angled-top::before {
+    top: 0;
+    // transform: skewY(-1.5deg);
+    // transform-origin: 0;
+  }
+
+  &.angled-bottom::after {
+    top: 100%;
+    // transform: skewY(1.5deg);
+    // transform-origin: 100%;
+  }
+}
+
+
+/// Utilities
+
+.u-left {
+  @media (min-width: 670px) {
+    float: left;
+  }
+}
+
+.u-right {
+  @media (min-width: 670px) {
+    float: right;
+  }
+}
+
+.u-mb20 {
+  margin-bottom: #{(20 / $base-size)}em !important;
+}
+
+.u-centered {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 
 /// Themes
 
-.th-bg-lonelyPlanet {
+.t-lonelyPlanet {
   $color: map-get($colors, 'Mariner');
+  background-color: $color;
+  color: map-get($colors, 'White');
 
   &.Button {
-    background-color: $color;
-
     &:hover,
     &:active,
     &:focus {
@@ -968,12 +1182,12 @@ a {
   }
 }
 
-.th-bg-salesforce {
+.t-salesforce {
   $color: map-get($colors, 'Cerulean');
+  background-color: $color;
+  color: map-get($colors, 'White');
 
   &.Button {
-    background-color: $color;
-
     &:hover,
     &:active,
     &:focus {
@@ -982,12 +1196,12 @@ a {
   }
 }
 
-.th-bg-airbnb {
+.t-airbnb {
   $color: map-get($colors, 'Persimmon');
+  background-color: $color;
+  color: map-get($colors, 'White');
 
   &.Button {
-    background-color: $color;
-
     &:hover,
     &:active,
     &:focus {

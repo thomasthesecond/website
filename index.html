@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="home no-js" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,32 +13,32 @@
     <script src="public/eqcss.js"></script>
     <!-- <script type="text/eqcss" src="public/main.eqcss"></script> -->
     <script type="text/eqcss">
-      @element ".Masthead-container" and (max-width: 220px) {
-        .Masthead-container h1 {
+      @element ".Masthead-wrap" and (max-width: 220px) {
+        .Masthead-wrap h1 {
           font-size: 36px;
         }
 
-        .Masthead-container p {
+        .Masthead-wrap p {
           font-size: 20px;
         }
       }
 
-      @element ".Masthead-container" and (min-width: 221px) and (max-width: 399px) {
-        .Masthead-container h1 {
+      @element ".Masthead-wrap" and (min-width: 221px) and (max-width: 399px) {
+        .Masthead-wrap h1 {
           font-size: 45px;
         }
 
-        .Masthead-container p {
+        .Masthead-wrap p {
           font-size: 20px;
         }
       }
 
-      @element ".Masthead-container" and (min-width: 400px) and (max-width: 889px) {
-        .Masthead-container h1 {
+      @element ".Masthead-wrap" and (min-width: 400px) and (max-width: 889px) {
+        .Masthead-wrap h1 {
           font-size: 63px;
         }
 
-        .Masthead-container p {
+        .Masthead-wrap p {
           font-size: 28px;
         }
       }
@@ -94,7 +94,7 @@
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="Masthead swiper-slide slide-0" data-index="0">
-            <div class="Masthead-container container">
+            <div class="Masthead-wrap wrap">
               <h1>I design apps and websites for global brands and startups.</h1>
               <p>
                 Recent projects include
@@ -106,7 +106,7 @@
           </div>
 
           <div class="CaseStudy swiper-slide slide-1 not-animated" data-index="1">
-            <div class="CaseStudy-container container">
+            <div class="CaseStudy-wrap wrap">
               <div class="CaseStudy-description">
                 <time class="date" datetime="2015-12">December 2015</time>
                 <h2 class="title">Lonely Planet Destinations &amp; Guides</h2>
@@ -114,7 +114,7 @@
                   Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id
                   ligula porta felis euismod semper.
                 </p>
-                <a href="#" role="button" class="Button th-bg-lonelyPlanet">
+                <a href="#" role="button" class="Button t-lonelyPlanet">
                   Read case study
                 </a>
               </div>
@@ -130,7 +130,7 @@
           </div>
 
           <div class="CaseStudy swiper-slide slide-2 not-animated" data-index="2">
-            <div class="CaseStudy-container container">
+            <div class="CaseStudy-wrap wrap">
               <div class="CaseStudy-description">
                 <time class="date" datetime="2014-08">August 2014</time>
                 <h2 class="title">Airbnb Rebrand</h2>
@@ -138,7 +138,7 @@
                   Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id
                   ligula porta felis euismod semper.
                 </p>
-                <a href="#" role="button" class="Button th-bg-airbnb">
+                <a href="#" role="button" class="Button t-airbnb">
                   Read case study
                 </a>
               </div>
@@ -154,7 +154,7 @@
           </div>
 
           <div class="CaseStudy swiper-slide slide-3 not-animated" data-index="3">
-            <div class="CaseStudy-container container">
+            <div class="CaseStudy-wrap wrap">
               <div class="CaseStudy-description">
                 <time class="date" datetime="2013-11">November 2013</time>
                 <h2 class="title">Salesforce1 &amp; Styleguide</h2>
@@ -162,7 +162,7 @@
                   Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id
                   ligula porta felis euismod semper.
                 </p>
-                <a href="#" role="button" class="Button th-bg-salesforce">
+                <a href="#" role="button" class="Button t-salesforce">
                   Read case study
                 </a>
               </div>
@@ -171,10 +171,6 @@
                 src="public/images/salesforce.png"
                 alt="Salesforce" />
             </div>
-
-            <!-- <img class="image-Salesforce"
-              src="public/images/salesforce.png"
-              alt="Salesforce" /> -->
           </div>
         </div>
 
@@ -182,7 +178,7 @@
       </div>
 
       <footer class="Footer">
-        <div class="container">
+        <div class="wrap">
           <header>
             <h2>Want to work together?</h2>
             <p>
