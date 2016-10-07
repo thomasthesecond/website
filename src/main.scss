@@ -16,18 +16,22 @@
 /// Settings
 
 $colors: (
+  Black         : #000,
   White         : #fff,
   PictonBlue    : #3aa7e8,
   MineShaft     : #323232, // 3a3a3a
   CapeCod       : #3c4143,
   DoveGray      : #656565,
   Mariner       : #297cbc, // LP
+  ChathamsBlue  : #163771, // LP alternate
   Cerulean      : #00a1e0, // Salesforce
   Persimmon     : #ff5459, // Airbnb
   Seashell      : #f1f1f1,
+  Alabaster     : #f7f7f7,
   SilverChalice : #afafaf,
   Scorpion      : #5e5e5e,
-  Gray          : #868686
+  Gray          : #868686,
+  DustyGray     : #979797
 );
 
 @function helvetica() {
@@ -53,9 +57,10 @@ $fonts: (
 $layout: (
   columns: 12,
   column-width: 80px,
-  container: 1290px,
+  container: 1268px,
   gutter-position: before,
-  gutters: 3 / 8,
+  // gutters: 3 / 8,
+  gutters: 28 / 80,
   // math: static,
   output: float
 );
@@ -143,6 +148,16 @@ a {
 // a:visited {
 a {
   color: map-get($colors, 'Mariner');
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.image {
+  border: 1px solid map-get($colors, 'DustyGray');
+  box-shadow: 0 2px 4px rgba(black, .5), 0 1px 3px rgba(black, .5) inset;
 }
 
 .Masthead {
@@ -397,75 +412,77 @@ a {
   }
 }
 
-.swiper-container {
-  height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
-.swiper-slide {
-  // -webkit-box-align: center;
-  // -ms-flex-align: center;
-  // -webkit-align-items: center;
-  // align-items: center;
-  background-color: map-get($colors, 'White');
-  // display: -webkit-box;
-  // display: -ms-flexbox;
-  // display: -webkit-flex;
-  // display: flex;
-  // -webkit-box-pack: center;
-  // -ms-flex-pack: center;
-  // -webkit-justify-content: center;
-  // justify-content: center;
-}
-
-.swiper-pagination {
-  @media (max-width: 669px) {
-    display: none;
-  }
-}
-
-.swiper-container-vertical > .swiper-pagination-bullets {
-  left: 20px;
-  right: auto;
-
-  @media (min-width: 572px) {
-    left: #{(56 / 1600) * 100%};
+.HomeSwiper {
+  .swiper-container {
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
   }
 
-  @media (min-width: 1600px) {
-    left: 56px;
+  .swiper-slide {
+    // -webkit-box-align: center;
+    // -ms-flex-align: center;
+    // -webkit-align-items: center;
+    // align-items: center;
+    background-color: map-get($colors, 'White');
+    // display: -webkit-box;
+    // display: -ms-flexbox;
+    // display: -webkit-flex;
+    // display: flex;
+    // -webkit-box-pack: center;
+    // -ms-flex-pack: center;
+    // -webkit-justify-content: center;
+    // justify-content: center;
   }
-}
 
-.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
-  margin: 6px 0;
-}
-
-.swiper-pagination-bullet {
-  background: #cac6cd;
-  height: 5px;
-  opacity: 1;
-  transition: background 200ms ease-in-out;
-  width: 5px;
-
-  @media (min-width: 760px) {
-    height: 10px;
-    width: 10px;
+  .swiper-pagination {
+    @media (max-width: 669px) {
+      display: none;
+    }
   }
-}
 
-.light {
-  background: lighten(#cac6cd, 5);
-}
+  .swiper-container-vertical > .swiper-pagination-bullets {
+    left: 20px;
+    right: auto;
 
-.lighter {
-  background: lighten(#cac6cd, 10);
-}
+    @media (min-width: 572px) {
+      left: #{(56 / 1600) * 100%};
+    }
 
-.swiper-pagination-bullet-active {
-  background: map-get($colors, 'PictonBlue');
+    @media (min-width: 1600px) {
+      left: 56px;
+    }
+  }
+
+  .swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 6px 0;
+  }
+
+  .swiper-pagination-bullet {
+    background: #cac6cd;
+    height: 5px;
+    opacity: 1;
+    transition: background 200ms ease-in-out;
+    width: 5px;
+
+    @media (min-width: 760px) {
+      height: 10px;
+      width: 10px;
+    }
+  }
+
+  .light {
+    background: lighten(#cac6cd, 5);
+  }
+
+  .lighter {
+    background: lighten(#cac6cd, 10);
+  }
+
+  .swiper-pagination-bullet-active {
+    background: map-get($colors, 'PictonBlue');
+  }
 }
 
 .copy {
@@ -473,12 +490,12 @@ a {
 
   color: map-get($colors, 'Gray');
   font-family: map-get($fonts, 'Helvetica');
-  font-size: #{(32 / $base-size)}em;
+  font-size: #{(24 / $base-size)}em;
   line-height: (48 / 32);
   margin: 0;
 
-  @media (max-width: 669px) {
-    font-size: 24px;
+  @media (min-width: 670px) {
+    font-size: #{(32 / $base-size)}em;
   }
 
   // sizes ---------------------------------------------------------------------
@@ -500,6 +517,11 @@ a {
 }
 
 .heading {
+  // settings ------------------------------------------------------------------
+
+  $heading-huge: 64;
+  $heading-large: 50;
+
   // base ----------------------------------------------------------------------
 
   color: map-get($colors, 'MineShaft');
@@ -509,15 +531,15 @@ a {
   // sizes ---------------------------------------------------------------------
 
   &.-huge {
-    font-size: #{(64 / $base-size)}em;
+    font-size: #{($heading-huge / $base-size)}em;
     letter-spacing: -2.84px;
-    line-height: (71 / 64);
+    line-height: (71 / $heading-huge);
   }
 
   &.-large {
-    font-size: #{(50 / $base-size)}em;
+    font-size: #{($heading-large / $base-size)}em;
     letter-spacing: -1.6px;
-    line-height: (54 / 50);
+    line-height: (54 / $heading-large);
   }
 
   &.-tiny {
@@ -533,9 +555,250 @@ a {
     color: rgba(map-get($colors, 'MineShaft'), .69);
   }
 
+  &.-gray {
+    color: #424242;
+  }
+
   &.-white {
     color: map-get($colors, 'White');
   }
+
+  &.-whiteAlt {
+    color: rgba(map-get($colors, 'White'), .46);
+  }
+
+  // styles --------------------------------------------------------------------
+
+  &.-tick {
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 4px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 30px;
+    }
+
+    &.-large {
+      margin-bottom:  #{(74 / $heading-large)}em;
+      padding-top: #{(128 / $heading-large)}em;
+    }
+
+    &.-white::before {
+      background-color: rgba(map-get($colors, 'White'), .66);
+    }
+
+    // LP
+    &.-mariner::before {
+      background-color: map-get($colors, 'Mariner');
+    }
+
+    &.-blue::before {
+      background-color: #4a90e2;
+    }
+
+    // Salesforce
+    &.-cerulean::before {
+      background-color: map-get($colors, 'Cerulean');
+    }
+
+    // Airbnb
+    &.-persimmon::before {
+      background-color: map-get($colors, 'Persimmon');
+    }
+  }
+}
+
+.Story.-lp {
+  // LP Chapter 1 --------------------------------------------------------------
+
+  .Intro + .Chapter-1 {
+    margin-top: #{(210 / $base-size)}em;
+  }
+
+  .Chapter-1 {
+  }
+
+  // LP Chapter 2 --------------------------------------------------------------
+
+  .Chapter-2 {
+  }
+
+  // LP Chapter 3 --------------------------------------------------------------
+
+  .Chapter-3 {
+  }
+
+  // LP Chapter 4 --------------------------------------------------------------
+
+  .Chapter-4 {
+  }
+
+  // LP Chapter 5 --------------------------------------------------------------
+
+  .Chapter-5 {
+  }
+
+  // LP Chapter 6 --------------------------------------------------------------
+
+  .Chapter-6 {
+  }
+
+  // LP Chapter 7 --------------------------------------------------------------
+
+  .Chapter-7 {
+  }
+
+  // LP Chapter 8 --------------------------------------------------------------
+
+  .Chapter-8 {
+  }
+
+  // LP Chapter 9 --------------------------------------------------------------
+
+  .Chapter-9 {
+  }
+
+  // LP Chapter 10 -------------------------------------------------------------
+
+  .Chapter-10 {
+    // margin-top: #{(275 / $base-size)}em;
+
+    // .Section + .PhotoGallery {
+    //   margin-top: #{(-88 / $base-size)}em;
+    // }
+
+    // .PhotoGallery + .FullImage {
+    //   margin-top: #{(46 / $base-size)}em;
+    // }
+
+    .FullImage + .CopyBlock {
+      margin-top: #{(136 / $base-size)}em;
+    }
+  }
+}
+
+.Story.-airbnb {
+  // Airbnb Chapter 1 ------------------------------------------------------------
+
+  .Intro + .Chapter-1 {
+    margin-top: #{(210 / $base-size)}em;
+  }
+
+  .Chapter-1 {
+    .Section + .CarouselFeature {
+      margin-top: #{(-112 / $base-size)}em;
+    }
+
+    .Carousel {
+      margin-top: #{(43 / $base-size)}em;
+    }
+
+    .CarouselFeature + .CopyGroup {
+      margin-top: #{(122 / $base-size)}em;
+    }
+
+    .CopyBlock + .SingleImage {
+      margin-top: #{(140 / $base-size)}em;
+    }
+  }
+
+  // Airbnb Chapter 2 ------------------------------------------------------------
+
+  .Chapter-2 {
+    margin-top: #{(165 / $base-size)}em;
+
+    .CopyGroup {
+      .CopyBlock + .SingleImage {
+        margin-top: #{(88 / $base-size)}em;
+      }
+    }
+
+    .Section {
+      margin-top: #{(-285 / $base-size)}em;
+      padding-top: #{(425 / $base-size)}em;
+
+      .CopyBlock + .SingleImage {
+        margin-top: #{(82 / $base-size)}em;
+      }
+
+      .SingleImage + .CopyBlock {
+        margin-top: #{(134 / $base-size)}em;
+      }
+    }
+  }
+
+  // Airbnb Chapter 3 ------------------------------------------------------------
+
+  .Chapter-3 {
+    margin-top: #{(16 / $base-size)}em;
+
+    .Section + .ImageGroup {
+      margin-top: #{(-180 / $base-size)}em;
+    }
+
+    .ImageGroup + .SingleImage {
+      margin-top: #{(200 / $base-size)}em;
+    }
+
+    .SingleImage + .CopyBlock {
+      margin-top: #{(148 / $base-size)}em;
+    }
+  }
+
+  // Airbnb Chapter 4 ------------------------------------------------------------
+
+  .Chapter-4 {
+    margin-top: #{(338 / $base-size)}em;
+
+    .Section + .ImageGroup {
+      margin-top: #{(-174 / $base-size)}em;
+    }
+
+    .ImageGroup + .CopyBlock {
+      margin-top: #{(222 / $base-size)}em;
+    }
+  }
+
+  // Airbnb Chapter 5 ------------------------------------------------------------
+
+  .Chapter-5 {
+    margin-top: #{(275 / $base-size)}em;
+
+    .Section + .PhotoGallery {
+      margin-top: #{(-88 / $base-size)}em;
+    }
+
+    .PhotoGallery + .FullImage {
+      margin-top: #{(46 / $base-size)}em;
+    }
+
+    .FullImage + .CopyBlock {
+      margin-top: #{(136 / $base-size)}em;
+    }
+  }
+}
+
+.CopyHeader {
+  position: relative;
+
+  .heading.-tiny {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: #{(90 / $base-size)}em;
+  }
+}
+
+.Intro {
+  // padding-bottom: #{(107 / $base-size)}em;
+  // padding-top: #{(195 / $base-size)}em;
+  margin-top: #{(195 / $base-size)}em;
 }
 
 .IntroHeader {
@@ -546,9 +809,19 @@ a {
     font-size: 12px;
   }
 
-  // .heading.-tiny {
-  //   margin-bottom: #{(20 / $base-size)}em;
-  // }
+  .heading.-tiny {
+    margin-bottom: #{(16 / $base-size)}em;
+  }
+}
+
+.IntroCopy .copy {
+  padding-right: (60px / span(7 static)) * 100%;
+}
+
+.IntroCopy aside {
+  @media (min-width: 670px) {
+    margin-top: 21px;
+  }
 }
 
 // @mixin nested-span($n) {
@@ -593,9 +866,8 @@ a {
 
 // Components
 
-.Main {
-  // padding-bottom: 152px;
-  // padding-top: 152px;
+.Story {
+  padding-bottom: #{(343 / $base-size)}em;
 }
 
 .Nav {
@@ -1093,55 +1365,236 @@ a {
   }
 }
 
-.HeaderImage {
-  background-color: map-get($colors, 'MineShaft');
-  height: 400px;
-  // margin-top: 152px;
-  max-height: 400px;
+.panel {
+  background-color: map-get($colors, 'White');
+  position: relative;
+  z-index: 2;
+
+  &.-feature {
+    box-shadow: 0 #{(50 / $base-size)}em #{(75 / $base-size)}em rgba(map-get($colors, 'Black'), .2);
+    // max-height: 850px;
+    // min-height: 850px;
+    padding: #{(89 / $base-size)}em #{(108 / $base-size)}em;
+  }
+
+  &.-column {
+    box-shadow: 0 #{(35 / $base-size)}em #{(70 / $base-size)}em rgba(map-get($colors, 'Black'), .13);
+    // padding: #{(89 / $base-size)}em #{(108 / $base-size)}em;
+  }
+
+  // 0 35px 70px black, .17
+  &.-image {
+    border: 1px solid rgba(map-get($colors, 'DustyGray'), .51);
+    box-shadow: 0 #{(75 / $base-size)}em #{(90 / $base-size)}em rgba(map-get($colors, 'Black'), .2);
+
+    > img {
+      display: block;
+      max-width: 100%;
+    }
+  }
 }
 
-.PullImage {
+.DataMetricsFeature {}
+
+.Metric {
+  float: left;
+
+  + .Metric {
+    margin-left: gutter();
+  }
+}
+
+.QuadImages {
+  img {
+    float: left;
+    width: span(3);
+  }
+
+  img + img {
+    margin-left: gutter();
+  }
+}
+
+.PhotoGallery {
+  position: relative;
+  z-index: 2;
+
+  img {
+    // border: 1px solid rgba(map-get($colors, 'DustyGray'), .58);
+    // box-shadow: 0 20px 40px rgba(map-get($colors, 'Black'), .17);
+    display: block;
+    float: left;
+
+    &:not(:first-child) {
+      margin-top: gutter();
+    }
+
+    &:nth-child(2),
+    &:nth-child(6),
+    &:nth-child(8) {
+      width: span(7)
+    }
+
+    &:nth-child(2),
+    &:nth-child(5),
+    &:nth-child(8) {
+      margin-right: gutter();
+    }
+
+    &:nth-child(3),
+    &:nth-child(5),
+    &:nth-child(9) {
+      width: span(5);
+    }
+  }
+}
+
+.ImageGroup {
+  column-count: 2;
+  column-gap: gutter(static);
+  position: relative;
+  z-index: 2;
+
+  img {
+    border: 1px solid rgba(map-get($colors, 'DustyGray'), .58);
+    box-shadow: 0 20px 40px rgba(map-get($colors, 'Black'), .17);
+    display: block;
+
+    &:nth-child(even) {
+      margin-top: gutter(static);
+    }
+  }
+}
+
+.CarouselFeature {
   position: relative;
   z-index: 2;
 }
 
-.Section {
-  height: 200px;
-  position: relative;
-  z-index: 1;
+.Masthead {
+  background-color: map-get($colors, 'MineShaft');
+  // background-position: center center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // height: #{(377 / $base-size)}em;
+  max-height: 377px;
+  overflow: hidden;
 
-  &.angled-top::before,
-  &.angled-bottom::after {
+  > img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.Section {
+  // background-color: map-get($colors, 'White');
+  // margin-bottom: 100px;
+  // margin-top: 100px;
+  padding-bottom: #{(245 / $base-size)}em; // 134px;
+  padding-top: #{(96 / $base-size)}em; // 103px;
+
+  &.-angled {
+    position: relative;
+    z-index: 1;
+  }
+
+  &.-angledTop::before,
+  &.-angledBottom::after {
     background-color: inherit;
     bottom: 0;
-    content: "";
+    content: '';
     display: block;
     height: 50%;
     left: 0;
     position: absolute;
     right: 0;
     top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &.-angledTop.-ltr::before,
+  &.-angledBottom.-ltr::after {
     transform: skewY(-5deg);
     transform-origin: 0;
-    z-index: -1;
+  }
+
+  &.-angledTop.-rtl::before,
+  &.-angledBottom.-rtl::after {
+    transform: skewY(5deg);
+    transform-origin: 100%;
+  }
+
+  &.-angledTop::before {
+    top: 0;
+  }
+
+  &.-angledBottom::after {
+    top: 100%;
+  }
+}
+
+.Carousel {
+  // max-width: 1048px;
+  position: relative;
+
+  img {
+    display: block;
     width: 100%;
   }
+}
 
-  &.angled-top::before {
-    top: 0;
-    // transform: skewY(-1.5deg);
-    // transform-origin: 0;
+.Carousel-pagination {
+  .swiper-pagination-bullet {
+    background-color: map-get($colors, 'White');
+    border: 1px solid map-get($colors, 'DustyGray');
+    height: 10px;
+    opacity: 1;
+    width: 10px;
   }
 
-  &.angled-bottom::after {
-    top: 100%;
-    // transform: skewY(1.5deg);
-    // transform-origin: 100%;
+  .swiper-pagination-bullet-active {
+    background-color: map-get($colors, 'Persimmon');
+    border-color: darken(map-get($colors, 'Persimmon'), 10); // #f14f54
   }
+}
+
+.Carousel-next,
+.Carousel-prev {
+  background-color: rgba(map-get($colors, 'White'), .92);
+  border: 0;
+  border-radius: 100%;
+  box-shadow: 0 20px 40px rgba(map-get($colors, 'Black'), .20);
+  bottom: 0;
+  cursor: pointer;
+  display: block;
+  height: 68px;
+  // margin-bottom: auto;
+  // margin-top: auto;
+  padding: 0;
+  position: absolute;
+  // top: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 68px;
+  z-index: 2;
+}
+
+.Carousel-next {
+  right: -34px;
+}
+
+.Carousel-prev {
+  left: -34px;
 }
 
 
 /// Utilities
+
+.u-above {
+  position: relative;
+  z-index: 2;
+}
 
 .u-left {
   @media (min-width: 670px) {
@@ -1165,11 +1618,43 @@ a {
   text-align: center;
 }
 
+.u-bg-alabaster {
+  background-color: map-get($colors, 'Alabaster');
+}
+// Black         : #000,
+// White         : #fff,
+// PictonBlue    : #3aa7e8,
+// MineShaft     : #323232, // 3a3a3a
+// CapeCod       : #3c4143,
+// DoveGray      : #656565,
+// Mariner       : #297cbc, // LP
+// Cerulean      : #00a1e0, // Salesforce
+// Persimmon     : #ff5459, // Airbnb
+// Seashell      : #f1f1f1,
+// Alabaster     : #f7f7f7,
+// SilverChalice : #afafaf,
+// Scorpion      : #5e5e5e,
+// Gray          : #868686
+
 
 /// Themes
 
 .t-lonelyPlanet {
   $color: map-get($colors, 'Mariner');
+  background-color: $color;
+  color: map-get($colors, 'White');
+
+  &.Button {
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color + 30;
+    }
+  }
+}
+
+.t-lonelyPlanet-alt {
+  $color: map-get($colors, 'ChathamsBlue');
   background-color: $color;
   color: map-get($colors, 'White');
 

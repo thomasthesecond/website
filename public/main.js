@@ -34,7 +34,7 @@ function toggleClass(el, className) {
 function homePage() {
   var nav = document.querySelector(".js-nav");
 
-  var swiper = new Swiper(".swiper-container", {
+  var swiper = new Swiper(".HomeSwiper", {
     pagination: ".swiper-pagination",
     direction: "vertical",
     slidesPerView: 1,
@@ -96,6 +96,6 @@ function navigation() {
 (function() {
   "use strict";
 
-  homePage();
+  if (hasClass(document.body, "Home") homePage();
   navigation();
 }());
