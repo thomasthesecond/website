@@ -31,7 +31,10 @@ $colors: (
   SilverChalice : #afafaf,
   Scorpion      : #5e5e5e,
   Gray          : #868686,
-  DustyGray     : #979797
+  DustyGray     : #979797,
+  Alto          : #dedede,
+  AthensGray    : #f1f0f3,
+  Tundora       : #424242
 );
 
 @function helvetica() {
@@ -46,11 +49,40 @@ $colors: (
   @return 'Georgia', sans-serif; // TODO: Use FreightText
 }
 
+@mixin clearfix() {
+  &::after {
+    clear: both;
+    content: ' ';
+    display: block;
+  }
+}
+
+@mixin aspect-ratio($width, $height, $element: 'div') {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: ($height / $width) * 100%;
+    width: 100%;
+  }
+
+  > #{$element} {
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
 $fonts: (
   Helvetica: helvetica(),
   SansSerifLight: sans-serif('Light'),
   SansSerifBook: sans-serif('Book'),
   SansSerifMedium: sans-serif('Medium'),
+  SansSerifBold: sans-serif('Bold'),
   Serif: serif()
 );
 
@@ -68,6 +100,12 @@ $layout: (
 $susy: $layout;
 
 $base-size: 16;
+$copy-size: 32;
+
+$heading-huge: 64;
+$heading-large: 50;
+$heading-medium: 42;
+$heading-small: 32;
 
 @mixin underlined-link() {
   background-image: linear-gradient(
@@ -315,6 +353,16 @@ img {
   }
 }
 
+.NavButton {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  outline: 0;
+  padding: 0;
+  user-select: none;
+}
+
 .hamburger {
   display: block;
   padding: 8px 9px 7px;
@@ -367,7 +415,12 @@ img {
 .hamburger-inner::after {
   background-color: map-get($colors, 'Scorpion');
   height: 1px;
+  transition: background-color 200ms ease-in-out;
   width: 100%;
+
+  .NavButton.-white & {
+    background-color: map-get($colors, 'White');
+  }
 }
 
 .hamburger--elastic {
@@ -490,23 +543,27 @@ img {
 
   color: map-get($colors, 'Gray');
   font-family: map-get($fonts, 'Helvetica');
-  font-size: #{(24 / $base-size)}em;
-  line-height: (48 / 32);
+  font-size: #{(($copy-size - 8) / $base-size)}em;
+  line-height: (48 / $copy-size);
   margin: 0;
 
   @media (min-width: 670px) {
-    font-size: #{(32 / $base-size)}em;
+    font-size: #{($copy-size / $base-size)}em;
   }
 
   // sizes ---------------------------------------------------------------------
 
   &.-small {
     font-size: #{(24 / 16)}em;
-    line-height: (48 / 24);
+    line-height: (36 / 24);
 
     @media (max-width: 669px) {
       font-size: 18px;
     }
+  }
+
+  &.-small.-loose {
+    line-height: (48 / 24);
   }
 
   // colors --------------------------------------------------------------------
@@ -517,15 +574,10 @@ img {
 }
 
 .heading {
-  // settings ------------------------------------------------------------------
-
-  $heading-huge: 64;
-  $heading-large: 50;
-
   // base ----------------------------------------------------------------------
 
   color: map-get($colors, 'MineShaft');
-  font-family: map-get($fonts, 'SansSerifMedium');
+  font-family: map-get($fonts, 'SansSerifBook');
   margin: 0;
 
   // sizes ---------------------------------------------------------------------
@@ -534,12 +586,40 @@ img {
     font-size: #{($heading-huge / $base-size)}em;
     letter-spacing: -2.84px;
     line-height: (71 / $heading-huge);
+
+    @media (max-width: 669px) {
+      font-size: #{($heading-large / $base-size)}em;
+    }
   }
 
   &.-large {
     font-size: #{($heading-large / $base-size)}em;
     letter-spacing: -1.6px;
     line-height: (54 / $heading-large);
+
+    @media (max-width: 669px) {
+      font-size: #{($heading-medium / $base-size)}em;
+    }
+  }
+
+  &.-medium {
+    font-size: #{($heading-medium / $base-size)}em;
+    letter-spacing: -1.34px;
+    line-height: (54 / $heading-medium);
+
+    @media (max-width: 669px) {
+      font-size: #{($heading-small / $base-size)}em;
+    }
+  }
+
+  &.-small {
+    font-size: #{($heading-small / $base-size)}em;
+    letter-spacing: -1.42px;
+    line-height: (48 / $heading-small);
+
+    @media (max-width: 669px) {
+      font-size: #{(28 / $base-size)}em;
+    }
   }
 
   &.-tiny {
@@ -573,7 +653,7 @@ img {
     position: relative;
 
     &::before {
-      content: "";
+      content: '';
       display: block;
       height: 4px;
       left: 0;
@@ -622,64 +702,250 @@ img {
   }
 
   .Chapter-1 {
+    .Section {
+      padding-bottom: #{(50 / $base-size)}em;
+    }
+
+    .Section + .DataMetricsFeature {
+      margin-top: #{(48 / $base-size)}em;
+    }
   }
 
   // LP Chapter 2 --------------------------------------------------------------
 
   .Chapter-2 {
+    margin-top: #{(158 / $base-size)}em;
+
+    .Graph {
+      margin-top: #{(115 / $base-size)}em;
+    }
+
+    .Graph + .CopyBlock {
+      margin-top: #{(160 / $base-size)}em;
+    }
   }
 
   // LP Chapter 3 --------------------------------------------------------------
 
   .Chapter-3 {
+    margin-top: #{(246 / $base-size)}em;
+
+    .Section {
+      padding-bottom: #{(186 / $base-size)}em;
+    }
+
+    .SingleImage {
+      margin-top: #{(-166 / $base-size)}em;
+    }
   }
 
   // LP Chapter 4 --------------------------------------------------------------
 
   .Chapter-4 {
+    margin-top: #{(112 / $base-size)}em;
+
+    .ImageGroup {
+      margin-top: #{(108 / $base-size)}em;
+    }
+
+    .ImageGroup + .CopyBlock {
+      margin-top: #{(176 / $base-size)}em;
+    }
+
+    .SingleImage {
+      margin-top: #{(57 / $base-size)}em;
+    }
   }
 
   // LP Chapter 5 --------------------------------------------------------------
 
   .Chapter-5 {
+    margin-top: #{(134 / $base-size)}em;
+
+    .FullImage {
+      margin-top: #{(71 / $base-size)}em;
+    }
+
+    .FullImage + .CopyBlock {
+      margin-top: #{(142 / $base-size)}em;
+    }
+
+    .SingleImage {
+      margin-top: #{(104 / $base-size)}em;
+    }
+
+    .ColumnImages {
+      margin-top: gutter(static);
+    }
   }
 
   // LP Chapter 6 --------------------------------------------------------------
 
   .Chapter-6 {
+    margin-top: #{(152 / $base-size)}em;
+
+    .CopyBlock + .ImageGroup {
+      margin-top: #{(95 / $base-size)}em;
+    }
+
+    .ImageGroup + .CopyBlock {
+      margin-top: #{(141 / $base-size)}em;
+    }
   }
 
   // LP Chapter 7 --------------------------------------------------------------
 
   .Chapter-7 {
+    margin-top: #{(218 / $base-size)}em;
+
+    .Section {
+      padding-bottom: 0;
+    }
+
+    .iPhones {
+      margin-top: #{(74 / $base-size)}em;
+    }
   }
 
   // LP Chapter 8 --------------------------------------------------------------
 
   .Chapter-8 {
+    margin-top: #{(100 / $base-size)}em;
+
+    .CityGuides {
+      margin-top: #{(62 / $base-size)}em;
+    }
   }
 
   // LP Chapter 9 --------------------------------------------------------------
 
   .Chapter-9 {
+    margin-top: #{(188 / $base-size)}em;
+
+    .DiscoverFeature {
+      margin-top: #{(71 / $base-size)}em;
+    }
   }
 
   // LP Chapter 10 -------------------------------------------------------------
 
   .Chapter-10 {
-    // margin-top: #{(275 / $base-size)}em;
+    margin-top: #{(288 / $base-size)}em;
 
-    // .Section + .PhotoGallery {
-    //   margin-top: #{(-88 / $base-size)}em;
-    // }
+    .Video {
+      margin-top: #{(126 / $base-size)}em;
+    }
 
-    // .PhotoGallery + .FullImage {
-    //   margin-top: #{(46 / $base-size)}em;
-    // }
+    .FullImage {
+      margin-top: #{(210 / $base-size)}em;
+    }
 
     .FullImage + .CopyBlock {
-      margin-top: #{(136 / $base-size)}em;
+      margin-top: #{(164 / $base-size)}em;
     }
+  }
+}
+
+.Contact .Story {
+  padding-top: #{(88 / $base-size)}em;
+
+  @media (min-width: 670px) {
+    padding-top: #{(188 / $base-size)}em;
+  }
+
+  .copy {
+    margin-bottom: #{(25 / $copy-size)}em;
+    margin-top: #{(25 / $copy-size)}em;
+  }
+}
+
+.About .Story {
+  padding-bottom: #{(96 / $base-size)}em;
+  padding-top: #{(88 / $base-size)}em;
+
+  @media (min-width: 670px) {
+    padding-bottom: #{(156 / $base-size)}em;
+    padding-top: #{(188 / $base-size)}em;
+  }
+
+  .AboutBrad {
+    .heading {
+      @media (min-width: 980px) {
+        width: span(10);
+      }
+
+      @media (min-width: 1160px) {
+        width: span(8);
+      }
+
+      @media (min-width: 1460px) {
+        width: span(6);
+      }
+    }
+
+    .copy {
+      margin-bottom: #{(59 / $copy-size)}em;
+      margin-top: #{(59 / $copy-size)}em;
+
+      @media (min-width: 980px) {
+        width: span(10);
+      }
+
+      @media (min-width: 1160px) {
+        width: span(8);
+      }
+    }
+  }
+
+  .Services {
+    .heading {}
+    .ServicesList {}
+  }
+}
+
+.Services {
+  &.-tick {
+    margin-top: #{(118 / $base-size)}em;
+
+    @media (min-width: 670px) {
+      margin-top: #{(178 / $base-size)}em;
+    }
+
+    &::before {
+      background-color: map-get($colors, 'Persimmon');
+      content: '';
+      display: block;
+      height: 4px;
+      margin-bottom: #{(96 / $base-size)}em;
+      width: 30px;
+
+      @media (min-width: 670px) {
+        margin-bottom: #{(156 / $base-size)}em;
+      }
+    }
+  }
+}
+
+.ServicesList {
+  // font-size: 14px;
+  margin-top: #{(67 / $base-size)}em;
+
+  @media (min-width: 670px) {
+    // font-size: #{$base-size}px;
+    margin-top: #{(127 / $base-size)}em;
+  }
+
+  .ServicesList-column {
+    // margin-bottom: #{(40 / 14)}em;
+    margin-bottom: #{(40 / $base-size)}em;
+
+    @media (min-width: 670px) {
+      margin-bottom: #{(105 / $base-size)}em;
+    }
+  }
+
+  .copy {
+    margin-top: #{(29 / $copy-size)}em;
   }
 }
 
@@ -819,8 +1085,16 @@ img {
 }
 
 .IntroCopy aside {
+  margin-top: 40px;
+
   @media (min-width: 670px) {
     margin-top: 21px;
+  }
+
+  .copy {
+    @media (max-width: 669px) {
+      margin-top: 8px;
+    }
   }
 }
 
@@ -870,10 +1144,12 @@ img {
   padding-bottom: #{(343 / $base-size)}em;
 }
 
-.Nav {
+.Nav > .Header {
   // background-color: rgba(255, 255, 255, .6);
   overflow: hidden;
   padding: 20px;
+  position: relative;
+  z-index: 10;
 
   // @media (min-width: 572px) {
   @media (min-width: 670px) {
@@ -891,21 +1167,21 @@ img {
   }
 }
 
-.Nav-fixed {
+.Nav > .Header-fixed {
   left: 0;
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 10;
 }
 
 .Logo {
-  background-color: map-get($colors, 'PictonBlue');
+  color: map-get($colors, 'MineShaft');
   border-radius: 100%;
   display: inline-block;
   font-size: 30px;
   height: 1em;
   text-align: center;
+  transition: color 200ms ease-in-out;
   width: 1em;
 
   @media (min-width: 446px) {
@@ -916,9 +1192,13 @@ img {
     font-size: 48px;
   }
 
+  &.-white {
+    color: map-get($colors, 'White');
+  }
+
   .icon {
-    opacity: .8;
-    transition: opacity 200ms ease-in-out;
+    // opacity: .8;
+    // transition: opacity 200ms ease-in-out;
 
     // @media (min-width: 572px) {
     //   padding-left: 2px;
@@ -929,12 +1209,300 @@ img {
   &:active,
   &:focus {
     .icon {
-      opacity: 1;
+      // opacity: 1;
     }
   }
 
   .Nav & {
     float: left;
+  }
+}
+
+.Menu {
+  font-family: map-get($fonts, 'SansSerifMedium');
+
+  .Menu-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .Nav & {
+    background-color: map-get($colors, 'White');
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9;
+
+    @media (min-width: 446px) {
+      // height: calc(100vh - 78px);
+      // top: 78px;
+    }
+
+    @media (min-width: 572px) {
+      // height: calc(100vh - 88px);
+      // top: 88px;
+    }
+
+    @media (min-width: 616px) {
+      // height: calc(100vh - 152px);
+      // top: #{(152 / 1600) * 100%};
+    }
+
+    @media (min-width: 1600px) {
+      // height: calc(100vh - 152px);
+      // top: 152px;
+    }
+  }
+
+  &.-hidden {
+    opacity: 0;
+    transition: opacity 200ms, visibility 200ms;
+    visibility: hidden;
+
+    .Menu-container {
+      opacity: 0;
+      transform: translateY(-100px) scale(1.2);
+      transition: opacity 200ms, transform 200ms, visibility 200ms;
+      visibility: hidden;
+    }
+
+    // .MenuPrimary li,
+    // .MenuSecondary li {
+    //   opacity: 0;
+    //   transform: translateY(-20px) scale(1.2);
+    //   transition: opacity 400ms, transform 400ms, visibility 400ms;
+    //   visibility: hidden;
+    // }
+    //
+    // .MenuSocial {
+    //   opacity: 0;
+    //   transition: opacity 400ms, visibility 400ms;
+    //   visibility: hidden;
+    // }
+  }
+
+  &.-visible {
+    opacity: 1;
+    transition: opacity 400ms, visibility 400ms;
+    visibility: visible;
+
+    .Menu-container {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      transition: opacity 400ms cubic-bezier(.68, -.55, .265, 1.55) 100ms,
+        transform 400ms cubic-bezier(.68, -.55, .265, 1.55) 100ms,
+        visibility 400ms cubic-bezier(.68, -.55, .265, 1.55) 100ms;
+      visibility: visible;
+    }
+
+    // .MenuPrimary li,
+    // .MenuSecondary li {
+    //   opacity: 1;
+    //   transform: translateY(0) scale(1);
+    //   visibility: visible;
+    // }
+    //
+    // .MenuSocial {
+    //   opacity: 1;
+    //   visibility: visible;
+    // }
+    //
+    // .MenuPrimary li:nth-child(1) {
+    //   transition: opacity 400ms cubic-bezier(.68, -.55, .265, 1.55),
+    //     transform 400ms cubic-bezier(.68, -.55, .265, 1.55),
+    //     visibility 400ms cubic-bezier(.68, -.55, .265, 1.55);
+    // }
+    //
+    // .MenuPrimary li:nth-child(2) {
+    //   transition: opacity 400ms cubic-bezier(.68, -.55, .265, 1.55) 400ms,
+    //     transform 400ms cubic-bezier(.68, -.55, .265, 1.55) 400ms,
+    //     visibility 400ms cubic-bezier(.68, -.55, .265, 1.55) 400ms;
+    // }
+    //
+    // .MenuPrimary li:nth-child(3) {
+    //   transition: opacity 400ms cubic-bezier(.68, -.55, .265, 1.55) 800ms,
+    //     transform 400ms cubic-bezier(.68, -.55, .265, 1.55) 800ms,
+    //     visibility 400ms cubic-bezier(.68, -.55, .265, 1.55) 800ms;
+    // }
+    //
+    // .MenuSecondary li:nth-child(1) {
+    //   transition: opacity 400ms cubic-bezier(.68, -.55, .265, 1.55) 1200ms,
+    //     transform 400ms cubic-bezier(.68, -.55, .265, 1.55) 1200ms,
+    //     visibility 400ms cubic-bezier(.68, -.55, .265, 1.55) 1200ms;
+    // }
+    //
+    // .MenuSecondary li:nth-child(2) {
+    //   transition: opacity 400ms cubic-bezier(.68, -.55, .265, 1.55) 1600ms,
+    //     transform 400ms cubic-bezier(.68, -.55, .265, 1.55) 1600ms,
+    //     visibility 400ms cubic-bezier(.68, -.55, .265, 1.55) 1600ms;
+    // }
+    //
+    // .MenuSocial {
+    //   transition: opacity 400ms cubic-bezier(.68, -.55, .265, 1.55) 2000ms,
+    //     visibility 400ms cubic-bezier(.68, -.55, .265, 1.55) 2000ms;
+    // }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    padding: 0;
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  .heading {
+    @media(min-height: 420px) {
+      font-size: #{(12 / $base-size)}em;
+    }
+
+    @media(min-height: 569px) {
+      font-size: #{(14 / $base-size)}em;
+    }
+
+    @media(min-height: 668px) {
+      font-size: #{(16 / $base-size)}em;
+    }
+  }
+}
+
+.MenuPrimary {
+  color: map-get($colors, 'MineShaft');
+  font-size: #{(64 / $base-size)}em;
+  letter-spacing: -2.84px;
+  line-height: (83 / 64);
+
+  @media(min-height: 420px) {
+    font-size: #{(40 / $base-size)}em;
+    letter-spacing: -1.84px;
+  }
+
+  @media(min-height: 569px) {
+    font-size: #{(52 / $base-size)}em;
+    letter-spacing: -2.84px;
+  }
+
+  @media(min-height: 668px) {
+    font-size: #{(58 / $base-size)}em;
+  }
+
+  @media(min-height: 737px) {
+    font-size: #{(64 / $base-size)}em;
+  }
+
+  .Menu & {
+    margin-top: #{(16 / 64)}em;
+  }
+
+  a {
+    color: inherit;
+    transition: color 200ms ease-in-out,
+      transform 200ms ease-in-out;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: map-get($colors, 'DoveGray');
+      transform: scale(1.1);
+    }
+  }
+
+  span {
+    color: map-get($colors, 'Alto');
+  }
+}
+
+.MenuSecondary {
+  color: rgba(map-get($colors, 'MineShaft'), .57);
+  font-size: #{(40 / $base-size)}em;
+  letter-spacing: -1.78px;
+  line-height: (60 / 40);
+
+  @media(min-height: 420px) {
+    font-size: #{(24 / $base-size)}em;
+    letter-spacing: -.78px;
+  }
+
+  @media(min-height: 569px) {
+    font-size: #{(32 / $base-size)}em;
+    letter-spacing: -1.78px;
+  }
+
+  @media(min-height: 668px) {
+    font-size: #{(36 / $base-size)}em;
+  }
+
+  @media(min-height: 737px) {
+    font-size: #{(40 / $base-size)}em;
+  }
+
+  .Menu & {
+    margin-top: #{(50 / 40)}em;
+  }
+
+  a {
+    color: inherit;
+    transition: color 200ms ease-in-out,
+      transform 200ms ease-in-out;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: map-get($colors, 'DoveGray');
+      transform: scale(1.1);
+    }
+  }
+}
+
+.MenuSocial {
+  font-size: #{(32 / $base-size)}em;
+
+  .Menu & {
+    bottom: #{(60 / 32)}em;
+    position: absolute;
+
+    @media(min-height: 420px) {
+      font-size: 24px;
+    }
+
+    @media(min-height: 569px) {
+      font-size: 28px;
+    }
+
+    @media(min-height: 737px) {
+      font-size: 32px;
+    }
+  }
+
+  li {
+    display: inline-block;
+    margin-left: #{(30 / 32)}em;
+    margin-right: #{(30 / 32)}em;
+  }
+
+  a {
+    color: map-get($colors, 'CapeCod');
+    transition: color 200ms ease-in-out,
+      transform 200ms ease-in-out;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: map-get($colors, 'DoveGray');
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -989,11 +1557,11 @@ img {
 
   p {
     color: map-get($colors, 'DoveGray');
-    font-size: 32px;
+    font-size: #{($copy-size / $base-size)}em;
     // font-family: serif;
     font-weight: 300;
-    line-height: (48 / 32);
-    margin: #{(40 / 32)}em 0 0;
+    line-height: (48 / $copy-size);
+    margin: #{(40 / $copy-size)}em 0 0;
   }
 }
 
@@ -1255,6 +1823,29 @@ img {
 }
 
 .Footer {
+  padding-bottom: #{226 / $base-size}em;
+
+  &.-tick {
+    &::before {
+      background-color: map-get($colors, 'Persimmon');
+      content: '';
+      display: block;
+      height: 4px;
+      margin: 0 auto #{(87 / $base-size)}em;
+      width: 30px;
+
+      .LonelyPlanet.StoryPage & {
+        background-color: map-get($colors, 'Mariner');
+      }
+
+      @media (min-width: 670px) {
+        margin-bottom: #{(87 / $base-size)}em;
+      }
+    }
+  }
+}
+
+.Home .Footer {
   background-color: map-get($colors, 'Seashell');
   padding-bottom: 124px;
   padding-top: 230px;
@@ -1304,10 +1895,43 @@ img {
     margin-bottom: 65px;
     margin-top: 17px;
   }
+}
 
-  form {
-    font-family: map-get($fonts, 'SansSerifLight');
-    letter-spacing: -.25px;
+.ContactHeader {
+  @media (min-width: 1024px) {
+    width: span(8);
+  }
+}
+
+.ContactForm {
+  font-family: map-get($fonts, 'SansSerifLight');
+  font-size: #{(18 / $base-size)}em;
+  letter-spacing: -.77px;
+  margin-top: #{(76 / 24)}em;
+
+  @media (min-width: 670px) {
+    font-size: #{(24 / $base-size)}em;
+  }
+
+  @media (min-width: 1024px) {
+    width: span(10);
+  }
+
+  // ::-webkit-input-placeholder { color: rgba(map-get($colors, 'Tundora'), .5); }
+  // ::-moz-placeholder { color: rgba(map-get($colors, 'Tundora'), .5); }
+  // :-ms-input-placeholder { color: rgba(map-get($colors, 'Tundora'), .5); }
+  // :-moz-placeholder { color: rgba(map-get($colors, 'Tundora'), .5); }
+
+  .label {
+    color: rgba(map-get($colors, 'Tundora'), .5);
+    font-size: 1em;
+    display: block;
+    left: #{(30 / 24)}em;
+    pointer-events: none;
+    position: absolute;
+    top: #{(21 / 24)}em;
+    transition: font-size 200ms ease-in-out,
+      transform 200ms ease-in-out;
   }
 
   fieldset {
@@ -1315,10 +1939,10 @@ img {
     margin: 0;
     overflow: hidden;
     padding: 0;
-  }
 
-  fieldset + fieldset {
-    margin-top: gutter(10 fluid);
+    + fieldset {
+      margin-top: gutter(10);
+    }
   }
 
   legend,
@@ -1328,40 +1952,104 @@ img {
 
   input,
   textarea {
-    background-color: map-get($colors, 'White');
-    border: 0;
+    background-color: map-get($colors, 'AthensGray');
+    border: 1px solid transparent;
     display: block;
-    font-size: 24px;
-    padding: 21px 30px;
+    outline: none;
+    padding: #{(21 / 24)}em #{(30 / 24)}em;
+    transition: background-color 200ms ease-in-out,
+      border-color 200ms ease-in-out;
     width: 100%;
+
+    &:focus {
+      background-color: lighten(map-get($colors, 'AthensGray'), 1.5);
+      border-color: darken(map-get($colors, 'AthensGray'), 3);
+    }
+
+    &:focus,
+    &.is-filled {
+      padding-bottom: #{(15 / 24)}em;
+      padding-top: #{(27 / 24)}em;
+    }
+
+    &:focus ~ .label,
+    &.is-filled ~ .label {
+      transform: translate(1px, -18px) scale(.5);
+      transform-origin: 0;
+    }
   }
 
   textarea {
-    height: 316px;
+    height: #{(316 / 24)}em;
     resize: none;
   }
 
+  &.has-validated {
+    input,
+    textarea {
+      &:invalid {
+        border-color: map-get($colors, 'Persimmon');
+      }
+    }
+  }
+
   button {
-    background-color: map-get($colors, 'PictonBlue');
+    background-color: map-get($colors, 'Persimmon');
     border: 0;
+    box-shadow: 0 #{(50 / 20)}em #{(75 / 20)}em rgba(map-get($colors, 'Black'), .25);
     color: map-get($colors, 'White');
     cursor: pointer;
     display: block;
-    font-size: 20px;
+    font-size: #{(20 / 24)}em;
     line-height: 1;
-    margin-top: gutter(10 fluid);
-    padding: 25px 0 23px;
+    margin-top: gutter(10);
+    outline: 0;
+    padding: #{(25 / 20)}em 0 #{(23 / 20)}em;
     text-align: center;
+    transition: background-color 100ms ease-in-out,
+      box-shadow 100ms ease-in-out,
+      transform 100ms ease-in-out;
     width: 100%;
+
+    .LonelyPlanet.StoryPage & {
+      background-color: map-get($colors, 'Mariner');
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: lighten(map-get($colors, 'Persimmon'), 5);
+
+      .LonelyPlanet.StoryPage & {
+        background-color: lighten(map-get($colors, 'Mariner'), 5);
+      }
+    }
+
+    &:active {
+      box-shadow: 0 #{(42 / 20)}em #{(75 / 20)}em rgba(map-get($colors, 'Black'), .28);
+      transform: translate(3px, 3px);
+    }
   }
 
-  .column {
-    float: left;
-    width: span(5 of 10 fluid);
+  .field {
+    position: relative;
+
+    &.-half {
+      @media (min-width: 480px) {
+        float: left;
+        width: span(5 of 10);
+      }
+    }
   }
 
-  .column + .column {
-    margin-left: gutter(10 fluid);
+  .field.-half + .field.-half {
+    @media (max-width: 479px) {
+      margin-top: gutter(10);
+    }
+
+    @media (min-width: 480px) {
+      margin-left: gutter(10);
+    }
   }
 }
 
@@ -1394,25 +2082,171 @@ img {
   }
 }
 
-.DataMetricsFeature {}
+.DiscoverFeature {
+  position: relative;
+}
 
-.Metric {
-  float: left;
+.DiscoverFeature-panels {
+  position: absolute;
+  right: 20px;
+  top: 50%; // (87px / container()) * 100%;
+  transform: translateY(-50%);
+  width: span(6);
+  z-index: 2;
 
-  + .Metric {
-    margin-left: gutter();
+  @media (min-width: 670px) {
+    right: 0;
+  }
+
+  > img {
+    box-shadow: 0 20px 40px rgba(map-get($colors, 'Black'), .08);
+
+    + img {
+      // margin-top: 25px;
+      margin-top: (25px / span(6 static)) * 100%;
+    }
   }
 }
 
-.QuadImages {
-  img {
-    float: left;
-    width: span(3);
+.DiscoverFeature-markers {
+  left: 18px;
+  position: absolute;
+  top: 50%; // 9px;
+  transform: translateY(-50%);
+  width: (691px / container()) * 100%;
+  z-index: 3;
+
+  @media (max-width: 669px) {
+    left: (56px / 654px) * 100%;
+    width: 40%;
   }
 
-  img + img {
-    margin-left: gutter();
+  @media (min-width: 670px) {
+    left: -2px;
   }
+}
+
+.DiscoverFeature-map {
+  // left: 0;
+  // position: absolute;
+  // top: 0;
+  width: (728px / container()) * 100%;
+  z-index: 1;
+}
+
+.DataMetricsFeature {
+  > .container {
+    @media (min-width: 800px) {
+      display: flex;
+    }
+  }
+}
+
+.Metric {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: #{(60 / $base-size)}em #{(41 / $base-size)}em #{(31 / $base-size)}em;
+  text-align: center;
+
+  @media (min-width: 800px) {
+    float: left;
+    width: span(4);
+  }
+
+  + .Metric {
+    @media (max-width: 799px) {
+      margin-top: gutter();
+    }
+
+    @media (min-width: 800px) {
+      margin-left: gutter();
+    }
+  }
+}
+
+.MetricFigure {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+
+  @media (min-width: 480px) and (max-width: 669px) {
+    max-width: 80%;
+  }
+
+  @media (min-width: 670px) and (max-width: 799px) {
+    max-width: 60%;
+  }
+
+  svg {
+    display: inline-block;
+
+    .Metric.-data & {
+      width: (280px / (span(4 static) - 82px)) * 100%;
+    }
+
+    .Metric.-tools & {
+      width: (283px / (span(4 static) - 82px)) * 100%;
+    }
+
+    .Metric.-research & {
+      width: (267px / (span(4 static) - 82px)) * 100%;
+    }
+  }
+}
+
+.MetricDescription {
+  margin-top: #{(64 / $base-size)}em;
+
+  .heading span {
+    color: map-get($colors, 'Gray');
+    display: block;
+    font-size: #{(12 / $heading-medium)}em;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-top: #{(8 / 12)}em;
+    text-transform: uppercase;
+  }
+
+  .copy {
+    font-size: 1em;
+    line-height: (28 / 16);
+    margin-top: #{(36 / $base-size)}em;
+  }
+}
+
+.columns {
+  @include container;
+
+  .column {
+    float: left;
+
+    + .column {
+      margin-left: gutter();
+    }
+  }
+
+  &.-three .column {
+    width: span(4);
+  }
+
+  &.-four .column {
+    width: span(3);
+  }
+}
+
+.ServicesList {
+  -webkit-columns: span(3 static) 3;
+     -moz-columns: span(3 static) 3;
+          columns: span(3 static) 3;
+  -webkit-column-gap: span(1 static) + gutter(static) + gutter(static);
+     -moz-column-gap: span(1 static) + gutter(static) + gutter(static);
+          column-gap: span(1 static) + gutter(static) + gutter(static);
+}
+
+.ServicesList-column {
+  display: inline-block;
 }
 
 .PhotoGallery {
@@ -1449,6 +2283,169 @@ img {
   }
 }
 
+.AppPromotion {
+  margin: gutter() auto 0;
+  text-align: center;
+  width: 176px;
+
+  @media (min-width: 670px) {
+    width: (176px + 176px + gutter(static));
+  }
+
+  a {
+    display: block;
+
+    @media (min-width: 670px) {
+      float: left;
+    }
+
+    + a {
+      @media (max-width: 669px) {
+        margin-top: gutter();
+      }
+
+      @media (min-width: 670px) {
+        margin-left: gutter(static);
+      }
+    }
+  }
+}
+
+.Graph {
+  color: map-get($colors, 'Gray');
+  font-family: map-get($fonts, 'SansSerifBook');
+  font-size: #{(14 / $base-size)}em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.GraphRow {
+  + .GraphRow {
+    margin-top: #{(28 / 14)}em;
+
+    @media (min-width: 670px) {
+      margin-top: #{(45 / 14)}em;
+    }
+  }
+}
+
+.GraphLabel {
+  letter-spacing: .5px;
+  text-align: left;
+
+  @media (min-width: 670px) {
+    float: left;
+    letter-spacing: 1px;
+    text-align: right;
+    width: span(3);
+  }
+}
+
+.GraphViz {
+  @media (max-width: 669px) {
+    margin-top: #{(8 / 14)}em;
+  }
+
+  @media (min-width: 670px) {
+    float: left;
+    margin-left: gutter();
+    width: span(8);
+  }
+}
+
+.GraphViz-track {
+  background-color: map-get($colors, 'Alto');
+  border-radius: #{(12 / 14)}em;
+  height: #{(12 / 14)}em;
+  width: 100%;
+}
+
+.GraphViz-fill {
+  background-color: map-get($colors, 'Mariner');
+  border-radius: #{(12 / 14)}em;
+  height: #{(12 / 14)}em;
+
+  .GraphRow:nth-child(1) & { width: #{((632px / span(8 static)) * 100%)} }
+  .GraphRow:nth-child(2) & { width: #{((423px / span(8 static)) * 100%)} }
+  .GraphRow:nth-child(3) & { width: #{((365px / span(8 static)) * 100%)} }
+  .GraphRow:nth-child(4) & { width: #{((212px / span(8 static)) * 100%)} }
+  .GraphRow:nth-child(5) & { width: #{((171px / span(8 static)) * 100%)} }
+  .GraphRow:nth-child(6) & { width: #{((158px / span(8 static)) * 100%)} }
+}
+
+.GraphAmount {
+  color: map-get($colors, 'Tundora');
+  float: left;
+  font-size: #{(12 / 14)}em;
+  letter-spacing: 1px;
+  margin-left: gutter();
+  text-align: left;
+  width: span(1);
+
+  @media (max-width: 669px) {
+    display: none;
+  }
+}
+
+.iPhones {
+  padding-left: #{(56px / container()) * 100%};
+  padding-left: #{(64px / container()) * 100%};
+  position: relative;
+  z-index: 2;
+
+  .iPhone {
+    float: left;
+
+    &.-black {
+      margin-top: #{(60px / container()) * 100%};
+      width: #{(281px / container()) * 100%};
+    }
+
+    &.-gold {
+      margin-left: #{(16px / container()) * 100%};
+      width: #{(433px / container()) * 100%};
+    }
+
+    &.-pink {
+      margin-left: #{(32px / container()) * 100%};
+      margin-top: #{(47px / container()) * 100%};
+      width: #{(382px / container()) * 100%};
+    }
+  }
+}
+
+.CityGuides {
+  img {
+    float: left;
+    width: span(2);
+
+    + img {
+      margin-left: gutter();
+    }
+  }
+
+  .container + .container {
+    margin-top: gutter();
+  }
+}
+
+.Video {
+  background-color: map-get($colors, 'Alto');
+  padding-bottom: #{(24 / $base-size)}em;
+  padding-top: #{(24 / $base-size)}em;
+
+  figure {
+    @include aspect-ratio(836, 470, 'iframe');
+    margin: 0;
+  }
+
+  iframe {
+    border: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
 .ImageGroup {
   column-count: 2;
   column-gap: gutter(static);
@@ -1471,14 +2468,14 @@ img {
   z-index: 2;
 }
 
-.Masthead {
+.HeaderImage {
   background-color: map-get($colors, 'MineShaft');
   // background-position: center center;
   // background-repeat: no-repeat;
   // background-size: cover;
   // height: #{(377 / $base-size)}em;
   max-height: 377px;
-  overflow: hidden;
+  // overflow: hidden;
 
   > img {
     display: block;
@@ -1566,8 +2563,10 @@ img {
   border-radius: 100%;
   box-shadow: 0 20px 40px rgba(map-get($colors, 'Black'), .20);
   bottom: 0;
+  color: map-get($colors, 'DustyGray');
   cursor: pointer;
   display: block;
+  font-size: 27px;
   height: 68px;
   // margin-bottom: auto;
   // margin-top: auto;
@@ -1578,14 +2577,153 @@ img {
   transform: translateY(-50%);
   width: 68px;
   z-index: 2;
+
+  .icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
 }
 
 .Carousel-next {
   right: -34px;
+
+  .icon {
+    left: 0;
+    right: -3px;
+  }
 }
 
 .Carousel-prev {
   left: -34px;
+
+  .icon {
+    left: -3px;
+    right: 0;
+  }
+}
+
+.FooterNav {
+  @include clearfix();
+  margin-bottom: #{(36 / $base-size)}em;
+  margin-left: #{(20 / $base-size)}em;
+  margin-right: #{(20 / $base-size)}em;
+  position: relative;
+
+  @media (min-width: 670px) {
+    margin-left: #{(56 / 1600) * 100%};
+    margin-right: #{(56 / 1600) * 100%};
+  }
+
+  @media (min-width: 1600px) {
+    margin-left: #{(108 / $base-size)}em;
+    margin-right: #{(108 / $base-size)}em;
+  }
+}
+
+.NavLink {
+  background-color: map-get($colors, 'White');
+  box-shadow: 0 #{(12.5 / 32)}em #{(25 / 32)}em rgba(map-get($colors, 'Black'), .2);
+  color: map-get($colors, 'MineShaft');
+  display: inline-block;
+  font-family: map-get($fonts, 'SansSerifBook');
+  font-size: #{(14 / $base-size)}em;
+  padding: #{(18 / 32)}em #{(48 / 32)}em #{(22 / 32)}em;
+  position: relative;
+  text-align: center;
+  transition: color 200ms ease-in-out,
+    box-shadow 100ms ease-in-out,
+    transform 100ms ease-in-out;
+  z-index: 2;
+
+  @media (min-width: 670px) {
+    box-shadow: 0 #{(50 / 32)}em #{(75 / 32)}em rgba(map-get($colors, 'Black'), .2);
+    font-size: #{(16 / $base-size)}em;
+    padding: #{(35 / 32)}em #{(130 / 32)}em #{(46 / 32)}em;
+  }
+
+  @media (min-width: 880px) {
+    font-size: #{(24 / $base-size)}em;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: #{(32 / $base-size)}em;
+  }
+
+  .FooterNav & {
+    &:first-child {
+      float: left;
+    }
+
+    &:last-child {
+      float: right;
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: map-get($colors, 'DoveGray');
+    // color: map-get($colors, 'Persimmon');
+
+    small,
+    .icon {
+      color: lighten(map-get($colors, 'Persimmon'), 5);
+
+      .LonelyPlanet.StoryPage & {
+        color: lighten(map-get($colors, 'Mariner'), 5);
+      }
+    }
+  }
+
+  &:active {
+    box-shadow: 0 #{(8.5 / $base-size)}em #{(25 / $base-size)}em rgba(map-get($colors, 'Black'), .28);
+    transform: translate(3px, 3px);
+
+    @media (min-width: 670px) {
+      box-shadow: 0 #{(42 / 20)}em #{(75 / 20)}em rgba(map-get($colors, 'Black'), .28);
+    }
+  }
+
+  small {
+    color: map-get($colors, 'Persimmon');
+    font-family: map-get($fonts, 'SansSerifBold');
+    font-size: #{(16 / 32)}em;
+    display: block;
+    text-transform: uppercase;
+    transition: color 200ms ease-in-out;
+
+    @media (max-width: 669px) {
+      display: none;
+    }
+
+    .LonelyPlanet.StoryPage & {
+      color: map-get($colors, 'Mariner');
+    }
+  }
+
+  .icon {
+    bottom: 0;
+    color: map-get($colors, 'Persimmon');
+    font-size: #{(14 / 32)}em;
+    margin-bottom: auto;
+    margin-top: auto;
+    position: absolute;
+    top: 0;
+
+    .LonelyPlanet.StoryPage & {
+      color: map-get($colors, 'Mariner');
+    }
+  }
+
+  .icon:first-child {
+    left: #{(34 / 32)}em;
+  }
+
+  .icon:last-child {
+    right: #{(34 / 32)}em;
+  }
 }
 
 

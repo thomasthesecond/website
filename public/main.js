@@ -78,24 +78,151 @@ function homePage() {
   });
 }
 
+function contactPage() {
+  var button = document.querySelector(".js-submit");
+  var form = document.querySelector(".js-form");
+  var nameField = document.getElementById("name");
+  var emailField = document.getElementById("email");
+  var descriptionField = document.getElementById("description");
+  var fields = [nameField, emailField, descriptionField];
+
+  if (button && form) {
+    button.addEventListener("click", function() {
+      addClass(form, "has-validated");
+    });
+  }
+
+  for (var i = 0; i < fields.length; i++) {
+    if (fields[i]) {
+      fields[i].onchange = function() {
+        if (this.value) {
+          addClass(this, "is-filled");
+        } else {
+          removeClass(this, "is-filled");
+        }
+      };
+    }
+  }
+}
+
 function navigation() {
   var nav = document.querySelector(".js-nav");
   var hamburger = document.querySelector(".js-hamburger");
-  var headroom = new Headroom(nav, {
-    // offset: 205,
-    // tolerance: 5
-  });
+  var menu = document.querySelector(".js-menu");
+  var logo = document.querySelector(".js-logo");
 
-  headroom.init();
+  if (nav) {
+    var headroom = new Headroom(nav, {
+      // offset: 205,
+      // tolerance: 5
+    });
+
+    headroom.init();
+  }
 
   hamburger.addEventListener("click", function() {
     toggleClass(this, "is-active");
+
+    if (hasClass(menu, "-hidden")) {
+      removeClass(menu, "-hidden");
+      addClass(menu, "-visible");
+    } else {
+      removeClass(menu, "-visible");
+      addClass(menu, "-hidden");
+    }
+
+    if (hasClass(this, "is-active")) {
+      noScroll.on();
+    } else {
+      noScroll.off();
+    }
+
+    if (hasClass(logo, "-white")) {
+      removeClass(logo, "-white");
+    } else {
+      addClass(logo, "-white");
+    }
+
+    if (hasClass(hamburger, "-white")) {
+      removeClass(hamburger, "-white");
+    } else {
+      addClass(hamburger, "-white");
+    }
   });
+
+  // if (hasClass(hamburger, "is-active")) {
+  // }
+
+  document.onkeydown = function(event) {
+    event = event || window.event;
+    var isEscape = false;
+    if ("key" in event) {
+      isEscape = (event.key === "Escape" || event.key === "Esc");
+    } else {
+      isEscape = (event.keyCode === 27);
+    }
+    if (isEscape) {
+      removeClass(hamburger, "is-active");
+      removeClass(menu, "-visible");
+      addClass(menu, "-hidden");
+      noScroll.off();
+
+      if (hasClass(document.body, "StoryPage")) {
+        addClass(logo, "-white");
+        addClass(hamburger, "-white");
+      }
+    }
+  }
+}
+
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+
+function isScrolledIntoView(el) {
+  var elemTop = el.getBoundingClientRect().top;
+  var elemBottom = el.getBoundingClientRect().bottom;
+
+  // return (elemTop < window.innerHeight) && (elemBottom >= 0);
+  return (elemTop >= 0) && (elemBottom <= window.innerHeight);
+}
+
+function lonelyPlanet() {
+  var hamburger = document.querySelector(".js-hamburger");
+  var logo = document.querySelector(".js-logo");
+  var intro = document.querySelector(".Intro");
+
+  console.log(isScrolledIntoView(intro));
+  window.onscroll = debounce(function() {
+    console.log("scrolling");
+    console.log(isScrolledIntoView(intro));
+
+    if (isScrolledIntoView(intro)) {
+      removeClass(logo, "-white");
+      removeClass(hamburger, "-white");
+    } else {
+      addClass(logo, "-white");
+      addClass(hamburger, "-white");
+    }
+  }, 0);
 }
 
 (function() {
   "use strict";
 
-  if (hasClass(document.body, "Home") homePage();
+  if (hasClass(document.body, "Home")) homePage();
+  if (hasClass(document.body, "Contact")) contactPage();
+  // if (hasClass(document.body, "LonelyPlanet")) lonelyPlanet();
   navigation();
 }());

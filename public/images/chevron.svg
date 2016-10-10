@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="8px" height="14px" viewBox="0 0 8 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>Bitmap Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect x="1650" y="148" width="8" height="14" id="rect-1"></rect>
+    </defs>
+    <g id="Finals" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Footer" transform="translate(-1650.000000, -148.000000)">
+            <g id="Bitmap-Copy-2" transform="translate(1654.000000, 155.000000) scale(-1, 1) translate(-1654.000000, -155.000000) ">
+                <image x="1650" y="148" width="8" height="14" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAYAAAASVl2WAAAABGdBTUEAA1teXP8meAAAAPNJREFUGBltkCuOAkEQhrubBIFBcImZ2aDXA8GSYAgeiSQgmGYXZrgDwSI4AgnzSPBoHsfAIBBd+9csPZkAJboe31+V6hLig7nTeOz50S8j+cpdnQwE0ZqZFDRXRYHjR13AVd4oYVbw5ScNI2iHvMw1kMUpaP1kAk+n30QmRb3CEBacw9aMg5Kjo7ogsUdc5QIsh5woSXIEX+MEc0PbmeV4FP5hOwUWJAusV8aYEMntWdCejucWslfXZftI0nQQ37mAGbOiKLvDJWgfMLsH/shFny7pTJO+lLSBqMTCt0tels0tbjcE+1+2cEhuyM31k4nd4w8Z+lBue4kgWQAAAABJRU5ErkJggg=="></image>
+                <use fill="#FF5B5F" fill-rule="evenodd" xlink:href="#rect-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>
