@@ -3733,7 +3733,7 @@ img {
   position: fixed;
   right: 0;
   top: 0;
-  transition: opacity 500ms ease-in-out 500ms, transform 1000ms ease-in-out;
+  transition: opacity 500ms ease-in-out 500ms;
   width: 100%; }
   .Preloader.is-loading {
     opacity: 0; }
