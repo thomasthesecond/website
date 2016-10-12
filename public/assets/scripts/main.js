@@ -120,56 +120,57 @@ function navigation() {
     headroom.init();
   }
 
-  hamburger.addEventListener("click", function() {
-    toggleClass(this, "is-active");
+  if (hamburger) {
+    hamburger.addEventListener("click", function() {
+      toggleClass(this, "is-active");
 
-    if (hasClass(menu, "-hidden")) {
-      removeClass(menu, "-hidden");
-      addClass(menu, "-visible");
-    } else {
-      removeClass(menu, "-visible");
-      addClass(menu, "-hidden");
-    }
+      if (hasClass(menu, "-hidden")) {
+        removeClass(menu, "-hidden");
+        addClass(menu, "-visible");
+      } else {
+        removeClass(menu, "-visible");
+        addClass(menu, "-hidden");
+      }
 
-    if (hasClass(this, "is-active")) {
-      noScroll.on();
-    } else {
-      noScroll.off();
-    }
-
-    if (hasClass(logo, "-white")) {
-      removeClass(logo, "-white");
-    } else {
-      addClass(logo, "-white");
-    }
-
-    if (hasClass(hamburger, "-white")) {
-      removeClass(hamburger, "-white");
-    } else {
-      addClass(hamburger, "-white");
-    }
-  });
-
-  // if (hasClass(hamburger, "is-active")) {
-  // }
-
-  document.onkeydown = function(event) {
-    event = event || window.event;
-    var isEscape = false;
-    if ("key" in event) {
-      isEscape = (event.key === "Escape" || event.key === "Esc");
-    } else {
-      isEscape = (event.keyCode === 27);
-    }
-    if (isEscape) {
-      removeClass(hamburger, "is-active");
-      removeClass(menu, "-visible");
-      addClass(menu, "-hidden");
-      noScroll.off();
+      if (hasClass(this, "is-active")) {
+        noScroll.on();
+      } else {
+        noScroll.off();
+      }
 
       if (hasClass(document.body, "StoryPage")) {
-        addClass(logo, "-white");
-        addClass(hamburger, "-white");
+        if (hasClass(logo, "-white")) {
+          removeClass(logo, "-white");
+        } else {
+          addClass(logo, "-white");
+        }
+
+        if (hasClass(hamburger, "-white")) {
+          removeClass(hamburger, "-white");
+        } else {
+          addClass(hamburger, "-white");
+        }
+      }
+    });
+
+    document.onkeydown = function(event) {
+      event = event || window.event;
+      var isEscape = false;
+      if ("key" in event) {
+        isEscape = (event.key === "Escape" || event.key === "Esc");
+      } else {
+        isEscape = (event.keyCode === 27);
+      }
+      if (isEscape) {
+        removeClass(hamburger, "is-active");
+        removeClass(menu, "-visible");
+        addClass(menu, "-hidden");
+        noScroll.off();
+
+        if (hasClass(document.body, "StoryPage")) {
+          addClass(logo, "-white");
+          addClass(hamburger, "-white");
+        }
       }
     }
   }
@@ -198,31 +199,67 @@ function isScrolledIntoView(el) {
   return (elemTop >= 0) && (elemBottom <= window.innerHeight);
 }
 
+function preloader() {
+  var preloader = document.querySelector(".Preloader");
+  var page = document.querySelector(".Page");
+
+  if (hasClass(page, "is-loading") && hasClass(preloader, "is-loading")) {
+    noScroll.on();
+
+    removeClass(preloader, "is-loading");
+
+    setTimeout(function() {
+      addClass(preloader, "is-loading");
+      // addClass(preloader, "slide-up");
+    }, 3000);
+
+    setTimeout(function() {
+      noScroll.off();
+      removeClass(page, "is-loading");
+      preloader.style.display = "none";
+    }, 4500);
+  }
+}
+
 function lonelyPlanet() {
-  var hamburger = document.querySelector(".js-hamburger");
-  var logo = document.querySelector(".js-logo");
-  var intro = document.querySelector(".Intro");
+  // var hamburger = document.querySelector(".js-hamburger");
+  // var logo = document.querySelector(".js-logo");
+  // var intro = document.querySelector(".Intro");
+  //
+  // console.log(isScrolledIntoView(intro));
+  // window.onscroll = debounce(function() {
+  //   console.log("scrolling");
+  //   console.log(isScrolledIntoView(intro));
+  //
+  //   if (isScrolledIntoView(intro)) {
+  //     removeClass(logo, "-white");
+  //     removeClass(hamburger, "-white");
+  //   } else {
+  //     addClass(logo, "-white");
+  //     addClass(hamburger, "-white");
+  //   }
+  // }, 0);
 
-  console.log(isScrolledIntoView(intro));
-  window.onscroll = debounce(function() {
-    console.log("scrolling");
-    console.log(isScrolledIntoView(intro));
+  preloader();
+}
 
-    if (isScrolledIntoView(intro)) {
-      removeClass(logo, "-white");
-      removeClass(hamburger, "-white");
-    } else {
-      addClass(logo, "-white");
-      addClass(hamburger, "-white");
-    }
-  }, 0);
+function airbnb() {
+  var swiper = new Swiper('.Carousel > .swiper-container', {
+    pagination: '.Carousel-pagination',
+    paginationClickable: true,
+    nextButton: '.Carousel-next',
+    prevButton: '.Carousel-prev'
+  });
+
+  preloader();
 }
 
 (function() {
   "use strict";
 
-  if (hasClass(document.body, "Home")) homePage();
+  if (hasClass(document.documentElement, "Home")) homePage();
   if (hasClass(document.body, "Contact")) contactPage();
-  // if (hasClass(document.body, "LonelyPlanet")) lonelyPlanet();
+  if (hasClass(document.body, "LonelyPlanet")) lonelyPlanet();
+  if (hasClass(document.body, "Airbnb")) airbnb();
   navigation();
 }());

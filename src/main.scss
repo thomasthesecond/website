@@ -1,17 +1,20 @@
 /// Imports
 
 @import '../node_modules/susy/sass/susy';
+@import './normalize';
+@import './hamburgers';
+@import './swiper';
 
-@font-face { font-family: 'sans-Black'; src: url('./font/sans-Black.woff') format('woff2'); }
-@font-face { font-family: 'sans-BlackItalic'; src: url('./font/sans-BlackItalic.woff') format('woff2'); }
-@font-face { font-family: 'sans-Bold'; src: url('./font/sans-Bold.woff') format('woff2'); }
-@font-face { font-family: 'sans-BoldItalic'; src: url('./font/sans-BoldItalic.woff') format('woff2'); }
-@font-face { font-family: 'sans-Book'; src: url('./font/sans-Book.woff') format('woff2'); }
-@font-face { font-family: 'sans-BookItalic'; src: url('./font/sans-BookItalic.woff') format('woff2'); }
-@font-face { font-family: 'sans-Light'; src: url('./font/sans-Light.woff') format('woff2'); }
-@font-face { font-family: 'sans-LightItalic'; src: url('./font/sans-LightItalic.woff') format('woff2'); }
-@font-face { font-family: 'sans-Medium'; src: url('./font/sans-Medium.woff') format('woff2'); }
-@font-face { font-family: 'sans-MediumItalic'; src: url('./font/sans-MediumItalic.woff') format('woff2'); }
+@font-face { font-family: 'sans-Black'; src: url('../fonts/sans-Black.woff') format('woff2'); }
+@font-face { font-family: 'sans-BlackItalic'; src: url('../fonts/sans-BlackItalic.woff') format('woff2'); }
+@font-face { font-family: 'sans-Bold'; src: url('../fonts/sans-Bold.woff') format('woff2'); }
+@font-face { font-family: 'sans-BoldItalic'; src: url('../fonts/sans-BoldItalic.woff') format('woff2'); }
+@font-face { font-family: 'sans-Book'; src: url('../fonts/sans-Book.woff') format('woff2'); }
+@font-face { font-family: 'sans-BookItalic'; src: url('../fonts/sans-BookItalic.woff') format('woff2'); }
+@font-face { font-family: 'sans-Light'; src: url('../fonts/sans-Light.woff') format('woff2'); }
+@font-face { font-family: 'sans-LightItalic'; src: url('../fonts/sans-LightItalic.woff') format('woff2'); }
+@font-face { font-family: 'sans-Medium'; src: url('../fonts/sans-Medium.woff') format('woff2'); }
+@font-face { font-family: 'sans-MediumItalic'; src: url('../fonts/sans-MediumItalic.woff') format('woff2'); }
 
 /// Settings
 
@@ -172,7 +175,7 @@ body {
   // position: relative;
 }
 
-.home {
+.Home {
   height: 100%;
   overflow: hidden;
   position: relative;
@@ -466,7 +469,7 @@ img {
 }
 
 .HomeSwiper {
-  .swiper-container {
+  &.swiper-container {
     height: 100vh;
     margin-left: auto;
     margin-right: auto;
@@ -495,7 +498,7 @@ img {
     }
   }
 
-  .swiper-container-vertical > .swiper-pagination-bullets {
+  &.swiper-container-vertical > .swiper-pagination-bullets {
     left: 20px;
     right: auto;
 
@@ -508,7 +511,7 @@ img {
     }
   }
 
-  .swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+  &.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 6px 0;
   }
 
@@ -666,7 +669,11 @@ img {
 
     &.-large {
       margin-bottom:  #{(74 / $heading-large)}em;
-      padding-top: #{(128 / $heading-large)}em;
+      padding-top: #{(76 / $heading-large)}em;
+
+      @media (min-width: 670px) {
+        padding-top: #{(128 / $heading-large)}em;
+      }
     }
 
     &.-white::before {
@@ -698,12 +705,20 @@ img {
   // LP Chapter 1 --------------------------------------------------------------
 
   .Intro + .Chapter-1 {
-    margin-top: #{(210 / $base-size)}em;
+    margin-top: #{(100 / $base-size)}em;
+
+    @media (min-width: 670px) {
+      margin-top: #{(210 / $base-size)}em;
+    }
   }
 
   .Chapter-1 {
     .Section {
-      padding-bottom: #{(50 / $base-size)}em;
+      padding-bottom: 0;
+
+      @media (min-width: 670px) {
+        padding-bottom: #{(50 / $base-size)}em;
+      }
     }
 
     .Section + .DataMetricsFeature {
@@ -714,96 +729,188 @@ img {
   // LP Chapter 2 --------------------------------------------------------------
 
   .Chapter-2 {
-    margin-top: #{(158 / $base-size)}em;
+    margin-top: #{(100 / $base-size)}em;
+
+    @media (min-width: 670px) {
+      margin-top: #{(158 / $base-size)}em;
+    }
 
     .Graph {
-      margin-top: #{(115 / $base-size)}em;
+      margin-top: #{(80 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(115 / $base-size)}em;
+      }
     }
 
     .Graph + .CopyBlock {
-      margin-top: #{(160 / $base-size)}em;
+      margin-top: #{(80 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(160 / $base-size)}em;
+      }
     }
   }
 
   // LP Chapter 3 --------------------------------------------------------------
 
   .Chapter-3 {
-    margin-top: #{(246 / $base-size)}em;
+    margin-top: #{(100 / $base-size)}em;
+
+    @media (min-width: 670px) {
+      margin-top: #{(246 / $base-size)}em;
+    }
 
     .Section {
-      padding-bottom: #{(186 / $base-size)}em;
+      padding-bottom: 0;
+
+      &::after {
+        @media (max-width: 669px) {
+          height: 15%;
+        }
+      }
+
+      @media (min-width: 670px) {
+        padding-bottom: #{(186 / $base-size)}em;
+      }
     }
 
     .SingleImage {
-      margin-top: #{(-166 / $base-size)}em;
+      margin-top: #{(40 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(-166 / $base-size)}em;
+      }
     }
   }
 
   // LP Chapter 4 --------------------------------------------------------------
 
   .Chapter-4 {
-    margin-top: #{(112 / $base-size)}em;
+    margin-top: #{(100 / $base-size)}em;
+
+    @media (min-width: 670px) {
+      margin-top: #{(112 / $base-size)}em;
+    }
 
     .ImageGroup {
-      margin-top: #{(108 / $base-size)}em;
+      margin-top: #{(60 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(108 / $base-size)}em;
+      }
     }
 
     .ImageGroup + .CopyBlock {
-      margin-top: #{(176 / $base-size)}em;
+      margin-top: #{(50 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(176 / $base-size)}em;
+      }
     }
 
     .SingleImage {
-      margin-top: #{(57 / $base-size)}em;
+      margin-top: #{(60 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(57 / $base-size)}em;
+      }
     }
   }
 
   // LP Chapter 5 --------------------------------------------------------------
 
   .Chapter-5 {
-    margin-top: #{(134 / $base-size)}em;
+    margin-top: #{(100 / $base-size)}em;
+
+    @media (min-width: 670px) {
+      margin-top: #{(134 / $base-size)}em;
+    }
 
     .FullImage {
-      margin-top: #{(71 / $base-size)}em;
+      margin-top: #{(60 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(71 / $base-size)}em;
+      }
     }
 
     .FullImage + .CopyBlock {
-      margin-top: #{(142 / $base-size)}em;
+      margin-top: #{(60 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(142 / $base-size)}em;
+      }
     }
 
     .SingleImage {
-      margin-top: #{(104 / $base-size)}em;
+      margin-top: #{(60 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(104 / $base-size)}em;
+      }
     }
 
     .ColumnImages {
-      margin-top: gutter(static);
+      margin-top: gutter();
+
+      @media (min-width: 670px) {
+        margin-top: gutter(static);
+      }
     }
   }
 
   // LP Chapter 6 --------------------------------------------------------------
 
   .Chapter-6 {
-    margin-top: #{(152 / $base-size)}em;
+    margin-top: #{(100 / $base-size)}em;
+
+    @media (min-width: 670px) {
+      margin-top: #{(152 / $base-size)}em;
+    }
 
     .CopyBlock + .ImageGroup {
-      margin-top: #{(95 / $base-size)}em;
+      margin-top: #{(60 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(95 / $base-size)}em;
+      }
     }
 
     .ImageGroup + .CopyBlock {
-      margin-top: #{(141 / $base-size)}em;
+      margin-top: #{(60 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(141 / $base-size)}em;
+      }
     }
   }
 
   // LP Chapter 7 --------------------------------------------------------------
 
   .Chapter-7 {
-    margin-top: #{(218 / $base-size)}em;
+    margin-top: #{(100 / $base-size)}em;
+
+    @media (min-width: 670px) {
+      margin-top: #{(218 / $base-size)}em;
+    }
 
     .Section {
       padding-bottom: 0;
+
+      &::after {
+        @media (max-width: 669px) {
+          height: 20%;
+        }
+      }
     }
 
     .iPhones {
-      margin-top: #{(74 / $base-size)}em;
+      margin-top: #{(60 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(74 / $base-size)}em;
+      }
     }
   }
 
@@ -813,35 +920,61 @@ img {
     margin-top: #{(100 / $base-size)}em;
 
     .CityGuides {
-      margin-top: #{(62 / $base-size)}em;
+      margin-top: #{(60 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(62 / $base-size)}em;
+      }
     }
   }
 
   // LP Chapter 9 --------------------------------------------------------------
 
   .Chapter-9 {
-    margin-top: #{(188 / $base-size)}em;
+    margin-top: #{(100 / $base-size)}em;
+
+    @media (min-width: 670px) {
+      margin-top: #{(188 / $base-size)}em;
+    }
 
     .DiscoverFeature {
-      margin-top: #{(71 / $base-size)}em;
+      margin-top: #{(60 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(71 / $base-size)}em;
+      }
     }
   }
 
   // LP Chapter 10 -------------------------------------------------------------
 
   .Chapter-10 {
-    margin-top: #{(288 / $base-size)}em;
+    margin-top: #{(100 / $base-size)}em;
+
+    @media (min-width: 670px) {
+      margin-top: #{(288 / $base-size)}em;
+    }
 
     .Video {
-      margin-top: #{(126 / $base-size)}em;
+      margin-top: #{(80 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(126 / $base-size)}em;
+      }
     }
 
     .FullImage {
-      margin-top: #{(210 / $base-size)}em;
+      @media (min-width: 670px) {
+        margin-top: #{(210 / $base-size)}em;
+      }
     }
 
     .FullImage + .CopyBlock {
-      margin-top: #{(164 / $base-size)}em;
+      margin-top: #{(60 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(164 / $base-size)}em;
+      }
     }
   }
 }
@@ -953,48 +1086,104 @@ img {
   // Airbnb Chapter 1 ------------------------------------------------------------
 
   .Intro + .Chapter-1 {
-    margin-top: #{(210 / $base-size)}em;
+    margin-top: #{(100 / $base-size)}em;
+
+    @media (min-width: 670px) {
+      margin-top: #{(210 / $base-size)}em;
+    }
   }
 
   .Chapter-1 {
+    .Section {
+      // padding-bottom: #{(160 / $base-size)}em;
+      padding-bottom: 0;
+      padding-top: #{(80 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        padding-bottom: #{(245 / $base-size)}em;
+        padding-top: #{(96 / $base-size)}em;
+      }
+    }
+
     .Section + .CarouselFeature {
-      margin-top: #{(-112 / $base-size)}em;
+      margin-top: #{(45 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(-112 / $base-size)}em;
+      }
     }
 
     .Carousel {
-      margin-top: #{(43 / $base-size)}em;
+      margin-top: #{(30 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(43 / $base-size)}em;
+      }
     }
 
     .CarouselFeature + .CopyGroup {
-      margin-top: #{(122 / $base-size)}em;
+      margin-top: #{(80 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(122 / $base-size)}em;
+      }
     }
 
     .CopyBlock + .SingleImage {
-      margin-top: #{(140 / $base-size)}em;
+      margin-top: #{(80 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(140 / $base-size)}em;
+      }
     }
   }
 
   // Airbnb Chapter 2 ------------------------------------------------------------
 
   .Chapter-2 {
-    margin-top: #{(165 / $base-size)}em;
+    margin-top: #{(80 / $base-size)}em;
+
+    @media (min-width: 670px) {
+      margin-top: #{(165 / $base-size)}em;
+    }
 
     .CopyGroup {
       .CopyBlock + .SingleImage {
-        margin-top: #{(88 / $base-size)}em;
+        margin-top: #{(40 / $base-size)}em;
+
+        @media (min-width: 670px) {
+          margin-top: #{(88 / $base-size)}em;
+        }
       }
     }
 
     .Section {
-      margin-top: #{(-285 / $base-size)}em;
-      padding-top: #{(425 / $base-size)}em;
+      margin-top: #{(-80 / $base-size)}em;
+      padding-top: #{(150 / $base-size)}em;
+
+      @media (max-width: 669px) {
+        padding-bottom: #{(100 / $base-size)}em;
+      }
+
+      @media (min-width: 670px) {
+        margin-top: #{(-285 / $base-size)}em;
+        padding-top: #{(425 / $base-size)}em;
+      }
 
       .CopyBlock + .SingleImage {
-        margin-top: #{(82 / $base-size)}em;
+        margin-top: #{(60 / $base-size)}em;
+
+        @media (min-width: 670px) {
+          margin-top: #{(82 / $base-size)}em;
+        }
       }
 
       .SingleImage + .CopyBlock {
-        margin-top: #{(134 / $base-size)}em;
+        margin-top: #{(70 / $base-size)}em;
+
+        @media (min-width: 670px) {
+          margin-top: #{(134 / $base-size)}em;
+        }
       }
     }
   }
@@ -1005,47 +1194,87 @@ img {
     margin-top: #{(16 / $base-size)}em;
 
     .Section + .ImageGroup {
-      margin-top: #{(-180 / $base-size)}em;
+      margin-top: #{(-130 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(-180 / $base-size)}em;
+      }
     }
 
     .ImageGroup + .SingleImage {
-      margin-top: #{(200 / $base-size)}em;
+      margin-top: #{(80 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(200 / $base-size)}em;
+      }
     }
 
     .SingleImage + .CopyBlock {
-      margin-top: #{(148 / $base-size)}em;
+      margin-top: #{(60 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(148 / $base-size)}em;
+      }
     }
   }
 
   // Airbnb Chapter 4 ------------------------------------------------------------
 
   .Chapter-4 {
-    margin-top: #{(338 / $base-size)}em;
+    margin-top: #{(100 / $base-size)}em;
+
+    @media (min-width: 670px) {
+      margin-top: #{(338 / $base-size)}em;
+    }
 
     .Section + .ImageGroup {
-      margin-top: #{(-174 / $base-size)}em;
+      margin-top: #{(-120 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(-174 / $base-size)}em;
+      }
     }
 
     .ImageGroup + .CopyBlock {
-      margin-top: #{(222 / $base-size)}em;
+      margin-top: #{(80 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(222 / $base-size)}em;
+      }
     }
   }
 
   // Airbnb Chapter 5 ------------------------------------------------------------
 
   .Chapter-5 {
-    margin-top: #{(275 / $base-size)}em;
+    margin-top: #{(100 / $base-size)}em;
+
+    @media (min-width: 670px) {
+      margin-top: #{(275 / $base-size)}em;
+    }
 
     .Section + .PhotoGallery {
-      margin-top: #{(-88 / $base-size)}em;
+      margin-top: #{(-120 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(-88 / $base-size)}em;
+      }
     }
 
     .PhotoGallery + .FullImage {
-      margin-top: #{(46 / $base-size)}em;
+      margin-top: #{(40 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(46 / $base-size)}em;
+      }
     }
 
     .FullImage + .CopyBlock {
-      margin-top: #{(136 / $base-size)}em;
+      margin-top: #{(80 / $base-size)}em;
+
+      @media (min-width: 670px) {
+        margin-top: #{(136 / $base-size)}em;
+      }
     }
   }
 }
@@ -1057,14 +1286,20 @@ img {
     left: 0;
     position: absolute;
     right: 0;
-    top: #{(90 / $base-size)}em;
+    top: #{(30 / $base-size)}em;
+
+    @media (min-width: 670px) {
+      top: #{(90 / $base-size)}em;
+    }
   }
 }
 
-.Intro {
-  // padding-bottom: #{(107 / $base-size)}em;
-  // padding-top: #{(195 / $base-size)}em;
-  margin-top: #{(195 / $base-size)}em;
+.Story .Intro {
+  margin-top: #{(80 / $base-size)}em;
+
+  @media (min-width: 670px) {
+    margin-top: #{(195 / $base-size)}em;
+  }
 }
 
 .IntroHeader {
@@ -1080,8 +1315,16 @@ img {
   }
 }
 
+.IntroCopy {
+  @media (max-width: 669px) {
+    text-align: center;
+  }
+}
+
 .IntroCopy .copy {
-  padding-right: (60px / span(7 static)) * 100%;
+  @media (min-width: 670px) {
+    padding-right: (60px / span(7 static)) * 100%;
+  }
 }
 
 .IntroCopy aside {
@@ -1141,7 +1384,11 @@ img {
 // Components
 
 .Story {
-  padding-bottom: #{(343 / $base-size)}em;
+  padding-bottom: #{(100 / $base-size)}em;
+
+  @media (min-width: 670px) {
+    padding-bottom: #{(343 / $base-size)}em;
+  }
 }
 
 .Nav > .Header {
@@ -1823,7 +2070,11 @@ img {
 }
 
 .Footer {
-  padding-bottom: #{226 / $base-size}em;
+  padding-bottom: #{100 / $base-size}em;
+
+  @media (min-width: 670px) {
+    padding-bottom: #{226 / $base-size}em;
+  }
 
   &.-tick {
     &::before {
@@ -1900,6 +2151,14 @@ img {
 .ContactHeader {
   @media (min-width: 1024px) {
     width: span(8);
+  }
+
+  .heading + .copy {
+    margin-top: 1em;
+
+    @media (min-width: 670px) {
+      margin-top: .5em;
+    }
   }
 }
 
@@ -2059,10 +2318,13 @@ img {
   z-index: 2;
 
   &.-feature {
-    box-shadow: 0 #{(50 / $base-size)}em #{(75 / $base-size)}em rgba(map-get($colors, 'Black'), .2);
-    // max-height: 850px;
-    // min-height: 850px;
-    padding: #{(89 / $base-size)}em #{(108 / $base-size)}em;
+    box-shadow: 0 25px 50px rgba(map-get($colors, 'Black'), .2);
+    padding: 20px;
+
+    @media (min-width: 670px) {
+      box-shadow: 0 #{(50 / $base-size)}em #{(75 / $base-size)}em rgba(map-get($colors, 'Black'), .2);
+      padding: #{(89 / $base-size)}em #{(108 / $base-size)}em;
+    }
   }
 
   &.-column {
@@ -2073,7 +2335,11 @@ img {
   // 0 35px 70px black, .17
   &.-image {
     border: 1px solid rgba(map-get($colors, 'DustyGray'), .51);
-    box-shadow: 0 #{(75 / $base-size)}em #{(90 / $base-size)}em rgba(map-get($colors, 'Black'), .2);
+    box-shadow: 0 38px 45px rgba(map-get($colors, 'Black'), .2);
+
+    @media (min-width: 670px) {
+      box-shadow: 0 #{(75 / $base-size)}em #{(90 / $base-size)}em rgba(map-get($colors, 'Black'), .2);
+    }
 
     > img {
       display: block;
@@ -2284,11 +2550,12 @@ img {
 }
 
 .AppPromotion {
-  margin: gutter() auto 0;
+  margin: gutter(static) auto 0;
   text-align: center;
   width: 176px;
 
   @media (min-width: 670px) {
+    margin-top: gutter();
     width: (176px + 176px + gutter(static));
   }
 
@@ -2399,6 +2666,10 @@ img {
     &.-black {
       margin-top: #{(60px / container()) * 100%};
       width: #{(281px / container()) * 100%};
+
+      @media (max-width: 669px) {
+        margin-left: 7%;
+      }
     }
 
     &.-gold {
@@ -2466,6 +2737,12 @@ img {
 .CarouselFeature {
   position: relative;
   z-index: 2;
+
+  .copy {
+    @media (max-width: 669px) {
+      font-size: 18px;
+    }
+  }
 }
 
 .HeaderImage {
@@ -2484,11 +2761,13 @@ img {
 }
 
 .Section {
-  // background-color: map-get($colors, 'White');
-  // margin-bottom: 100px;
-  // margin-top: 100px;
-  padding-bottom: #{(245 / $base-size)}em; // 134px;
-  padding-top: #{(96 / $base-size)}em; // 103px;
+  padding-bottom: #{(190 / $base-size)}em;
+  padding-top: #{(80 / $base-size)}em;
+
+  @media (min-width: 670px) {
+    padding-bottom: #{(245 / $base-size)}em; // 134px;
+    padding-top: #{(96 / $base-size)}em; // 103px;
+  }
 
   &.-angled {
     position: relative;
@@ -2501,13 +2780,17 @@ img {
     bottom: 0;
     content: '';
     display: block;
-    height: 50%;
+    height: 30%;
     left: 0;
     position: absolute;
     right: 0;
     top: 0;
     width: 100%;
     z-index: -1;
+
+    @media (min-width: 670px) {
+      height: 50%;
+    }
   }
 
   &.-angledTop.-ltr::before,
@@ -2561,13 +2844,13 @@ img {
   background-color: rgba(map-get($colors, 'White'), .92);
   border: 0;
   border-radius: 100%;
-  box-shadow: 0 20px 40px rgba(map-get($colors, 'Black'), .20);
+  box-shadow: 0 #{(20 / 27)}em #{(40 / 27)}em rgba(map-get($colors, 'Black'), .20);
   bottom: 0;
   color: map-get($colors, 'DustyGray');
   cursor: pointer;
   display: block;
-  font-size: 27px;
-  height: 68px;
+  font-size: 14px;
+  height: #{(68 / 27)}em;
   // margin-bottom: auto;
   // margin-top: auto;
   padding: 0;
@@ -2575,8 +2858,12 @@ img {
   // top: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 68px;
   z-index: 2;
+  width: #{(68 / 27)}em;
+
+  @media (min-width: 670px) {
+    font-size: 27px;
+  }
 
   .icon {
     position: absolute;
@@ -2723,6 +3010,91 @@ img {
 
   .icon:last-child {
     right: #{(34 / 32)}em;
+  }
+}
+
+@-webkit-keyframes preloader {
+  0% { opacity: 0; }
+  100% { opacity: 100; }
+}
+
+@-moz-keyframes preloader {
+  0% { opacity: 0; }
+  100% { opacity: 100; }
+}
+
+@keyframes preloader {
+  0% { opacity: 0; }
+  100% { opacity: 100; }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(.9);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.Preloader {
+  align-items: center;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  bottom: 0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  opacity: 1;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 500ms ease-in-out 500ms,
+    transform 1000ms ease-in-out;
+  width: 100%;
+  // z-index: 10;
+
+  &.is-loading {
+    opacity: 0;
+    // -webkit-animation: preloader ease-in-out 1s 1;
+    // -moz-animation: preloader ease-in-out 1s 1;
+    // animation: preloader ease-in-out 1s 1;
+    // opacity: 0;
+  }
+
+  &.slide-up {
+    transform: translateY(-80vh);
+    // transform: translateY(-19vh);
+  }
+
+  .icon {
+    // color: rgba(map-get($colors, 'Black'), .54);
+    // cubic-bezier(.68, -.55, .265, 1.55)
+    animation: pop ease-in-out .5s;
+    animation-delay: 2.5s;
+    font-size: 204px;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.Page {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+
+  &.is-loading {
+    opacity: 0;
   }
 }
 
