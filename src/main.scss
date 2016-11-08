@@ -2389,6 +2389,10 @@ img {
       max-width: 100%;
     }
   }
+
+  &.-no-shadow {
+    box-shadow: none;
+  }
 }
 
 .DiscoverFeature {
@@ -3091,6 +3095,20 @@ img {
 
   &.is-loading {
     opacity: 0;
+  }
+}
+
+.SingleImage {
+  &.-wide {
+    img {
+      @media (min-width: 1400px) {
+        left: 50%;
+        max-width: 1600px;
+        position: relative;
+        transform: translateX(-50%);
+        width: 120%;
+      }
+    }
   }
 }
 

@@ -65,7 +65,7 @@
 	</div>
 
 	<div class="CarouselFeature wrap u-centered">
-		<div class="container panel -feature">
+		<div class="container panel -feature -no-shadow">
 			<p class="copy">
 				After the individual cards were solidified, the next problem to solve
 				was how we present those to the user.
@@ -103,8 +103,8 @@
 			</p>
 		</div>
 
-		<div class="SingleImage container">
-			<img src="assets/images/airbnb/iphone.png" alt="">
+		<div class="SingleImage -wide container">
+			<img src="assets/images/airbnb/_iphone@2x.png" alt="">
 		</div>
 	</div>
 </section>
@@ -141,7 +141,7 @@
 			</div>
 
 			<div class="SingleImage container">
-				<img class="image" src="assets/images/airbnb/searching-for-properties-2@2x.jpg" alt="">
+				<img src="assets/images/airbnb/searching-for-properties-2@2x.png" alt="">
 			</div>
 
 			<div class="CopyBlock container span-10">

@@ -3245,6 +3245,8 @@ img {
     .panel.-image > img {
       display: block;
       max-width: 100%; }
+  .panel.-no-shadow {
+    box-shadow: none; }
 
 .DiscoverFeature {
   position: relative; }
@@ -3777,6 +3779,14 @@ img {
   transition: opacity 500ms ease-in-out; }
   .Page.is-loading {
     opacity: 0; }
+
+@media (min-width: 1400px) {
+  .SingleImage.-wide img {
+    left: 50%;
+    max-width: 1600px;
+    position: relative;
+    transform: translateX(-50%);
+    width: 120%; } }
 
 .u-above {
   position: relative;
