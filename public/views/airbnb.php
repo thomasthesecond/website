@@ -1,4 +1,6 @@
 <?php
+	$page_title = 'Airbnb';
+
 	$this->layout('default', array(
 		'body_class' => 'Airbnb StoryPage',
 		'footer' => true,
@@ -6,7 +8,7 @@
 		'footer_link_prev' => 'Lonely Planet',
 		'header_image' => 'assets/images/airbnb/header-photo.jpg',
 		'main_class' => '-airbnb',
-		'page_title' => 'Airbnb',
+		'page_title' => $page_title,
 		'preloader_image' => 'assets/images/airbnb/preloader.jpg',
 	));
 ?>
@@ -15,7 +17,7 @@
 	<div class="container span-10">
 		<header class="IntroHeader">
 			<div class="heading -tiny -light">
-				Case Study
+				<?php echo $page_title; ?>
 			</div>
 
 			<h1 class="heading -huge">

@@ -1,4 +1,6 @@
 <?php
+	$page_title = 'Lonely Planet';
+
 	$this->layout('default', array(
 		'body_class' => 'LonelyPlanet StoryPage',
 		'footer' => true,
@@ -6,7 +8,7 @@
 		'footer_link_prev' => 'Salesforce',
 		'header_image' => 'assets/images/lp/header-photo.jpg',
 		'main_class' => '-lp',
-		'page_title' => 'Lonely Planet',
+		'page_title' => $page_title,
 		'preloader_image' => 'assets/images/lp/preloader.jpg',
 	));
 ?>
@@ -15,7 +17,7 @@
 	<div class="container span-10">
 		<header class="IntroHeader">
 			<div class="heading -tiny -light">
-				Case Study
+				<?php echo $page_title; ?>
 			</div>
 
 			<h1 class="heading -huge">

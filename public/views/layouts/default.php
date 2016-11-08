@@ -16,6 +16,7 @@
 	<?php
 		$this->render('shared/header', array(
 			'header_image' => $header_image,
+			'page_title' => $page_title,
 		));
 	?>
 

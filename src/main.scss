@@ -340,19 +340,54 @@ img {
 }
 
 .headroom {
-  transition: transform 800ms cubic-bezier(.68, -.55, .265, 1.55);
+  color: map-get($colors, 'Tundora');
+  transition: background-color 400ms ease-in-out,
+    transform 400ms ease-in-out;
   will-change: transform;
 }
 
 .headroom--pinned {
-  @media (min-width: 670px) {
-    transform: translateY(0%);
+  // @media (min-width: 670px) {}
+  transform: translateY(0%);
+
+  &.headroom--not-top {
+    // @media (min-width: 670px) {}
+    background-color: map-get($colors, 'White');
+    box-shadow: 0 35px 70px rgba(map-get($colors, 'Black'), .17);
   }
 }
 
 .headroom--unpinned {
-  @media (min-width: 670px) {
-    transform: translateY(-100%);
+  // @media (min-width: 670px) {}
+  transform: translateY(-100%);
+}
+
+.PageTitle {
+  font-family: map-get($fonts, 'SansSerifMedium');
+  font-size: 18px;
+  left: 50%;
+  letter-spacing: -.77px;
+  line-height: (31 / 18);
+  opacity: 0;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: opacity 400ms ease-in-out,
+    visibility 400ms ease-in-out;
+  visibility: hidden;
+
+  @media (min-width: 446px) {
+    font-size: 20px;
+    line-height: (36 / 20);
+  }
+
+  @media (min-width: 572px) {
+    font-size: 24px;
+    line-height: (42 / 24);
+  }
+
+  .headroom--pinned.headroom--not-top & {
+    opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -371,11 +406,11 @@ img {
   padding: 8px 9px 7px;
 
   @media (min-width: 446px) {
-    padding: 11px 9px 10px;
+    padding: 10px 9px 9px;
   }
 
   @media (min-width: 572px) {
-    padding: 14px 13px 13px;
+    padding: 11px 13px 10px;
   }
 
   @media (max-width: 571px) {
@@ -423,6 +458,10 @@ img {
 
   .NavButton.-white & {
     background-color: map-get($colors, 'White');
+  }
+
+  .headroom--pinned.headroom--not-top & {
+    background-color: map-get($colors, 'MineShaft');
   }
 }
 
@@ -545,7 +584,7 @@ img {
   // base ----------------------------------------------------------------------
 
   color: map-get($colors, 'Gray');
-  font-family: map-get($fonts, 'Helvetica');
+  font-family: map-get($fonts, 'Serif');
   font-size: #{(($copy-size - 8) / $base-size)}em;
   line-height: (48 / $copy-size);
   margin: 0;
@@ -639,7 +678,7 @@ img {
   }
 
   &.-gray {
-    color: #424242;
+    color: map-get($colors, 'Tundora');
   }
 
   &.-white {
@@ -771,7 +810,7 @@ img {
       }
 
       @media (min-width: 670px) {
-        padding-bottom: #{(186 / $base-size)}em;
+        padding-bottom: #{(206 / $base-size)}em;
       }
     }
 
@@ -779,7 +818,7 @@ img {
       margin-top: #{(40 / $base-size)}em;
 
       @media (min-width: 670px) {
-        margin-top: #{(-166 / $base-size)}em;
+        margin-top: #{(-138 / $base-size)}em;
       }
     }
   }
@@ -1400,17 +1439,17 @@ img {
 
   // @media (min-width: 572px) {
   @media (min-width: 670px) {
-    padding-left: #{(56 / 1600) * 100%};
-    padding-right: #{(56 / 1600) * 100%};
+    padding-left: #{(60 / 1600) * 100%};
+    padding-right: #{(60 / 1600) * 100%};
   }
 
   @media (min-width: 616px) {
-    padding-bottom: #{(52 / 1600) * 100%};
-    padding-top: #{(52 / 1600) * 100%};
+    padding-bottom: #{(30 / 1600) * 100%};
+    padding-top: #{(28 / 1600) * 100%};
   }
 
   @media (min-width: 1600px) {
-    padding: 52px 56px;
+    padding: 28px 60px 30px;
   }
 }
 
@@ -1432,11 +1471,11 @@ img {
   width: 1em;
 
   @media (min-width: 446px) {
-    font-size: 38px;
+    font-size: 36px;
   }
 
   @media (min-width: 572px) {
-    font-size: 48px;
+    font-size: 42px;
   }
 
   &.-white {
@@ -1462,6 +1501,10 @@ img {
 
   .Nav & {
     float: left;
+  }
+
+  .headroom--pinned.headroom--not-top & {
+    color: map-get($colors, 'MineShaft');
   }
 }
 
@@ -2555,7 +2598,7 @@ img {
   width: 176px;
 
   @media (min-width: 670px) {
-    margin-top: gutter();
+    // margin-top: gutter();
     width: (176px + 176px + gutter(static));
   }
 
@@ -2701,7 +2744,7 @@ img {
 }
 
 .Video {
-  background-color: map-get($colors, 'Alto');
+  background-color: rgba(map-get($colors, 'Alto'), .29);
   padding-bottom: #{(24 / $base-size)}em;
   padding-top: #{(24 / $base-size)}em;
 
@@ -2724,7 +2767,8 @@ img {
   z-index: 2;
 
   img {
-    border: 1px solid rgba(map-get($colors, 'DustyGray'), .58);
+    // border: 1px solid rgba(map-get($colors, 'DustyGray'), .58);
+    backface-visibility: hidden;
     box-shadow: 0 20px 40px rgba(map-get($colors, 'Black'), .17);
     display: block;
 

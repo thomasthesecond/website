@@ -1897,16 +1897,41 @@ img {
       font-size: 20px !important; } }
 
 .headroom {
-  transition: transform 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  color: #424242;
+  transition: background-color 400ms ease-in-out, transform 400ms ease-in-out;
   will-change: transform; }
 
-@media (min-width: 670px) {
-  .headroom--pinned {
-    transform: translateY(0%); } }
+.headroom--pinned {
+  transform: translateY(0%); }
+  .headroom--pinned.headroom--not-top {
+    background-color: #fff;
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.17); }
 
-@media (min-width: 670px) {
-  .headroom--unpinned {
-    transform: translateY(-100%); } }
+.headroom--unpinned {
+  transform: translateY(-100%); }
+
+.PageTitle {
+  font-family: "sans-Medium", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 18px;
+  left: 50%;
+  letter-spacing: -.77px;
+  line-height: 1.72222;
+  opacity: 0;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: opacity 400ms ease-in-out, visibility 400ms ease-in-out;
+  visibility: hidden; }
+  @media (min-width: 446px) {
+    .PageTitle {
+      font-size: 20px;
+      line-height: 1.8; } }
+  @media (min-width: 572px) {
+    .PageTitle {
+      font-size: 24px;
+      line-height: 1.75; } }
+  .headroom--pinned.headroom--not-top .PageTitle {
+    opacity: 1;
+    visibility: visible; }
 
 .NavButton {
   background-color: transparent;
@@ -1922,10 +1947,10 @@ img {
   padding: 8px 9px 7px; }
   @media (min-width: 446px) {
     .hamburger {
-      padding: 11px 9px 10px; } }
+      padding: 10px 9px 9px; } }
   @media (min-width: 572px) {
     .hamburger {
-      padding: 14px 13px 13px; } }
+      padding: 11px 13px 10px; } }
   .Nav .hamburger {
     float: right; }
 
@@ -1957,6 +1982,10 @@ img {
   .NavButton.-white .hamburger-inner::before,
   .NavButton.-white .hamburger-inner::after {
     background-color: #fff; }
+  .headroom--pinned.headroom--not-top .hamburger-inner,
+  .headroom--pinned.headroom--not-top .hamburger-inner::before,
+  .headroom--pinned.headroom--not-top .hamburger-inner::after {
+    background-color: #323232; }
 
 .hamburger--elastic .hamburger-inner {
   top: 0; }
@@ -2036,7 +2065,7 @@ img {
 
 .copy {
   color: #868686;
-  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Georgia", sans-serif;
   font-size: 1.5em;
   line-height: 1.5;
   margin: 0; }
@@ -2171,12 +2200,12 @@ img {
         height: 15%; } }
     @media (min-width: 670px) {
       .Story.-lp .Chapter-3 .Section {
-        padding-bottom: 11.625em; } }
+        padding-bottom: 12.875em; } }
   .Story.-lp .Chapter-3 .SingleImage {
     margin-top: 2.5em; }
     @media (min-width: 670px) {
       .Story.-lp .Chapter-3 .SingleImage {
-        margin-top: -10.375em; } }
+        margin-top: -8.625em; } }
 
 .Story.-lp .Chapter-4 {
   margin-top: 6.25em; }
@@ -2627,15 +2656,15 @@ img {
   z-index: 10; }
   @media (min-width: 670px) {
     .Nav > .Header {
-      padding-left: 3.5%;
-      padding-right: 3.5%; } }
+      padding-left: 3.75%;
+      padding-right: 3.75%; } }
   @media (min-width: 616px) {
     .Nav > .Header {
-      padding-bottom: 3.25%;
-      padding-top: 3.25%; } }
+      padding-bottom: 1.875%;
+      padding-top: 1.75%; } }
   @media (min-width: 1600px) {
     .Nav > .Header {
-      padding: 52px 56px; } }
+      padding: 28px 60px 30px; } }
 
 .Nav > .Header-fixed {
   left: 0;
@@ -2654,14 +2683,16 @@ img {
   width: 1em; }
   @media (min-width: 446px) {
     .Logo {
-      font-size: 38px; } }
+      font-size: 36px; } }
   @media (min-width: 572px) {
     .Logo {
-      font-size: 48px; } }
+      font-size: 42px; } }
   .Logo.-white {
     color: #fff; }
   .Nav .Logo {
     float: left; }
+  .headroom--pinned.headroom--not-top .Logo {
+    color: #323232; }
 
 .Menu {
   font-family: "sans-Medium", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
@@ -3363,7 +3394,6 @@ img {
   width: 176px; }
   @media (min-width: 670px) {
     .AppPromotion {
-      margin-top: 2.2082%;
       width: 380px; } }
   .AppPromotion a {
     display: block; }
@@ -3476,7 +3506,7 @@ img {
   margin-top: 2.2082%; }
 
 .Video {
-  background-color: #dedede;
+  background-color: rgba(222, 222, 222, 0.29);
   padding-bottom: 1.5em;
   padding-top: 1.5em; }
   .Video figure {
@@ -3505,7 +3535,7 @@ img {
   position: relative;
   z-index: 2; }
   .ImageGroup img {
-    border: 1px solid rgba(151, 151, 151, 0.58);
+    backface-visibility: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.17);
     display: block; }
     .ImageGroup img:nth-child(even) {

@@ -7,6 +7,12 @@
 			</svg>
 		</a>
 
+		<?php if (isset($header_image)): ?>
+			<div class="PageTitle">
+				<?php echo $page_title; ?>
+			</div>
+		<?php endif; ?>
+
 		<button class="NavButton<?php if (isset($header_image)) { echo ' -white'; } ?> hamburger hamburger--elastic js-hamburger">
       <div class="hamburger-box">
         <div class="hamburger-inner"></div>
