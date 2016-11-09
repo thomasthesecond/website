@@ -13,15 +13,14 @@
 
   <p class="copy">
     I’ve been with product companies as a product designer and/or Creative
-    Director for 5 years. For the 5 years before that, I served as the
-    Creative Director for a digital agency based in Nashville.
+		Director for 5 years. For the 5 years before that, I served as the Creative
+		Director for a digital agency based in Nashville.
   </p>
 
   <p class="copy">
-    Now I’m interested in spending time applying the knowledge gathered
-    across those experiences and applying it to a small number of select
-    clients, interested in using design to carve out a new path for
-    themselves.
+    Now I’m interested in spending time applying the knowledge gathered across
+		those experiences and applying it to a small number of select clients,
+		interested in using design to carve out a new path for themselves.
   </p>
 
   <div class="columns -three container">

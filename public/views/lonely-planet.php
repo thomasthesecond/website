@@ -28,19 +28,20 @@
 		<div class="IntroCopy container">
 			<div class="span-7 u-left">
 				<p class="copy">
-					Getting started was daunting. We had access to a world’s worth
-					of high-quality content, generated over the past 50 years from a
-					network of writers around the world. We also had many tens of
-					millions of visitors to our digital products every month. But
-					our digital experience was in a state of disarray.
+					Getting started was daunting. We had access to a world’s worth of
+					professionally-created content, developed over the past 50 years from
+					a network of writers around the world. We also had many tens of
+					millions of visitors to our digital products every month. But we
+					needed to do a better job of wielding the assets we had available
+					to us.
 				</p>
 			</div>
 
 			<aside class="span-3 u-right">
 				<h4 class="heading -tiny">My role</h4>
 				<p class="copy -small -loose">
-					I led the product design team. It was a broad role responsible
-					for producing roadmaps, teams, process, and products.
+					As Head of Design, I was responsible for developing our roadmaps,
+					teams, processes, and products, and designs.
 				</p>
 			</aside>
 		</div>
@@ -56,12 +57,11 @@
 				</h2>
 
 				<p class="copy -white">
-					It would be impossible to simplify if we didn’t have a clear
-					picture of what people expect from Lonely Planet. So we rolled
-					out several tools to capture usage data and metrics. The
-					information helped us become more objective when thinking
-					through our roadmap, allowing us to confidently craft our
-					product roadmap for the year.
+					It would be impossible to simplify if we didn’t have a clear picture
+					of what people expect from Lonely Planet. So we rolled out several
+					tools to capture usage data and metrics. The information helped us
+					become more objective when thinking through our roadmap, allowing us
+					to confidently craft our product roadmap for the year.
 				</p>
 			</div>
 		</div>
@@ -83,8 +83,8 @@
 						1.5 million <span>data points</span>
 					</h3>
 					<p class="copy">
-						Across our qualitative and quantitative methods, we pulled data
-						from over a million folks.
+						Across our qualitative and quantitative methods, we pulled data from
+						over a million folks.
 					</p>
 				</div>
 			</div>
@@ -214,7 +214,7 @@
 					</h3>
 					<p class="copy">
 						We set up tests, collected data, and distilled it into key
-						hypothesis for a better understanding.
+						hypothesis for a better context.
 					</p>
 				</div>
 			</div>
@@ -226,14 +226,13 @@
 	<div class="CopyGroup wrap">
 		<div class="CopyBlock container span-8">
 			<h2 class="heading -large -mariner -tick">
-				A world’s worth of photography
+				Crafting our focus
 			</h2>
 
 			<p class="copy">
-				Donec id elit non mi porta gravida at eget metus. Donec sed odio
-				dui. Integer posuere erat a ante venenatis dapibus posuere velit
-				aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget
-				quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam.
+				It was important to begin the process of simplification equipped with
+				the reasons why people come to Lonely Planet. We used the information
+				gleaned throughout the design process.
 			</p>
 		</div>
 
@@ -313,10 +312,9 @@
 				</header>
 
 				<p class="copy -white">
-					I spent a lot of time wireframing in the beginning of the project.
-					There was so much content to work with that it was important to
-					make sure that we nailed the correct information architecture
-					that would most benefit the visitors to the site.
+					We landed on Destinations as the place we would use to provide the
+					foundation for the future of our digital products. It’s why people
+					came to us, so it made sense to start there first.
 				</p>
 			</div>
 		</div>
@@ -335,10 +333,10 @@
 			</h2>
 
 			<p class="copy">
-				Donec id elit non mi porta gravida at eget metus. Donec sed odio
-				dui. Integer posuere erat a ante venenatis dapibus posuere velit
-				aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget
-				quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam.
+				The previous design used a card-based metaphor for all the content.
+				That’s great for responsiveness, but not so great when you’re
+				manifesting such different types of content. We wanted to do a better
+				job of spotlighting the content.
 			</p>
 		</div>
 
@@ -349,10 +347,10 @@
 
 		<div class="CopyBlock container span-8">
 			<p class="copy">
-				Donec id elit non mi porta gravida at eget metus. Donec sed odio
-				dui. Integer posuere erat a ante venenatis dapibus posuere velit
-				aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget
-				quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam.
+				So, we poured through the data. What generated the most revenue? What
+				tools did people use? What did they not use? We took this information
+				and developed a more clear funnel from high-level inspiration to the
+				nitty gritty details of trip-planning.
 			</p>
 		</div>
 
@@ -370,12 +368,10 @@
 			</h2>
 
 			<p class="copy">
-				I developed a photography brief that we would use to help our
-				destination editors and digital content folks find the right
-				imagery. When we hit snags and couldn’t find photography for
-				certain off-the-beaten-path places, 500px could pose the challenge
-				to the community. They were the partner for our needs on the
-				project.
+				After we had a handle on the information architecture and hierarchy, we
+				dove into the content. Our books have boasted great photography for
+				nearly 50 years, so obviously we wanted to do a much better job taking
+				advantage of that.
 			</p>
 		</div>
 	</div>
@@ -387,10 +383,10 @@
 	<div class="CopyBlock wrap">
 		<div class="container span-8">
 			<p class="copy">
-				Donec id elit non mi porta gravida at eget metus. Donec sed odio
-				dui. Integer posuere erat a ante venenatis dapibus posuere velit
-				aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget
-				quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam.
+				We partnered with 500px to build up a collection of great photography
+				covering every place on earth. I developed a set of guidelines for each
+				component to communicate what the team should look for when sourcing
+				photography: placement, negative space, tone, and composition.
 			</p>
 		</div>
 	</div>
@@ -415,10 +411,10 @@
 			</h2>
 
 			<p class="copy">
-				Donec id elit non mi porta gravida at eget metus. Donec sed odio
-				dui. Integer posuere erat a ante venenatis dapibus posuere velit
-				aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget
-				quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam.
+				Finally, we pulled all our hard work into a visual system worthy of
+				packaging up the world’s destinations. I brought in Halli Thorleiffsson
+				to augment the team and put the final touches on our new product
+				direction.
 			</p>
 		</div>
 	</div>
@@ -434,10 +430,10 @@
 	<div class="CopyBlock wrap">
 		<div class="container span-8">
 			<p class="copy">
-				Donec id elit non mi porta gravida at eget metus. Donec sed odio
-				dui. Integer posuere erat a ante venenatis dapibus posuere velit
-				aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget
-				quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam.
+				A website or product is never finished, and this is no exception. We’re
+				methodically replacing each core section with the new direction, which
+				are bringing in jumps in revenue, engagement, and users. And there’s so
+				much more to go.
 			</p>
 		</div>
 	</div>
@@ -458,11 +454,10 @@
 				</header>
 
 				<p class="copy -white">
-					There was solid talent in place for Guides, so my involvement
-					was limited to product direction and ongoing creative direction.
-					That essentially means lots of initial whiteboarding, wireframing,
-					and guiding the visual designs to ensure consistency across
-					products and platforms.
+					I kicked off the Guides mobile app at the same time as Destinations,
+					so it ran parallel to the web team. There was a solid team in place,
+					so I mostly focused on scoping the features, initial wireframing and
+					architecture, and ongoing creative direction.
 				</p>
 			</div>
 		</div>
@@ -485,10 +480,10 @@
 			</h2>
 
 			<p class="copy">
-				Lonely Planet has a community of expert travel authors around the
-				world. This is highly curated, high quality stuff. We packaged
-				them up into a beautifully simple interactive city guide experience
-				for a growing number of top cities around the world.
+				The goal for the product was to translate our brand value into a mobile
+				app, which would serve as our flagship offering moving forward. We took
+				our curated content, and packaged them up for 50 of the top cities
+				around the world.
 			</p>
 		</div>
 	</div>
@@ -522,9 +517,9 @@
 			</h2>
 
 			<p class="copy">
-				We placed an emphasis on our POIs, seeing Guides as a primarily
-				boots-on-the-ground pocket companion to help you get the most out
-				of the city. Simply stated? It’s Mapbox with our content on top.
+				We placed an emphasis on our POIs, seeing Guides as a primarily a
+				boots-on-the-ground pocket companion to help you get the most out of
+				the city.
 			</p>
 		</div>
 	</div>
@@ -549,10 +544,10 @@
 			</h2>
 
 			<p class="copy">
-				The team did a fantastic job bringing everything together. So much
-				so that the app received Apple’s Editor’s Choice, and it’s
-				improvements since launch have landed it nearly a 5-star rating in
-				the App Store. Be sure to download the app for your next trip.
+				The team did a fantastic job bringing everything together. So much so
+				that the app received Apple’s Editor’s Choice, and it’s improvements
+				since launch have landed it a 5-star rating in the App Store. Be sure to
+				download the app for your next trip.
 			</p>
 
 			<div class="AppPromotion container">
@@ -581,10 +576,12 @@
 	<div class="CopyBlock wrap">
 		<div class="container span-10">
 			<p class="copy">
-				Donec id elit non mi porta gravida at eget metus. Donec sed odio
-				dui. Integer posuere erat a ante venenatis dapibus posuere velit
-				aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget
-				quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam.
+				Lonely Planet encapsulates so much work that it’s hard to put in a case
+				study. Beyond the actual design work, I was developing a buidling
+				culture, cultivating and evangelizing product development, pushing
+				people to be better, and extending our network of talent far beyond our
+				walls. It was a great experience and I’m proud of what we were able to
+				accomplish together.
 			</p>
 		</div>
 	</div>

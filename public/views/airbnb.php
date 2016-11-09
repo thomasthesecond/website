@@ -30,9 +30,9 @@
 				<p class="copy">
 					Redesigning an experience as large as Airbnb was a huge undertaking.
 					Usually the best thing to do in such a situation is to just put your
-					headphones on and get to work. The team was only about 5 designers
-					and 15 engineers, and the timeline was tight. It was a dream job for
-					any freelancer and I was itching to get started.
+					headphones on and get to work. The team was only about 5 designers and
+					15 engineers, and the timeline was tight. It was a dream job for any
+					freelancer and I was itching to get started.
 				</p>
 			</div>
 
@@ -56,9 +56,9 @@
 				</h2>
 
 				<p class="copy -white">
-					Redesigning an experience as large as Airbnb was a  undertaking.
-					Usually the best thing to do in such a situation is to just put your
-					headphones on and get to work.
+					My first project was the property card: the building block of the
+					entire Airbnb experience. I built upon a lot of work done by the team
+					and developed countless iterations.
 				</p>
 			</div>
 		</div>
@@ -67,8 +67,8 @@
 	<div class="CarouselFeature wrap u-centered">
 		<div class="container panel -feature -no-shadow">
 			<p class="copy">
-				After the individual cards were solidified, the next problem to solve
-				was how we present those to the user.
+				Below are a few of the different explorations. Some are simple, while
+				others depended on interactions.
 			</p>
 
 			<div class="Carousel">
@@ -97,9 +97,9 @@
 	<div class="CopyGroup wrap u-centered">
 		<div class="CopyBlock container span-8">
 			<p class="copy">
-				After the individual property cards were solidified, the next problem
-				to solve was how we present those to the user while they search for a
-				place to stay.
+				There were slight tweaks made to each manifestation depending on where
+				it appeared: on the map, in the mobile app, on the homepage, or in the
+				search results.
 			</p>
 		</div>
 
@@ -117,11 +117,10 @@
 			</h2>
 
 			<p class="copy">
-				After the individual property cards were solidified, the next
-				problem to solve was how we present those to the user while they
-				search for a place to stay. Additionally, as we worked through the
-				different compositions, we were extracting and solidifying the
-				core component set.
+				After the individual property cards were solidified, the next problem to
+				solve was how we present those to the user while they search for a place
+				to stay. This is the highest trafficked experience for Airbnb, so it was
+				an honor to be able to work on it.
 			</p>
 		</div>
 
@@ -134,9 +133,10 @@
 		<div class="wrap">
 			<div class="CopyBlock container span-10">
 				<p class="copy">
-					After the individual property cards were solidified, the next
-					problem to solve was how we present those to the user while they
-					search for a place to stay.
+					While we were working through the various flows and screens, we were
+					also iterating on the different components and keeping an inventory of
+					everything. As we neared lanuch, those were formalized into the new
+					design system for the digital products.
 				</p>
 			</div>
 
@@ -146,9 +146,10 @@
 
 			<div class="CopyBlock container span-10">
 				<p class="copy">
-					After the individual property cards were solidified, the next
-					problem to solve was how we present those to the user while they
-					search for a place to stay.
+					These are just some of the components formalized as a part of the
+					initial Rebrand redesign. The team has since added even more
+					<a href="http://airbnb.design/the-way-we-build/">cool tools</a> to
+					their kit.
 				</p>
 			</div>
 		</div>
@@ -164,10 +165,10 @@
 				</h2>
 
 				<p class="copy -white">
-					Because this was the 11th hour of the project, I had to knock
-					out the entire careers section in only a week from start to
-					finish. But sometimes, removing the luxury of time is the best
-					way to get something good out the door :)
+					In addition to the core product flows, I took on the redesign of the
+					Careers section. Great people are what make Airbnb special, so we
+					wanted to make sure potential new employees were greeted with an
+					experience that reflected the new direction.
 				</p>
 			</div>
 		</div>
@@ -187,8 +188,9 @@
 	<div class="CopyBlock wrap">
 		<div class="container span-10">
 			<p class="copy">
-				We timed everything to ship about a week before my contract ended. So
-				I was fortunate enough to participate in the launch and attend parties.
+				In addition to the core design team, there was an art department filled
+				with incredibly talented designers that worked closely with us to
+				provide illustrations, photography, and video throughout the experience.
 			</p>
 		</div>
 	</div>
@@ -203,9 +205,9 @@
 				</h2>
 
 				<p class="copy -white">
-					Redesigning an experience as large as Airbnb was a huge undertaking.
-					Usually the best thing to do in such a situation is to just put your
-					headphones on and get to work.
+					Airbnb has dozens of landing pages for campaigns, information, and
+					more. I took those on and prioritized the work based on traffic.
+					Anything with substantial numbers was redesigned.
 				</p>
 			</div>
 		</div>
@@ -221,11 +223,10 @@
 	<div class="CopyBlock wrap">
 		<div class="container span-10">
 			<p class="copy">
-				After the individual property cards were solidified, the next
-				problem to solve was how we present those to the user while they
-				search for a place to stay. Additionally, as we worked through the
-				different compositions, we were extracting and solidifying the
-				core component set.
+				Overall, the engagement was 5 months, and covered the entire breadth of
+				the product. I often felt we wouldn’t finish in time, but that it
+				happened and happended so smoothly is a testiment to the quality of the
+				team that delivered it.
 			</p>
 		</div>
 	</div>
@@ -236,13 +237,13 @@
 		<div class="wrap">
 			<div class="container span-10">
 				<h2 class="heading -large -white -tick">
-					Property cards, property lists, and the component style guide
+					Launch day
 				</h2>
 
 				<p class="copy -white">
-					Redesigning an experience as large as Airbnb was a huge undertaking.
-					Usually the best thing to do in such a situation is to just put your
-					headphones on and get to work.
+					I was planning to travel after finishing up at Airbnb, so just bought
+					some new camera gear. It was a great opportunity to break it all in on
+					launch! I spent the day capturing all the festivities.
 				</p>
 			</div>
 		</div>
@@ -270,9 +271,10 @@
 	<div class="CopyBlock wrap">
 		<div class="container span-10">
 			<p class="copy">
-				I received the opportunity to work with an incredibly talented
-				group of people that left a big mark on me on both a professional
-				and personal level. Great project all the way around. Thanks Airbnb!
+				The Rebrand project was a joy to work on. The team was tight-knit and I
+				had as much pleasure building new relationships with them as I did
+				designing the product. I look forward to potentially working with Airbnb
+				again in the future.
 			</p>
 		</div>
 	</div>
