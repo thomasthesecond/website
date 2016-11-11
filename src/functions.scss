@@ -1,0 +1,19 @@
+@function helvetica() {
+  @return 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+@function sans-serif($weight: 'Book') {
+  @return 'sans-#{$weight}', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+@function serif() {
+  @return 'freight-text-pro', 'Georgia', sans-serif; // TODO: Use FreightText
+}
+
+@function color($color) {
+  @return map-get($colors, $color);
+}
+
+@function font($font) {
+  @return map-get($fonts, $font);
+}

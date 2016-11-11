@@ -1,185 +1,12 @@
-/// Imports
-
 @import '../node_modules/susy/sass/susy';
 @import './normalize';
 @import './hamburgers';
 @import './swiper';
-
-@font-face { font-family: 'sans-Black'; src: url('../fonts/sans-Black.woff') format('woff2'); }
-@font-face { font-family: 'sans-BlackItalic'; src: url('../fonts/sans-BlackItalic.woff') format('woff2'); }
-@font-face { font-family: 'sans-Bold'; src: url('../fonts/sans-Bold.woff') format('woff2'); }
-@font-face { font-family: 'sans-BoldItalic'; src: url('../fonts/sans-BoldItalic.woff') format('woff2'); }
-@font-face { font-family: 'sans-Book'; src: url('../fonts/sans-Book.woff') format('woff2'); }
-@font-face { font-family: 'sans-BookItalic'; src: url('../fonts/sans-BookItalic.woff') format('woff2'); }
-@font-face { font-family: 'sans-Light'; src: url('../fonts/sans-Light.woff') format('woff2'); }
-@font-face { font-family: 'sans-LightItalic'; src: url('../fonts/sans-LightItalic.woff') format('woff2'); }
-@font-face { font-family: 'sans-Medium'; src: url('../fonts/sans-Medium.woff') format('woff2'); }
-@font-face { font-family: 'sans-MediumItalic'; src: url('../fonts/sans-MediumItalic.woff') format('woff2'); }
-
-// Freight text: light weight only
-// Typekit ID: sdp5xcj
-
-/// Settings
-
-$colors: (
-  Black         : #000,
-  White         : #fff,
-  PictonBlue    : #3aa7e8,
-  MineShaft     : #323232, // 3a3a3a
-  CapeCod       : #3c4143,
-  DoveGray      : #656565,
-  Mariner       : #297cbc, // LP
-  ChathamsBlue  : #163771, // LP alternate
-  Cerulean      : #00a1e0, // Salesforce
-  Persimmon     : #ff5459, // Airbnb
-  Seashell      : #f1f1f1,
-  Alabaster     : #f7f7f7,
-  SilverChalice : #afafaf,
-  Scorpion      : #5e5e5e,
-  Gray          : #868686,
-  DustyGray     : #979797,
-  Alto          : #dedede,
-  AthensGray    : #f1f0f3,
-  Tundora       : #424242
-);
-
-@function helvetica() {
-  @return 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-}
-
-@function sans-serif($weight: 'Book') {
-  @return 'sans-#{$weight}', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-}
-
-@function serif() {
-  @return 'freight-text-pro', 'Georgia', sans-serif; // TODO: Use FreightText
-}
-
-@mixin clearfix() {
-  &::after {
-    clear: both;
-    content: ' ';
-    display: block;
-  }
-}
-
-@mixin aspect-ratio($width, $height, $element: 'div') {
-  position: relative;
-
-  &::before {
-    content: '';
-    display: block;
-    padding-top: ($height / $width) * 100%;
-    width: 100%;
-  }
-
-  > #{$element} {
-    bottom: 0;
-    left: 0;
-    margin: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-}
-
-$fonts: (
-  Helvetica: helvetica(),
-  SansSerifLight: sans-serif('Light'),
-  SansSerifBook: sans-serif('Book'),
-  SansSerifMedium: sans-serif('Medium'),
-  SansSerifBold: sans-serif('Bold'),
-  Serif: serif()
-);
-
-$layout: (
-  columns: 12,
-  column-width: 80px,
-  container: 1268px,
-  gutter-position: before,
-  // gutters: 3 / 8,
-  gutters: 28 / 80,
-  // math: static,
-  output: float
-);
-
-$susy: $layout;
-
-$base-size: 16;
-$copy-size: 28;
-
-$heading-huge: 64;
-$heading-large: 50;
-$heading-medium: 42;
-$heading-small: 32;
-
-@mixin underlined-link() {
-  background-image: linear-gradient(
-    to top,
-    transparent,
-    transparent 2px,
-    rgba(map-get($colors, 'Mariner'), .8) 3px,
-    rgba(map-get($colors, 'Mariner'), .8) (3px + 1px),
-    transparent (3px + 1px)
-  );
-  color: rgba(map-get($colors, 'Mariner'), .8);
-  position: relative;
-  text-decoration: none;
-  text-shadow: -1px -1px 0 map-get($colors, 'White'),
-     1px -1px 0 map-get($colors, 'White'),
-     -1px 1px 0 map-get($colors, 'White'),
-     1px 1px 0 map-get($colors, 'White');
-  transition: color 200ms ease;
-
-  // &:hover,
-  // &:active,
-  // &:focus {
-  //   background-image: linear-gradient(
-  //     to top,
-  //     transparent,
-  //     transparent 3px,
-  //     rgba(red, .4) 3px,
-  //     rgba(red, .4) (3px + 1px),
-  //     transparent (3px + 1px)
-  //   );
-  //   color: red;
-  // }
-}
-
-
-/// Base
-
-html {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -webkit-tap-highlight-color: transparent;
-  text-rendering: optimizeLegibility;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-// :root {
-//   font-size: calc(16px + 3vw);
-// }
-
-body {
-  background-color: map-get($colors, 'White');
-  color: map-get($colors, 'Gray');
-  font-family: map-get($fonts, 'Serif');
-  font-size: #{$base-size}px;
-  text-rendering: optimizeLegibility;
-}
-
-html,
-body {
-  // height: 100%;
-  // overflow: hidden;
-  // position: relative;
-}
+@import './font-face';
+@import './settings';
+@import './functions';
+@import './mixins';
+@import './base';
 
 .Home {
   height: 100%;
@@ -187,25 +14,8 @@ body {
   position: relative;
 }
 
-a {
-  text-decoration: none;
-}
-
-// a:link,
-// a:visited {
-a {
-  // color: map-get($colors, 'Mariner');
-  color: #4990e2; // LP
-  // TODO link color for Airbnb
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
 .image {
-  border: 1px solid map-get($colors, 'DustyGray');
+  border: 1px solid color('DustyGray');
   box-shadow: 0 2px 4px rgba(black, .5), 0 1px 3px rgba(black, .5) inset;
 }
 
@@ -298,17 +108,17 @@ img {
 }
 
 .date {
-  color: map-get($colors, 'SilverChalice');
+  color: color('SilverChalice');
   display: inline-block;
-  font-family: map-get($fonts, 'SansSerifLight');
+  font-family: font('SansSerifLight');
   font-size: 12px;
   letter-spacing: .4px;
   text-transform: uppercase;
 }
 
 .title {
-  color: map-get($colors, 'MineShaft');
-  font-family: map-get($fonts, 'SansSerifBook');
+  color: color('MineShaft');
+  font-family: font('SansSerifBook');
   font-size: 42px;
   letter-spacing: -.4px;
   line-height: (44 / 42);
@@ -331,7 +141,7 @@ img {
 }
 
 .intro {
-  color: map-get($colors, 'CapeCod');
+  color: color('CapeCod');
   // font-family: serif;
   font-size: 24px;
   font-weight: 300;
@@ -348,9 +158,10 @@ img {
 }
 
 .headroom {
-  color: map-get($colors, 'Tundora');
-  transition: background-color 400ms ease-in-out,
-    transform 400ms ease-in-out;
+  color: color('Tundora');
+  // transition: background-color 400ms ease-in-out,
+  //   transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
   will-change: transform;
 }
 
@@ -360,8 +171,8 @@ img {
 
   &.headroom--not-top {
     // @media (min-width: 670px) {}
-    background-color: map-get($colors, 'White');
-    box-shadow: 0 35px 70px rgba(map-get($colors, 'Black'), .17);
+    background-color: color('White');
+    box-shadow: 0 35px 70px rgba(color('Black'), .17);
   }
 }
 
@@ -371,7 +182,7 @@ img {
 }
 
 .PageTitle {
-  font-family: map-get($fonts, 'SansSerifMedium');
+  font-family: font('SansSerifMedium');
   font-size: 18px;
   left: 50%;
   letter-spacing: -.77px;
@@ -459,17 +270,17 @@ img {
 .hamburger-inner,
 .hamburger-inner::before,
 .hamburger-inner::after {
-  background-color: map-get($colors, 'Scorpion');
+  background-color: color('Scorpion');
   height: 1px;
   transition: background-color 200ms ease-in-out;
   width: 100%;
 
   .NavButton.-white & {
-    background-color: map-get($colors, 'White');
+    background-color: color('White');
   }
 
   .headroom--pinned.headroom--not-top & {
-    background-color: map-get($colors, 'MineShaft');
+    background-color: color('MineShaft');
   }
 }
 
@@ -528,7 +339,7 @@ img {
     // -ms-flex-align: center;
     // -webkit-align-items: center;
     // align-items: center;
-    background-color: map-get($colors, 'White');
+    background-color: color('White');
     // display: -webkit-box;
     // display: -ms-flexbox;
     // display: -webkit-flex;
@@ -584,27 +395,27 @@ img {
   }
 
   .swiper-pagination-bullet-active {
-    background: map-get($colors, 'PictonBlue');
+    background: color('PictonBlue');
   }
 }
 
 .copy {
   // base ----------------------------------------------------------------------
 
-  color: map-get($colors, 'Gray');
-  font-family: map-get($fonts, 'Serif');
-  font-size: #{(($copy-size - 8) / $base-size)}em;
+  color: color('Gray');
+  font-family: font('Serif');
+  font-size: #{($copy-size - 8)}px;
   line-height: (48 / $copy-size);
   margin: 0;
 
   @media (min-width: 670px) {
-    font-size: #{($copy-size / $base-size)}em;
+    font-size: #{$copy-size}px;
   }
 
   // sizes ---------------------------------------------------------------------
 
   &.-small {
-    font-size: #{(20 / 16)}em;
+    font-size: 20px;
     line-height: (36 / 24);
 
     @media (max-width: 669px) {
@@ -619,15 +430,15 @@ img {
   // colors --------------------------------------------------------------------
 
   &.-white {
-    color: map-get($colors, 'White');
+    color: color('White');
   }
 }
 
 .heading {
   // base ----------------------------------------------------------------------
 
-  color: map-get($colors, 'MineShaft');
-  font-family: map-get($fonts, 'SansSerifBook');
+  color: color('MineShaft');
+  font-family: font('SansSerifBook');
   margin: 0;
 
   // sizes ---------------------------------------------------------------------
@@ -695,19 +506,19 @@ img {
   // colors --------------------------------------------------------------------
 
   &.-light {
-    color: rgba(map-get($colors, 'MineShaft'), .69);
+    color: rgba(color('MineShaft'), .69);
   }
 
   &.-gray {
-    color: map-get($colors, 'Tundora');
+    color: color('Tundora');
   }
 
   &.-white {
-    color: map-get($colors, 'White');
+    color: color('White');
   }
 
   &.-whiteAlt {
-    color: rgba(map-get($colors, 'White'), .46);
+    color: rgba(color('White'), .46);
   }
 
   // styles --------------------------------------------------------------------
@@ -739,12 +550,12 @@ img {
     }
 
     &.-white::before {
-      background-color: rgba(map-get($colors, 'White'), .66);
+      background-color: rgba(color('White'), .66);
     }
 
     // LP
     &.-mariner::before {
-      background-color: map-get($colors, 'Mariner');
+      background-color: color('Mariner');
     }
 
     &.-blue::before {
@@ -753,12 +564,12 @@ img {
 
     // Salesforce
     &.-cerulean::before {
-      background-color: map-get($colors, 'Cerulean');
+      background-color: color('Cerulean');
     }
 
     // Airbnb
     &.-persimmon::before {
-      background-color: map-get($colors, 'Persimmon');
+      background-color: color('Persimmon');
     }
   }
 }
@@ -1113,7 +924,7 @@ img {
     }
 
     &::before {
-      background-color: map-get($colors, 'Persimmon');
+      background-color: color('Persimmon');
       content: '';
       display: block;
       height: 4px;
@@ -1498,13 +1309,13 @@ img {
 }
 
 .Logo {
-  color: map-get($colors, 'MineShaft');
+  color: color('MineShaft');
   border-radius: 100%;
   display: inline-block;
   font-size: 30px;
   height: 1em;
   text-align: center;
-  transition: color 200ms ease-in-out;
+  // transition: color 200ms ease-in-out;
   width: 1em;
 
   @media (min-width: 446px) {
@@ -1516,7 +1327,7 @@ img {
   }
 
   &.-white {
-    color: map-get($colors, 'White');
+    color: color('White');
   }
 
   .icon {
@@ -1541,12 +1352,12 @@ img {
   }
 
   .headroom--pinned.headroom--not-top & {
-    color: map-get($colors, 'MineShaft');
+    color: color('MineShaft');
   }
 }
 
 .Menu {
-  font-family: map-get($fonts, 'SansSerifMedium');
+  font-family: font('SansSerifMedium');
 
   .Menu-container {
     align-items: center;
@@ -1559,7 +1370,7 @@ img {
   }
 
   .Nav & {
-    background-color: map-get($colors, 'White');
+    background-color: color('White');
     height: 100vh;
     position: fixed;
     width: 100%;
@@ -1706,7 +1517,7 @@ img {
 }
 
 .MenuPrimary {
-  color: map-get($colors, 'MineShaft');
+  color: color('MineShaft');
   font-size: #{(64 / $base-size)}em;
   letter-spacing: -2.84px;
   line-height: (83 / 64);
@@ -1735,24 +1546,22 @@ img {
 
   a {
     color: inherit;
-    transition: color 200ms ease-in-out,
-      transform 200ms ease-in-out;
+    transition: color 200ms ease-in-out;
 
     &:hover,
     &:active,
     &:focus {
-      color: map-get($colors, 'DoveGray');
-      transform: scale(1.1);
+      color: color('DoveGray');
     }
   }
 
   span {
-    color: map-get($colors, 'Alto');
+    color: color('Alto');
   }
 }
 
 .MenuSecondary {
-  color: rgba(map-get($colors, 'MineShaft'), .57);
+  color: rgba(color('MineShaft'), .57);
   font-size: #{(40 / $base-size)}em;
   letter-spacing: -1.78px;
   line-height: (60 / 40);
@@ -1781,14 +1590,12 @@ img {
 
   a {
     color: inherit;
-    transition: color 200ms ease-in-out,
-      transform 200ms ease-in-out;
+    transition: color 200ms ease-in-out;
 
     &:hover,
     &:active,
     &:focus {
-      color: map-get($colors, 'DoveGray');
-      transform: scale(1.1);
+      color: color('DoveGray');
     }
   }
 }
@@ -1820,29 +1627,29 @@ img {
   }
 
   a {
-    color: map-get($colors, 'CapeCod');
+    color: color('CapeCod');
     transition: color 200ms ease-in-out,
       transform 200ms ease-in-out;
 
     &:hover,
     &:active,
     &:focus {
-      color: map-get($colors, 'DoveGray');
+      color: color('DoveGray');
       transform: scale(1.1);
     }
   }
 }
 
 .Button {
-  $color: map-get($colors, 'MineShaft');
+  $color: color('MineShaft');
   background-color: $color;
   background-image: none;
   border: 0;
   border-radius: 0;
-  color: map-get($colors, 'White');
+  color: color('White');
   cursor: pointer;
   display: inline-block;
-  font-family: map-get($fonts, 'SansSerifMedium');
+  font-family: font('SansSerifMedium');
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   line-height: 1;
@@ -1870,8 +1677,8 @@ img {
 
 .Masthead-wrap {
   h1 {
-    color: map-get($colors, 'MineShaft');
-    font-family: map-get($fonts, 'SansSerifBook');
+    color: color('MineShaft');
+    font-family: font('SansSerifBook');
     font-size: 72px;
     letter-spacing: -.4px;
     line-height: 1;
@@ -1883,7 +1690,7 @@ img {
   }
 
   p {
-    color: map-get($colors, 'DoveGray');
+    color: color('DoveGray');
     font-size: #{($copy-size / $base-size)}em;
     // font-family: serif;
     font-weight: 300;
@@ -2158,7 +1965,7 @@ img {
 
   &.-tick {
     &::before {
-      background-color: map-get($colors, 'Persimmon');
+      background-color: color('Persimmon');
       content: '';
       display: block;
       height: 4px;
@@ -2166,7 +1973,7 @@ img {
       width: 30px;
 
       .LonelyPlanet.StoryPage & {
-        background-color: map-get($colors, 'Mariner');
+        background-color: color('Mariner');
       }
 
       @media (min-width: 670px) {
@@ -2177,7 +1984,7 @@ img {
 }
 
 .Home .Footer {
-  background-color: map-get($colors, 'Seashell');
+  background-color: color('Seashell');
   padding-bottom: 124px;
   padding-top: 230px;
 
@@ -2196,7 +2003,7 @@ img {
     text-align: center;
 
     &::before {
-      background-color: map-get($colors, 'PictonBlue');
+      background-color: color('PictonBlue');
       content: '';
       display: block;
       height: 4px;
@@ -2209,8 +2016,8 @@ img {
   }
 
   h2 {
-    color: map-get($colors, 'MineShaft');
-    font-family: map-get($fonts, 'SansSerifBook');
+    color: color('MineShaft');
+    font-family: font('SansSerifBook');
     font-size: 50px;
     letter-spacing: -.4px;
     line-height: (54 / 50);
@@ -2243,7 +2050,7 @@ img {
 }
 
 .ContactForm {
-  font-family: map-get($fonts, 'SansSerifBook');
+  font-family: font('SansSerifBook');
   font-size: #{(18 / $base-size)}em;
   letter-spacing: -.77px;
   margin-top: #{(76 / 24)}em;
@@ -2256,13 +2063,13 @@ img {
     width: span(10);
   }
 
-  // ::-webkit-input-placeholder { color: rgba(map-get($colors, 'Tundora'), .5); }
-  // ::-moz-placeholder { color: rgba(map-get($colors, 'Tundora'), .5); }
-  // :-ms-input-placeholder { color: rgba(map-get($colors, 'Tundora'), .5); }
-  // :-moz-placeholder { color: rgba(map-get($colors, 'Tundora'), .5); }
+  // ::-webkit-input-placeholder { color: rgba(color('Tundora'), .5); }
+  // ::-moz-placeholder { color: rgba(color('Tundora'), .5); }
+  // :-ms-input-placeholder { color: rgba(color('Tundora'), .5); }
+  // :-moz-placeholder { color: rgba(color('Tundora'), .5); }
 
   .label {
-    color: rgba(map-get($colors, 'Tundora'), .5);
+    color: rgba(color('Tundora'), .5);
     font-size: 1em;
     display: block;
     left: #{(30 / 24)}em;
@@ -2289,7 +2096,7 @@ img {
 
   input,
   textarea {
-    background-color: map-get($colors, 'AthensGray');
+    background-color: color('AthensGray');
     border: 1px solid transparent;
     display: block;
     outline: none;
@@ -2299,8 +2106,8 @@ img {
     width: 100%;
 
     &:focus {
-      background-color: lighten(map-get($colors, 'AthensGray'), 1.5);
-      border-color: darken(map-get($colors, 'AthensGray'), 3);
+      background-color: lighten(color('AthensGray'), 1.5);
+      border-color: darken(color('AthensGray'), 3);
     }
 
     &:focus,
@@ -2325,17 +2132,17 @@ img {
     input,
     textarea {
       &:invalid {
-        border-color: map-get($colors, 'Persimmon');
+        border-color: color('Persimmon');
       }
     }
   }
 
   button {
-    background-color: map-get($colors, 'Persimmon');
+    background-color: color('Persimmon');
     border: 0;
-    // box-shadow: 0 #{(50 / 20)}em #{(75 / 20)}em rgba(map-get($colors, 'Black'), .25);
+    // box-shadow: 0 #{(50 / 20)}em #{(75 / 20)}em rgba(color('Black'), .25);
     box-shadow: 0 30px 115px rgba(0, 0, 0, 0.2);
-    color: map-get($colors, 'White');
+    color: color('White');
     cursor: pointer;
     display: block;
     font-size: #{(20 / 24)}em;
@@ -2350,16 +2157,16 @@ img {
     width: 100%;
 
     .LonelyPlanet.StoryPage & {
-      background-color: map-get($colors, 'Mariner');
+      background-color: color('Mariner');
     }
 
     &:hover,
     &:focus,
     &:active {
-      background-color: lighten(map-get($colors, 'Persimmon'), 5);
+      background-color: lighten(color('Persimmon'), 5);
 
       .LonelyPlanet.StoryPage & {
-        background-color: lighten(map-get($colors, 'Mariner'), 5);
+        background-color: lighten(color('Mariner'), 5);
       }
     }
 
@@ -2392,32 +2199,32 @@ img {
 }
 
 .panel {
-  background-color: map-get($colors, 'White');
+  background-color: color('White');
   position: relative;
   z-index: 2;
 
   &.-feature {
-    box-shadow: 0 25px 50px rgba(map-get($colors, 'Black'), .2);
+    box-shadow: 0 25px 50px rgba(color('Black'), .2);
     padding: 20px;
 
     @media (min-width: 670px) {
-      box-shadow: 0 #{(50 / $base-size)}em #{(75 / $base-size)}em rgba(map-get($colors, 'Black'), .2);
+      box-shadow: 0 #{(50 / $base-size)}em #{(75 / $base-size)}em rgba(color('Black'), .2);
       padding: #{(89 / $base-size)}em #{(108 / $base-size)}em;
     }
   }
 
   &.-column {
-    box-shadow: 0 #{(35 / $base-size)}em #{(70 / $base-size)}em rgba(map-get($colors, 'Black'), .13);
+    box-shadow: 0 #{(35 / $base-size)}em #{(70 / $base-size)}em rgba(color('Black'), .13);
     // padding: #{(89 / $base-size)}em #{(108 / $base-size)}em;
   }
 
   // 0 35px 70px black, .17
   &.-image {
-    border: 1px solid rgba(map-get($colors, 'DustyGray'), .51);
-    box-shadow: 0 38px 45px rgba(map-get($colors, 'Black'), .2);
+    border: 1px solid rgba(color('DustyGray'), .51);
+    box-shadow: 0 38px 45px rgba(color('Black'), .2);
 
     @media (min-width: 670px) {
-      box-shadow: 0 #{(75 / $base-size)}em #{(90 / $base-size)}em rgba(map-get($colors, 'Black'), .2);
+      box-shadow: 0 #{(75 / $base-size)}em #{(90 / $base-size)}em rgba(color('Black'), .2);
     }
 
     > img {
@@ -2453,7 +2260,7 @@ img {
   }
 
   > img {
-    box-shadow: 0 20px 40px rgba(map-get($colors, 'Black'), .08);
+    box-shadow: 0 20px 40px rgba(color('Black'), .08);
 
     + img {
       // margin-top: 25px;
@@ -2556,9 +2363,9 @@ img {
   margin-top: 40px;
 
   .heading span {
-    color: map-get($colors, 'Gray');
+    color: color('Gray');
     display: block;
-    font-family: map-get($fonts, 'SansSerifLight');
+    font-family: font('SansSerifLight');
     // SansSerifLight: sans-serif('Light'),
     // SansSerifBook: sans-serif('Book'),
     // SansSerifMedium
@@ -2616,8 +2423,8 @@ img {
   z-index: 2;
 
   img {
-    // border: 1px solid rgba(map-get($colors, 'DustyGray'), .58);
-    // box-shadow: 0 20px 40px rgba(map-get($colors, 'Black'), .17);
+    // border: 1px solid rgba(color('DustyGray'), .58);
+    // box-shadow: 0 20px 40px rgba(color('Black'), .17);
     display: block;
     float: left;
 
@@ -2675,8 +2482,8 @@ img {
 }
 
 .Graph {
-  color: map-get($colors, 'Gray');
-  font-family: map-get($fonts, 'SansSerifBook');
+  color: color('Gray');
+  font-family: font('SansSerifBook');
   font-size: #{(14 / $base-size)}em;
   line-height: 1;
   text-transform: uppercase;
@@ -2717,14 +2524,14 @@ img {
 }
 
 .GraphViz-track {
-  background-color: map-get($colors, 'Alto');
+  background-color: color('Alto');
   border-radius: #{(12 / 14)}em;
   height: #{(12 / 14)}em;
   width: 100%;
 }
 
 .GraphViz-fill {
-  // background-color: map-get($colors, 'Mariner');
+  // background-color: color('Mariner');
   background-color: #4990e2;
   border-radius: #{(12 / 14)}em;
   height: #{(12 / 14)}em;
@@ -2738,7 +2545,7 @@ img {
 }
 
 .GraphAmount {
-  color: map-get($colors, 'Tundora');
+  color: color('Tundora');
   float: left;
   font-size: #{(12 / 14)}em;
   letter-spacing: 1px;
@@ -2798,7 +2605,7 @@ img {
 }
 
 .Video {
-  background-color: map-get($colors, 'Alabaster');
+  background-color: color('Alabaster');
   padding-bottom: #{(24 / $base-size)}em;
   padding-top: #{(24 / $base-size)}em;
 
@@ -2822,14 +2629,14 @@ img {
 
   &.-shadows {
     img {
-      box-shadow: 0 20px 40px rgba(map-get($colors, 'Black'), .17);
+      box-shadow: 0 20px 40px rgba(color('Black'), .17);
     }
   }
 
   img {
-    // border: 1px solid rgba(map-get($colors, 'DustyGray'), .58);
+    // border: 1px solid rgba(color('DustyGray'), .58);
     backface-visibility: hidden;
-    // box-shadow: 0 20px 40px rgba(map-get($colors, 'Black'), .17);
+    // box-shadow: 0 20px 40px rgba(color('Black'), .17);
     display: block;
 
     // &:first-child {
@@ -2854,7 +2661,7 @@ img {
 }
 
 .HeaderImage {
-  background-color: map-get($colors, 'MineShaft');
+  background-color: color('MineShaft');
   // background-position: center center;
   // background-repeat: no-repeat;
   // background-size: cover;
@@ -2934,27 +2741,27 @@ img {
 
 .Carousel-pagination {
   .swiper-pagination-bullet {
-    background-color: map-get($colors, 'White');
-    border: 1px solid map-get($colors, 'DustyGray');
+    background-color: color('White');
+    border: 1px solid color('DustyGray');
     height: 10px;
     opacity: 1;
     width: 10px;
   }
 
   .swiper-pagination-bullet-active {
-    background-color: map-get($colors, 'Persimmon');
-    border-color: darken(map-get($colors, 'Persimmon'), 10); // #f14f54
+    background-color: color('Persimmon');
+    border-color: darken(color('Persimmon'), 10); // #f14f54
   }
 }
 
 .Carousel-next,
 .Carousel-prev {
-  background-color: rgba(map-get($colors, 'White'), .92);
+  background-color: rgba(color('White'), .92);
   border: 0;
   border-radius: 100%;
-  box-shadow: 0 #{(20 / 27)}em #{(40 / 27)}em rgba(map-get($colors, 'Black'), .20);
+  box-shadow: 0 #{(20 / 27)}em #{(40 / 27)}em rgba(color('Black'), .20);
   bottom: 0;
-  color: map-get($colors, 'DustyGray');
+  color: color('DustyGray');
   cursor: pointer;
   display: block;
   font-size: 14px;
@@ -3018,11 +2825,11 @@ img {
 }
 
 .NavLink {
-  background-color: map-get($colors, 'White');
-  box-shadow: 0 12px 25px rgba(map-get($colors, 'Black'), .2);
-  color: map-get($colors, 'MineShaft');
+  background-color: color('White');
+  box-shadow: 0 12px 25px rgba(color('Black'), .2);
+  color: color('MineShaft');
   display: inline-block;
-  font-family: map-get($fonts, 'SansSerifMedium');
+  font-family: font('SansSerifMedium');
   font-size: #{(14 / $base-size)}em;
   // padding: #{(18 / 32)}em #{(48 / 32)}em #{(22 / 32)}em;
   padding: 22px 48px 18px;
@@ -3036,7 +2843,7 @@ img {
   z-index: 2;
 
   @media (min-width: 670px) {
-    // box-shadow: 0 24px 75px 10px rgba(map-get($colors, 'Black'), .2);
+    // box-shadow: 0 24px 75px 10px rgba(color('Black'), .2);
     box-shadow: 0 44px 145px 10px rgba(0, 0, 0, 0.12);
     font-size: #{(16 / $base-size)}em;
     padding: 42px 0 40px;
@@ -3063,28 +2870,28 @@ img {
   &:hover,
   &:active,
   &:focus {
-    color: map-get($colors, 'DoveGray');
-    // color: map-get($colors, 'Persimmon');
+    color: color('DoveGray');
+    // color: color('Persimmon');
 
     small,
     .icon {
-      color: lighten(map-get($colors, 'Persimmon'), 5);
+      color: lighten(color('Persimmon'), 5);
 
       .LonelyPlanet.StoryPage & {
-        color: lighten(map-get($colors, 'Mariner'), 5);
+        color: lighten(color('Mariner'), 5);
       }
     }
   }
 
   &:active {
-    background-color: map-get($colors, 'Alabaster');
+    background-color: color('Alabaster');
     box-shadow: none;
     transform: translate(3px, 3px);
   }
 
   small {
-    color: map-get($colors, 'Persimmon');
-    font-family: map-get($fonts, 'SansSerifMedium');
+    color: color('Persimmon');
+    font-family: font('SansSerifMedium');
     font-size: 12px;
     letter-spacing: 1px;
     display: block;
@@ -3096,7 +2903,7 @@ img {
     }
 
     .LonelyPlanet.StoryPage & {
-      color: map-get($colors, 'Mariner');
+      color: color('Mariner');
     }
   }
 
@@ -3106,7 +2913,7 @@ img {
 
   .icon {
     bottom: 0;
-    color: map-get($colors, 'Persimmon');
+    color: color('Persimmon');
     font-size: #{(14 / 32)}em;
     margin-bottom: auto;
     margin-top: auto;
@@ -3114,7 +2921,7 @@ img {
     top: 0;
 
     .LonelyPlanet.StoryPage & {
-      color: map-get($colors, 'Mariner');
+      color: color('Mariner');
     }
   }
 
@@ -3211,7 +3018,7 @@ img {
 }
 
 .u-bg-alabaster {
-  background-color: map-get($colors, 'Alabaster');
+  background-color: color('Alabaster');
 }
 // Black         : #000,
 // White         : #fff,
@@ -3232,9 +3039,9 @@ img {
 /// Themes
 
 .t-lonelyPlanet {
-  $color: map-get($colors, 'Mariner');
+  $color: color('Mariner');
   background-color: $color;
-  color: map-get($colors, 'White');
+  color: color('White');
 
   &.Button {
     &:hover,
@@ -3246,9 +3053,9 @@ img {
 }
 
 .t-lonelyPlanet-alt {
-  $color: map-get($colors, 'ChathamsBlue');
+  $color: color('ChathamsBlue');
   background-color: $color;
-  color: map-get($colors, 'White');
+  color: color('White');
 
   &.Button {
     &:hover,
@@ -3260,9 +3067,9 @@ img {
 }
 
 .t-salesforce {
-  $color: map-get($colors, 'Cerulean');
+  $color: color('Cerulean');
   background-color: $color;
-  color: map-get($colors, 'White');
+  color: color('White');
 
   &.Button {
     &:hover,
@@ -3274,9 +3081,9 @@ img {
 }
 
 .t-airbnb {
-  $color: map-get($colors, 'Persimmon');
+  $color: color('Persimmon');
   background-color: $color;
-  color: map-get($colors, 'White');
+  color: color('White');
 
   &.Button {
     &:hover,

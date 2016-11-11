@@ -1,0 +1,51 @@
+$colors: (
+  Black         : #000,
+  White         : #fff,
+  PictonBlue    : #3aa7e8,
+  MineShaft     : #323232, // 3a3a3a
+  CapeCod       : #3c4143,
+  DoveGray      : #656565,
+  Mariner       : #297cbc, // LP
+  ChathamsBlue  : #163771, // LP alternate
+  Cerulean      : #00a1e0, // Salesforce
+  Persimmon     : #ff5459, // Airbnb
+  Seashell      : #f1f1f1,
+  Alabaster     : #f7f7f7,
+  SilverChalice : #afafaf,
+  Scorpion      : #5e5e5e,
+  Gray          : #868686,
+  DustyGray     : #979797,
+  Alto          : #dedede,
+  AthensGray    : #f1f0f3,
+  Tundora       : #424242
+);
+
+$fonts: (
+  Helvetica: helvetica(),
+  SansSerifLight: sans-serif('Light'),
+  SansSerifBook: sans-serif('Book'),
+  SansSerifMedium: sans-serif('Medium'),
+  SansSerifBold: sans-serif('Bold'),
+  Serif: serif()
+);
+
+$layout: (
+  columns: 12,
+  column-width: 80px,
+  container: 1268px,
+  gutter-position: before,
+  // gutters: 3 / 8,
+  gutters: 28 / 80,
+  // math: static,
+  output: float
+);
+
+$susy: $layout;
+
+$base-size: 16;
+$copy-size: 28;
+
+$heading-huge: 64;
+$heading-large: 50;
+$heading-medium: 42;
+$heading-small: 32;

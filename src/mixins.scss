@@ -1,0 +1,62 @@
+@mixin clearfix() {
+  &::after {
+    clear: both;
+    content: ' ';
+    display: block;
+  }
+}
+
+@mixin aspect-ratio($width, $height, $element: 'div') {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: ($height / $width) * 100%;
+    width: 100%;
+  }
+
+  > #{$element} {
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+
+
+@mixin underlined-link() {
+  background-image: linear-gradient(
+    to top,
+    transparent,
+    transparent 2px,
+    rgba(color('Mariner'), .8) 3px,
+    rgba(color('Mariner'), .8) (3px + 1px),
+    transparent (3px + 1px)
+  );
+  color: rgba(color('Mariner'), .8);
+  position: relative;
+  text-decoration: none;
+  text-shadow: -1px -1px 0 color('White'),
+     1px -1px 0 color('White'),
+     -1px 1px 0 color('White'),
+     1px 1px 0 color('White');
+  transition: color 200ms ease;
+
+  // &:hover,
+  // &:active,
+  // &:focus {
+  //   background-image: linear-gradient(
+  //     to top,
+  //     transparent,
+  //     transparent 3px,
+  //     rgba(red, .4) 3px,
+  //     rgba(red, .4) (3px + 1px),
+  //     transparent (3px + 1px)
+  //   );
+  //   color: red;
+  // }
+}

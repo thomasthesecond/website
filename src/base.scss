@@ -1,0 +1,49 @@
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: color('White');
+  color: color('Gray');
+  font-family: font('Serif');
+  font-size: #{$base-size}px;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+  // height: 100%;
+  // overflow: hidden;
+  // position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+// a:link,
+// a:visited {
+a {
+  // color: color('Mariner');
+  .LonelyPlanet & {
+    color: #4990e2; // LP
+  }
+
+  .Airbnb & {
+    color: color('Persimmon');
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
