@@ -174,7 +174,7 @@
 		</div>
 	</div>
 
-	<div class="ImageGroup wrap">
+	<div class="ImageGroup wrap -shadows">
 		<img src="assets/images/airbnb/careers-1@2x.png" alt="">
 		<img src="assets/images/airbnb/careers-3@2x.png" alt="">
 		<img src="assets/images/airbnb/careers-2@2x.png" alt="">
@@ -213,7 +213,7 @@
 		</div>
 	</div>
 
-	<div class="ImageGroup wrap">
+	<div class="ImageGroup wrap -shadows">
 		<img src="assets/images/airbnb/careers-1@2x.png" alt="">
 		<img src="assets/images/airbnb/careers-3@2x.png" alt="">
 		<img src="assets/images/airbnb/careers-2@2x.png" alt="">
