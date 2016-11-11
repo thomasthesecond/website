@@ -419,7 +419,7 @@
 		</div>
 	</div>
 
-	<div class="ImageGroup wrap">
+	<div class="ImageGroup wrap -shadows">
 		<img src="assets/images/lp/screenshot-1@2x.png" alt="">
 		<img src="assets/images/lp/screenshot-3@2x.png" alt="">
 		<img src="assets/images/lp/screenshot-4@2x.png" alt="">
@@ -574,7 +574,7 @@
 	</div>
 
 	<div class="CopyBlock wrap">
-		<div class="container span-10">
+		<div class="container span-8">
 			<p class="copy">
 				Lonely Planet encapsulates so much work that it’s hard to put in a case
 				study. Beyond the actual design work, I was developing a buidling

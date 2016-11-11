@@ -1,6 +1,6 @@
 <div class="wrap">
   <header class="ContactHeader container u-centered">
-    <h1 class="heading -huge">Let’s work together</h1>
+    <h1 class="heading -large">Let’s work together</h1>
     <p class="copy">
       Just tell me a little bit about the project at hand.
     </p>

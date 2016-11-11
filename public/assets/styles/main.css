@@ -1776,7 +1776,10 @@ button.swiper-pagination-bullet {
   src: url("../fonts/sans-MediumItalic.woff") format("woff2"); }
 
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility; }
 
 *,
 *::before,
@@ -1786,7 +1789,7 @@ html {
 body {
   background-color: #fff;
   color: #868686;
-  font-family: "Georgia", sans-serif;
+  font-family: "freight-text-pro", "Georgia", sans-serif;
   font-size: 16px;
   text-rendering: optimizeLegibility; }
 
@@ -1799,7 +1802,7 @@ a {
   text-decoration: none; }
 
 a {
-  color: #297cbc; }
+  color: #4990e2; }
 
 img {
   display: block;
@@ -2065,15 +2068,15 @@ img {
 
 .copy {
   color: #868686;
-  font-family: "Georgia", sans-serif;
-  font-size: 1.5em;
-  line-height: 1.5;
+  font-family: "freight-text-pro", "Georgia", sans-serif;
+  font-size: 1.25em;
+  line-height: 1.71429;
   margin: 0; }
   @media (min-width: 670px) {
     .copy {
-      font-size: 2em; } }
+      font-size: 1.75em; } }
   .copy.-small {
-    font-size: 1.5em;
+    font-size: 1.25em;
     line-height: 1.5; }
     @media (max-width: 669px) {
       .copy.-small {
@@ -2088,23 +2091,25 @@ img {
   font-family: "sans-Book", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   margin: 0; }
   .heading.-huge {
-    font-size: 4em;
-    letter-spacing: -2.84px;
-    line-height: 1.10938; }
+    font-size: 3.8em;
+    letter-spacing: -2px;
+    line-height: 1.05; }
     @media (max-width: 669px) {
       .heading.-huge {
         font-size: 3.125em; } }
   .heading.-large {
-    font-size: 3.125em;
-    letter-spacing: -1.6px;
-    line-height: 1.08; }
+    line-height: 1.18;
+    font-size: 42px;
+    color: #424242;
+    letter-spacing: -.5px; }
     @media (max-width: 669px) {
       .heading.-large {
         font-size: 2.625em; } }
   .heading.-medium {
-    font-size: 2.625em;
     letter-spacing: -1.34px;
-    line-height: 1.28571; }
+    line-height: 1.28571;
+    color: #585858;
+    font-size: 38px; }
     @media (max-width: 669px) {
       .heading.-medium {
         font-size: 2em; } }
@@ -2116,6 +2121,7 @@ img {
       .heading.-small {
         font-size: 1.75em; } }
   .heading.-tiny {
+    color: #787878;
     font-size: 1em;
     letter-spacing: .7px;
     line-height: 1;
@@ -2141,11 +2147,11 @@ img {
       top: 0;
       width: 30px; }
     .heading.-tick.-large {
-      margin-bottom: 1.48em;
+      margin-bottom: 0.88em;
       padding-top: 1.52em; }
       @media (min-width: 670px) {
         .heading.-tick.-large {
-          padding-top: 2.56em; } }
+          padding-top: 128px; } }
     .heading.-tick.-white::before {
       background-color: rgba(255, 255, 255, 0.66); }
     .heading.-tick.-mariner::before {
@@ -2178,7 +2184,7 @@ img {
     .Story.-lp .Chapter-2 {
       margin-top: 9.875em; } }
   .Story.-lp .Chapter-2 .Graph {
-    margin-top: 5em; }
+    margin-top: 10.625em; }
     @media (min-width: 670px) {
       .Story.-lp .Chapter-2 .Graph {
         margin-top: 7.1875em; } }
@@ -2200,7 +2206,7 @@ img {
         height: 15%; } }
     @media (min-width: 670px) {
       .Story.-lp .Chapter-3 .Section {
-        padding-bottom: 12.875em; } }
+        padding-bottom: 14.875em; } }
   .Story.-lp .Chapter-3 .SingleImage {
     margin-top: 2.5em; }
     @media (min-width: 670px) {
@@ -2221,7 +2227,8 @@ img {
     margin-top: 3.125em; }
     @media (min-width: 670px) {
       .Story.-lp .Chapter-4 .ImageGroup + .CopyBlock {
-        margin-top: 11em; } }
+        margin-top: 9em;
+        margin-bottom: 140px; } }
   .Story.-lp .Chapter-4 .SingleImage {
     margin-top: 3.75em; }
     @media (min-width: 670px) {
@@ -2237,7 +2244,7 @@ img {
     margin-top: 3.75em; }
     @media (min-width: 670px) {
       .Story.-lp .Chapter-5 .FullImage {
-        margin-top: 4.4375em; } }
+        margin-top: 9.375em; } }
   .Story.-lp .Chapter-5 .FullImage + .CopyBlock {
     margin-top: 3.75em; }
     @media (min-width: 670px) {
@@ -2247,7 +2254,7 @@ img {
     margin-top: 3.75em; }
     @media (min-width: 670px) {
       .Story.-lp .Chapter-5 .SingleImage {
-        margin-top: 6.5em; } }
+        margin-top: 9em; } }
   .Story.-lp .Chapter-5 .ColumnImages {
     margin-top: 2.2082%; }
     @media (min-width: 670px) {
@@ -2276,7 +2283,7 @@ img {
     .Story.-lp .Chapter-7 {
       margin-top: 13.625em; } }
   .Story.-lp .Chapter-7 .Section {
-    padding-bottom: 0; }
+    padding-bottom: 70px; }
     @media (max-width: 669px) {
       .Story.-lp .Chapter-7 .Section::after {
         height: 20%; } }
@@ -2284,7 +2291,7 @@ img {
     margin-top: 3.75em; }
     @media (min-width: 670px) {
       .Story.-lp .Chapter-7 .iPhones {
-        margin-top: 4.625em; } }
+        margin-top: 30px; } }
 
 .Story.-lp .Chapter-8 {
   margin-top: 6.25em; }
@@ -2292,24 +2299,24 @@ img {
     margin-top: 3.75em; }
     @media (min-width: 670px) {
       .Story.-lp .Chapter-8 .CityGuides {
-        margin-top: 3.875em; } }
+        margin-top: 7.625em; } }
 
 .Story.-lp .Chapter-9 {
   margin-top: 6.25em; }
   @media (min-width: 670px) {
     .Story.-lp .Chapter-9 {
-      margin-top: 11.75em; } }
+      margin-top: 10.5em; } }
   .Story.-lp .Chapter-9 .DiscoverFeature {
     margin-top: 3.75em; }
     @media (min-width: 670px) {
       .Story.-lp .Chapter-9 .DiscoverFeature {
-        margin-top: 4.4375em; } }
+        margin-top: 6.3125em; } }
 
 .Story.-lp .Chapter-10 {
   margin-top: 6.25em; }
   @media (min-width: 670px) {
     .Story.-lp .Chapter-10 {
-      margin-top: 18em; } }
+      margin-top: 9.875em; } }
   .Story.-lp .Chapter-10 .Video {
     margin-top: 5em; }
     @media (min-width: 670px) {
@@ -2330,8 +2337,8 @@ img {
     .Contact .Story {
       padding-top: 11.75em; } }
   .Contact .Story .copy {
-    margin-bottom: 0.78125em;
-    margin-top: 0.78125em; }
+    margin-bottom: 0.89286em;
+    margin-top: 0.89286em; }
 
 .About .Story {
   padding-bottom: 6em;
@@ -2350,8 +2357,8 @@ img {
     .About .Story .AboutBrad .heading {
       width: 48.8959%; } }
   .About .Story .AboutBrad .copy {
-    margin-bottom: 1.84375em;
-    margin-top: 1.84375em; }
+    margin-bottom: 2.10714em;
+    margin-top: 2.10714em; }
     @media (min-width: 980px) {
       .About .Story .AboutBrad .copy {
         width: 82.9653%; } }
@@ -2386,7 +2393,7 @@ img {
       .ServicesList .ServicesList-column {
         margin-bottom: 6.5625em; } }
   .ServicesList .copy {
-    margin-top: 0.90625em; }
+    margin-top: 1.03571em; }
 
 .Story.-airbnb .Intro + .Chapter-1 {
   margin-top: 6.25em; }
@@ -2535,8 +2542,12 @@ img {
   @media (max-width: 669px) {
     .IntroHeader {
       font-size: 12px; } }
+  .IntroHeader .heading.-huge {
+    margin-left: auto;
+    margin-right: auto;
+    width: 82.9653%; }
   .IntroHeader .heading.-tiny {
-    margin-bottom: 1em; }
+    margin-bottom: 25px; }
 
 @media (max-width: 669px) {
   .IntroCopy {
@@ -2544,6 +2555,7 @@ img {
 
 @media (min-width: 670px) {
   .IntroCopy .copy {
+    margin-top: 13px;
     padding-right: 8.24176%; } }
 
 .IntroCopy aside {
@@ -2879,10 +2891,10 @@ img {
 
 .Masthead-wrap p {
   color: #656565;
-  font-size: 2em;
+  font-size: 1.75em;
   font-weight: 300;
-  line-height: 1.5;
-  margin: 1.25em 0 0; }
+  line-height: 1.71429;
+  margin: 1.42857em 0 0; }
 
 .image-LonelyPlanet-1,
 .image-Airbnb-1 {
@@ -3122,7 +3134,7 @@ img {
       margin-top: .5em; } }
 
 .ContactForm {
-  font-family: "sans-Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "sans-Book", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 1.125em;
   letter-spacing: -.77px;
   margin-top: 3.16667em; }
@@ -3139,8 +3151,7 @@ img {
     left: 1.25em;
     pointer-events: none;
     position: absolute;
-    top: 0.875em;
-    transition: font-size 200ms ease-in-out, transform 200ms ease-in-out; }
+    top: 0.875em; }
   .ContactForm fieldset {
     border: 0;
     margin: 0;
@@ -3185,7 +3196,7 @@ img {
   .ContactForm button {
     background-color: #ff5459;
     border: 0;
-    box-shadow: 0 2.5em 3.75em rgba(0, 0, 0, 0.25);
+    box-shadow: 0 30px 115px rgba(0, 0, 0, 0.2);
     color: #fff;
     cursor: pointer;
     display: block;
@@ -3208,7 +3219,7 @@ img {
       .LonelyPlanet.StoryPage .ContactForm button:active {
         background-color: #2e8ad1; }
     .ContactForm button:active {
-      box-shadow: 0 2.1em 3.75em rgba(0, 0, 0, 0.28);
+      box-shadow: none;
       transform: translate(3px, 3px); }
   .ContactForm .field {
     position: relative; }
@@ -3249,7 +3260,11 @@ img {
     box-shadow: none; }
 
 .DiscoverFeature {
+  max-width: 850px;
   position: relative; }
+  @media (min-width: 1000px) {
+    .DiscoverFeature {
+      width: 60%; } }
 
 .DiscoverFeature-panels {
   position: absolute;
@@ -3293,7 +3308,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 3.75em 2.5625em 1.9375em;
+  padding: 60px 41px 50px;
   text-align: center; }
   @media (min-width: 800px) {
     .Metric {
@@ -3327,17 +3342,19 @@ img {
       width: 82.91925%; }
 
 .MetricDescription {
-  margin-top: 4em; }
+  margin-top: 40px; }
   .MetricDescription .heading span {
     color: #868686;
     display: block;
+    font-family: "sans-Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     font-size: 0.28571em;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     line-height: 1;
     margin-top: 0.66667em;
     text-transform: uppercase; }
   .MetricDescription .copy {
-    font-size: 1em;
+    color: #5a5a5a;
+    font-size: 14px;
     line-height: 1.75;
     margin-top: 2.25em; }
 
@@ -3391,7 +3408,7 @@ img {
       width: 40.37855%; }
 
 .AppPromotion {
-  margin: 28px auto 0;
+  margin: 68px auto 0;
   text-align: center;
   width: 176px; }
   @media (min-width: 670px) {
@@ -3449,7 +3466,7 @@ img {
   width: 100%; }
 
 .GraphViz-fill {
-  background-color: #297cbc;
+  background-color: #4990e2;
   border-radius: 0.85714em;
   height: 0.85714em; }
   .GraphRow:nth-child(1) .GraphViz-fill {
@@ -3508,7 +3525,7 @@ img {
   margin-top: 2.2082%; }
 
 .Video {
-  background-color: rgba(222, 222, 222, 0.29);
+  background-color: #f7f7f7;
   padding-bottom: 1.5em;
   padding-top: 1.5em; }
   .Video figure {
@@ -3536,9 +3553,10 @@ img {
   column-gap: 28px;
   position: relative;
   z-index: 2; }
+  .ImageGroup.-shadows img {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.17); }
   .ImageGroup img {
     backface-visibility: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.17);
     display: block; }
     .ImageGroup img:nth-child(even) {
       margin-top: 28px; }
@@ -3675,21 +3693,22 @@ img {
 
 .NavLink {
   background-color: #fff;
-  box-shadow: 0 0.39062em 0.78125em rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
   color: #323232;
   display: inline-block;
-  font-family: "sans-Book", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "sans-Medium", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 0.875em;
-  padding: 0.5625em 1.5em 0.6875em;
+  padding: 22px 48px 18px;
   position: relative;
   text-align: center;
-  transition: color 200ms ease-in-out, box-shadow 100ms ease-in-out, transform 100ms ease-in-out;
+  transition: color 200ms ease-in-out, background-color 200ms ease-in-out, box-shadow 100ms ease-in-out, transform 100ms ease-in-out;
+  width: 344px;
   z-index: 2; }
   @media (min-width: 670px) {
     .NavLink {
-      box-shadow: 0 1.5625em 2.34375em rgba(0, 0, 0, 0.2);
+      box-shadow: 0 44px 145px 10px rgba(0, 0, 0, 0.12);
       font-size: 1em;
-      padding: 1.09375em 4.0625em 1.4375em; } }
+      padding: 42px 0 40px; } }
   @media (min-width: 880px) {
     .NavLink {
       font-size: 1.5em; } }
@@ -3719,15 +3738,14 @@ img {
       .LonelyPlanet.StoryPage .NavLink:focus .icon {
         color: #2e8ad1; }
   .NavLink:active {
-    box-shadow: 0 0.53125em 1.5625em rgba(0, 0, 0, 0.28);
+    background-color: #f7f7f7;
+    box-shadow: none;
     transform: translate(3px, 3px); }
-    @media (min-width: 670px) {
-      .NavLink:active {
-        box-shadow: 0 2.1em 3.75em rgba(0, 0, 0, 0.28); } }
   .NavLink small {
     color: #ff5459;
-    font-family: "sans-Bold", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    font-size: 0.5em;
+    font-family: "sans-Medium", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
     display: block;
     text-transform: uppercase;
     transition: color 200ms ease-in-out; }
@@ -3736,6 +3754,8 @@ img {
         display: none; } }
     .LonelyPlanet.StoryPage .NavLink small {
       color: #297cbc; }
+  .NavLink span {
+    letter-spacing: -1px; }
   .NavLink .icon {
     bottom: 0;
     color: #ff5459;
@@ -3747,9 +3767,9 @@ img {
     .LonelyPlanet.StoryPage .NavLink .icon {
       color: #297cbc; }
   .NavLink .icon:first-child {
-    left: 1.0625em; }
+    left: 30px; }
   .NavLink .icon:last-child {
-    right: 1.0625em; }
+    right: 30px; }
 
 .Preloader {
   align-items: center;
@@ -3766,7 +3786,8 @@ img {
   right: 0;
   top: 0;
   transition: opacity 500ms ease-in-out 500ms;
-  width: 100%; }
+  width: 100%;
+  display: none !important; }
   .Preloader.is-loading {
     opacity: 0; }
   .Preloader .icon {

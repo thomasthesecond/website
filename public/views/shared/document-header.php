@@ -26,6 +26,9 @@
 
 		<link rel="stylesheet" href="assets/styles/main.css">
 
+		<script src="https://use.typekit.net/sdp5xcj.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
 		<?php if ($html_class === 'Home'): ?>
 			<script src="assets/scripts/eqcss.js"></script>
 

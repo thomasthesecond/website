@@ -240,7 +240,7 @@ function lonelyPlanet() {
   //   }
   // }, 0);
 
-  preloader();
+  // preloader();
 }
 
 function airbnb() {
@@ -251,7 +251,7 @@ function airbnb() {
     prevButton: '.Carousel-prev'
   });
 
-  preloader();
+  // preloader();
 }
 
 (function() {
