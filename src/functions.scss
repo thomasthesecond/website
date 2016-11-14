@@ -7,13 +7,9 @@
 }
 
 @function serif() {
-  @return 'freight-text-pro', 'Georgia', sans-serif; // TODO: Use FreightText
+  @return 'freight-text-pro', 'Georgia', sans-serif;
 }
 
 @function color($color) {
   @return map-get($colors, $color);
-}
-
-@function font($font) {
-  @return map-get($fonts, $font);
 }

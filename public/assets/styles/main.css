@@ -1789,7 +1789,7 @@ html {
 body {
   background-color: #fff;
   color: #868686;
-  font-family: serif();
+  font-family: "freight-text-pro", "Georgia", sans-serif;
   font-size: 16px;
   text-rendering: optimizeLegibility; }
 
@@ -1864,14 +1864,14 @@ img {
 .date {
   color: #afafaf;
   display: inline-block;
-  font-family: sans-serif("Light");
+  font-family: "sans-Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 12px;
   letter-spacing: .4px;
   text-transform: uppercase; }
 
 .title {
   color: #323232;
-  font-family: sans-serif("Book");
+  font-family: "sans-Book", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 42px;
   letter-spacing: -.4px;
   line-height: 1.04762;
@@ -1917,7 +1917,7 @@ img {
   transform: translateY(-100%); }
 
 .PageTitle {
-  font-family: sans-serif("Medium");
+  font-family: "sans-Medium", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 18px;
   left: 50%;
   letter-spacing: -.77px;
@@ -2071,7 +2071,7 @@ img {
 
 .copy {
   color: #868686;
-  font-family: serif();
+  font-family: "freight-text-pro", "Georgia", sans-serif;
   font-size: 20px;
   line-height: 1.71429;
   margin: 0; }
@@ -2091,7 +2091,7 @@ img {
 
 .heading {
   color: #323232;
-  font-family: sans-serif("Book");
+  font-family: "sans-Book", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   margin: 0; }
   .heading.-huge {
     font-size: 3.8em;
@@ -2709,7 +2709,7 @@ img {
     color: #323232; }
 
 .Menu {
-  font-family: sans-serif("Medium"); }
+  font-family: "sans-Medium", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
   .Menu .Menu-container {
     align-items: center;
     display: flex;
@@ -2856,7 +2856,7 @@ img {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: sans-serif("Medium");
+  font-family: "sans-Medium", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   line-height: 1;
@@ -2880,7 +2880,7 @@ img {
 
 .Masthead-wrap h1 {
   color: #323232;
-  font-family: sans-serif("Book");
+  font-family: "sans-Book", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 72px;
   letter-spacing: -.4px;
   line-height: 1;
@@ -3110,7 +3110,7 @@ img {
       width: 30px; }
   .Home .Footer h2 {
     color: #323232;
-    font-family: sans-serif("Book");
+    font-family: "sans-Book", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     font-size: 50px;
     letter-spacing: -.4px;
     line-height: 1.08;
@@ -3134,7 +3134,7 @@ img {
       margin-top: .5em; } }
 
 .ContactForm {
-  font-family: sans-serif("Book");
+  font-family: "sans-Book", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 1.125em;
   letter-spacing: -.77px;
   margin-top: 3.16667em; }
@@ -3346,7 +3346,7 @@ img {
   .MetricDescription .heading span {
     color: #868686;
     display: block;
-    font-family: sans-serif("Light");
+    font-family: "sans-Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     font-size: 0.28571em;
     letter-spacing: 2px;
     line-height: 1;
@@ -3428,7 +3428,7 @@ img {
 
 .Graph {
   color: #868686;
-  font-family: sans-serif("Book");
+  font-family: "sans-Book", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 0.875em;
   line-height: 1;
   text-transform: uppercase; }
@@ -3696,7 +3696,7 @@ img {
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
   color: #323232;
   display: inline-block;
-  font-family: sans-serif("Medium");
+  font-family: "sans-Medium", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 0.875em;
   padding: 22px 48px 18px;
   position: relative;
@@ -3743,7 +3743,7 @@ img {
     transform: translate(3px, 3px); }
   .NavLink small {
     color: #ff5459;
-    font-family: sans-serif("Medium");
+    font-family: "sans-Medium", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     font-size: 12px;
     letter-spacing: 1px;
     display: block;

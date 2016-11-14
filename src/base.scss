@@ -14,7 +14,7 @@ html {
 body {
   background-color: color('White');
   color: color('Gray');
-  font-family: font('Serif');
+  font-family: serif();
   font-size: #{$base-size}px;
   text-rendering: optimizeLegibility;
 }

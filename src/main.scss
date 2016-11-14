@@ -110,7 +110,7 @@
 .date {
   color: color('SilverChalice');
   display: inline-block;
-  font-family: font('SansSerifLight');
+  font-family: sans-serif('Light');
   font-size: 12px;
   letter-spacing: .4px;
   text-transform: uppercase;
@@ -118,7 +118,7 @@
 
 .title {
   color: color('MineShaft');
-  font-family: font('SansSerifBook');
+  font-family: sans-serif('Book');
   font-size: 42px;
   letter-spacing: -.4px;
   line-height: (44 / 42);
@@ -182,7 +182,7 @@
 }
 
 .PageTitle {
-  font-family: font('SansSerifMedium');
+  font-family: sans-serif('Medium');
   font-size: 18px;
   left: 50%;
   letter-spacing: -.77px;
@@ -403,7 +403,7 @@
   // base ----------------------------------------------------------------------
 
   color: color('Gray');
-  font-family: font('Serif');
+  font-family: serif();
   font-size: #{($copy-size - 8)}px;
   line-height: (48 / $copy-size);
   margin: 0;
@@ -438,7 +438,7 @@
   // base ----------------------------------------------------------------------
 
   color: color('MineShaft');
-  font-family: font('SansSerifBook');
+  font-family: sans-serif('Book');
   margin: 0;
 
   // sizes ---------------------------------------------------------------------
@@ -1357,7 +1357,7 @@
 }
 
 .Menu {
-  font-family: font('SansSerifMedium');
+  font-family: sans-serif('Medium');
 
   .Menu-container {
     align-items: center;
@@ -1649,7 +1649,7 @@
   color: color('White');
   cursor: pointer;
   display: inline-block;
-  font-family: font('SansSerifMedium');
+  font-family: sans-serif('Medium');
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   line-height: 1;
@@ -1678,7 +1678,7 @@
 .Masthead-wrap {
   h1 {
     color: color('MineShaft');
-    font-family: font('SansSerifBook');
+    font-family: sans-serif('Book');
     font-size: 72px;
     letter-spacing: -.4px;
     line-height: 1;
@@ -2017,7 +2017,7 @@
 
   h2 {
     color: color('MineShaft');
-    font-family: font('SansSerifBook');
+    font-family: sans-serif('Book');
     font-size: 50px;
     letter-spacing: -.4px;
     line-height: (54 / 50);
@@ -2050,7 +2050,7 @@
 }
 
 .ContactForm {
-  font-family: font('SansSerifBook');
+  font-family: sans-serif('Book');
   font-size: #{(18 / $base-size)}em;
   letter-spacing: -.77px;
   margin-top: #{(76 / 24)}em;
@@ -2365,7 +2365,7 @@
   .heading span {
     color: color('Gray');
     display: block;
-    font-family: font('SansSerifLight');
+    font-family: sans-serif('Light');
     // SansSerifLight: sans-serif('Light'),
     // SansSerifBook: sans-serif('Book'),
     // SansSerifMedium
@@ -2483,7 +2483,7 @@
 
 .Graph {
   color: color('Gray');
-  font-family: font('SansSerifBook');
+  font-family: sans-serif('Book');
   font-size: #{(14 / $base-size)}em;
   line-height: 1;
   text-transform: uppercase;
@@ -2829,7 +2829,7 @@
   box-shadow: 0 12px 25px rgba(color('Black'), .2);
   color: color('MineShaft');
   display: inline-block;
-  font-family: font('SansSerifMedium');
+  font-family: sans-serif('Medium');
   font-size: #{(14 / $base-size)}em;
   // padding: #{(18 / 32)}em #{(48 / 32)}em #{(22 / 32)}em;
   padding: 22px 48px 18px;
@@ -2891,7 +2891,7 @@
 
   small {
     color: color('Persimmon');
-    font-family: font('SansSerifMedium');
+    font-family: sans-serif('Medium');
     font-size: 12px;
     letter-spacing: 1px;
     display: block;
