@@ -1405,8 +1405,7 @@
 
     .Menu-container {
       opacity: 0;
-      transform: translateY(-100px) scale(1.2);
-      transition: opacity 200ms, transform 200ms, visibility 200ms;
+      transition: opacity 200ms, visibility 200ms;
       visibility: hidden;
     }
 
@@ -1432,10 +1431,8 @@
 
     .Menu-container {
       opacity: 1;
-      transform: translateY(0) scale(1);
-      transition: opacity 400ms cubic-bezier(.68, -.55, .265, 1.55) 100ms,
-        transform 400ms cubic-bezier(.68, -.55, .265, 1.55) 100ms,
-        visibility 400ms cubic-bezier(.68, -.55, .265, 1.55) 100ms;
+      transition: opacity 400ms ease-in-out 100ms,
+        visibility 400ms ease-in-out 100ms;
       visibility: visible;
     }
 
@@ -2737,6 +2734,10 @@
     display: block;
     width: 100%;
   }
+
+  .swiper-button-disabled {
+    display: none;
+  }
 }
 
 .Carousel-pagination {
@@ -2785,6 +2786,10 @@
     top: 0;
     bottom: 0;
     margin: auto;
+
+    @media (min-width: 670px) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -2830,8 +2835,7 @@
   color: color('MineShaft');
   display: inline-block;
   font-family: sans-serif('Medium');
-  font-size: #{(14 / $base-size)}em;
-  // padding: #{(18 / 32)}em #{(48 / 32)}em #{(22 / 32)}em;
+  font-size: 14px;
   padding: 22px 48px 18px;
   position: relative;
   text-align: center;
@@ -2843,18 +2847,17 @@
   z-index: 2;
 
   @media (min-width: 670px) {
-    // box-shadow: 0 24px 75px 10px rgba(color('Black'), .2);
     box-shadow: 0 44px 145px 10px rgba(0, 0, 0, 0.12);
-    font-size: #{(16 / $base-size)}em;
+    font-size: 16px;
     padding: 42px 0 40px;
   }
 
   @media (min-width: 880px) {
-    font-size: #{(24 / $base-size)}em;
+    font-size: 24px;
   }
 
   @media (min-width: 1200px) {
-    font-size: #{(32 / $base-size)}em;
+    font-size: 32px;
   }
 
   .FooterNav & {
@@ -2908,6 +2911,7 @@
   }
 
   span {
+    color: color('MineShaft');
     letter-spacing: -1px;
   }
 

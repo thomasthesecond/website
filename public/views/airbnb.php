@@ -74,21 +74,21 @@
 			<div class="Carousel">
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide"><img src="assets/images/airbnb/property-cards-1.png" alt=""></div>
-						<div class="swiper-slide"><img src="assets/images/airbnb/property-cards-2.png" alt=""></div>
-						<div class="swiper-slide"><img src="assets/images/airbnb/property-cards-3.png" alt=""></div>
+						<div class="swiper-slide"><img src="assets/images/airbnb/property-cards-1.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="assets/images/airbnb/property-cards-2.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="assets/images/airbnb/property-cards-3.jpg" alt=""></div>
 					</div>
 					<div class="Carousel-pagination"></div>
 				</div>
 				<button class="Carousel-prev">
-					<svg class="icon" viewBox="0 0 19 32">
-						<path d="M17.151 15.77l-0.46-0.46-15.194-15.309-0.806 0.806 14.734 14.849-15.424 15.54 0.806 0.806 15.424-15.54 0.115 0.115z" transform="rotate(180 9.5 16)" />
-					</svg>
+					<svg class="icon" viewbox="0 0 32 32">
+						<path d="M9.8 0l-4 4 12 12-12 12 4 4 16.4-16z" transform="rotate(-180 16 16)" />
+		      </svg>
 				</button>
 				<button class="Carousel-next">
-					<svg class="icon" viewBox="0 0 19 32">
-						<path d="M17.151 15.77l-0.46-0.46-15.194-15.309-0.806 0.806 14.734 14.849-15.424 15.54 0.806 0.806 15.424-15.54 0.115 0.115z" />
-					</svg>
+					<svg class="icon" viewbox="0 0 32 32">
+						<path d="M9.8 0l-4 4 12 12-12 12 4 4 16.4-16z" />
+		      </svg>
 				</button>
 			</div>
 		</div>
@@ -111,7 +111,7 @@
 
 <section class="Chapter Chapter-2 u-centered">
 	<div class="CopyGroup wrap">
-		<div class="CopyBlock container span-10">
+		<div class="CopyBlock container span-8">
 			<h2 class="heading -large -persimmon -tick">
 				Searching for properties
 			</h2>
@@ -131,7 +131,7 @@
 
 	<div class="Section -angled -angledTop -angledBottom -rtl u-bg-alabaster">
 		<div class="wrap">
-			<div class="CopyBlock container span-10">
+			<div class="CopyBlock container span-8">
 				<p class="copy">
 					While we were working through the various flows and screens, we were
 					also iterating on the different components and keeping an inventory of
@@ -144,7 +144,7 @@
 				<img src="assets/images/airbnb/searching-for-properties-2@2x.png" alt="">
 			</div>
 
-			<div class="CopyBlock container span-10">
+			<div class="CopyBlock container span-8">
 				<p class="copy">
 					These are just some of the components formalized as a part of the
 					initial Rebrand redesign. The team has since added even more
@@ -159,7 +159,7 @@
 <section class="Chapter Chapter-3 u-centered">
 	<div class="Section -angled -angledTop -angledBottom -rtl t-airbnb">
 		<div class="wrap">
-			<div class="container span-10">
+			<div class="container span-8">
 				<h2 class="heading -large -white -tick">
 					Cleaning up careers
 				</h2>
@@ -186,7 +186,7 @@
 	</div>
 
 	<div class="CopyBlock wrap">
-		<div class="container span-10">
+		<div class="container span-8">
 			<p class="copy">
 				In addition to the core design team, there was an art department filled
 				with incredibly talented designers that worked closely with us to
@@ -221,7 +221,7 @@
 	</div>
 
 	<div class="CopyBlock wrap">
-		<div class="container span-10">
+		<div class="container span-8">
 			<p class="copy">
 				Overall, the engagement was 5 months, and covered the entire breadth of
 				the product. I often felt we wouldn’t finish in time, but that it
@@ -235,7 +235,7 @@
 <section class="Chapter Chapter-5 u-centered">
 	<div class="Section -angled -angledTop -angledBottom -rtl t-airbnb">
 		<div class="wrap">
-			<div class="container span-10">
+			<div class="container span-8">
 				<h2 class="heading -large -white -tick">
 					Launch day
 				</h2>
@@ -269,7 +269,7 @@
 	</div>
 
 	<div class="CopyBlock wrap">
-		<div class="container span-10">
+		<div class="container span-8">
 			<p class="copy">
 				The Rebrand project was a joy to work on. The team was tight-knit and I
 				had as much pleasure building new relationships with them as I did
