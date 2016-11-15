@@ -78,18 +78,18 @@
 						<div class="swiper-slide"><img src="assets/images/airbnb/property-cards-2.jpg" alt=""></div>
 						<div class="swiper-slide"><img src="assets/images/airbnb/property-cards-3.jpg" alt=""></div>
 					</div>
-					<div class="Carousel-pagination"></div>
 				</div>
 				<button class="Carousel-prev">
 					<svg class="icon" viewbox="0 0 32 32">
 						<path d="M9.8 0l-4 4 12 12-12 12 4 4 16.4-16z" transform="rotate(-180 16 16)" />
-		      </svg>
+					</svg>
 				</button>
 				<button class="Carousel-next">
 					<svg class="icon" viewbox="0 0 32 32">
 						<path d="M9.8 0l-4 4 12 12-12 12 4 4 16.4-16z" />
-		      </svg>
+					</svg>
 				</button>
+				<div class="Carousel-pagination"></div>
 			</div>
 		</div>
 	</div>
@@ -124,7 +124,7 @@
 			</p>
 		</div>
 
-		<div class="SingleImage container panel -image">
+		<div class="SingleImage container panel -image -no-shadow">
 			<img src="assets/images/airbnb/searching-for-properties@2x.jpg" alt="">
 		</div>
 	</div>
@@ -225,7 +225,7 @@
 			<p class="copy">
 				Overall, the engagement was 5 months, and covered the entire breadth of
 				the product. I often felt we wouldn’t finish in time, but that it
-				happened and happended so smoothly is a testiment to the quality of the
+				happened and happened so smoothly is a testiment to the quality of the
 				team that delivered it.
 			</p>
 		</div>

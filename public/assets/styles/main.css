@@ -2399,128 +2399,128 @@ img {
     margin-top: 1.03571em; }
 
 .Story.-airbnb .Intro + .Chapter-1 {
-  margin-top: 6.25em; }
+  margin-top: 100px; }
   @media (min-width: 670px) {
     .Story.-airbnb .Intro + .Chapter-1 {
-      margin-top: 13.125em; } }
+      margin-top: 210px; } }
 
 .Story.-airbnb .Chapter-1 .Section {
   padding-bottom: 0;
-  padding-top: 5em; }
+  padding-top: 80px; }
   @media (min-width: 670px) {
     .Story.-airbnb .Chapter-1 .Section {
-      padding-bottom: 15.3125em;
-      padding-top: 6em; } }
+      padding-bottom: 245px;
+      padding-top: 96px; } }
 
 .Story.-airbnb .Chapter-1 .Section + .CarouselFeature {
-  margin-top: 2.8125em; }
+  margin-top: 45px; }
   @media (min-width: 670px) {
     .Story.-airbnb .Chapter-1 .Section + .CarouselFeature {
-      margin-top: -7em; } }
+      margin-top: -112px; } }
 
 .Story.-airbnb .Chapter-1 .Carousel {
-  margin-top: 1.875em; }
+  margin-top: 30px; }
   @media (min-width: 670px) {
     .Story.-airbnb .Chapter-1 .Carousel {
-      margin-top: 2.6875em; } }
+      margin-top: 43px; } }
 
 .Story.-airbnb .Chapter-1 .CarouselFeature + .CopyGroup {
-  margin-top: 5em; }
+  margin-top: 20px; }
   @media (min-width: 670px) {
     .Story.-airbnb .Chapter-1 .CarouselFeature + .CopyGroup {
-      margin-top: 7.625em; } }
+      margin-top: 0; } }
 
 .Story.-airbnb .Chapter-1 .CopyBlock + .SingleImage {
-  margin-top: 5em; }
+  margin-top: 30px; }
   @media (min-width: 670px) {
     .Story.-airbnb .Chapter-1 .CopyBlock + .SingleImage {
-      margin-top: 8.75em; } }
+      margin-top: 54px; } }
 
 .Story.-airbnb .Chapter-2 {
-  margin-top: 5em; }
+  margin-top: 60px; }
   @media (min-width: 670px) {
     .Story.-airbnb .Chapter-2 {
-      margin-top: 10.3125em; } }
+      margin-top: 60px; } }
   .Story.-airbnb .Chapter-2 .CopyGroup .CopyBlock + .SingleImage {
-    margin-top: 2.5em; }
+    margin-top: 40px; }
     @media (min-width: 670px) {
       .Story.-airbnb .Chapter-2 .CopyGroup .CopyBlock + .SingleImage {
-        margin-top: 5.5em; } }
+        margin-top: 60px; } }
   .Story.-airbnb .Chapter-2 .Section {
-    margin-top: -5em;
-    padding-top: 9.375em; }
+    margin-top: -80px;
+    padding-top: 150px; }
     @media (max-width: 669px) {
       .Story.-airbnb .Chapter-2 .Section {
-        padding-bottom: 6.25em; } }
+        padding-bottom: 100px; } }
     @media (min-width: 670px) {
       .Story.-airbnb .Chapter-2 .Section {
-        margin-top: -17.8125em;
-        padding-top: 26.5625em; } }
+        margin-top: -285px;
+        padding-top: 425px; } }
     .Story.-airbnb .Chapter-2 .Section .CopyBlock + .SingleImage {
-      margin-top: 3.75em; }
+      margin-top: 60px; }
       @media (min-width: 670px) {
         .Story.-airbnb .Chapter-2 .Section .CopyBlock + .SingleImage {
-          margin-top: 5.125em; } }
+          margin-top: 112px; } }
     .Story.-airbnb .Chapter-2 .Section .SingleImage + .CopyBlock {
-      margin-top: 4.375em; }
+      margin-top: 70px; }
       @media (min-width: 670px) {
         .Story.-airbnb .Chapter-2 .Section .SingleImage + .CopyBlock {
-          margin-top: 8.375em; } }
+          margin-top: 134px; } }
 
 .Story.-airbnb .Chapter-3 {
-  margin-top: 1em; }
+  margin-top: 16px; }
   .Story.-airbnb .Chapter-3 .Section + .ImageGroup {
-    margin-top: -8.125em; }
+    margin-top: -130px; }
     @media (min-width: 670px) {
       .Story.-airbnb .Chapter-3 .Section + .ImageGroup {
-        margin-top: -11.25em; } }
+        margin-top: -180px; } }
   .Story.-airbnb .Chapter-3 .ImageGroup + .SingleImage {
-    margin-top: 5em; }
+    margin-top: 80px; }
     @media (min-width: 670px) {
       .Story.-airbnb .Chapter-3 .ImageGroup + .SingleImage {
-        margin-top: 12.5em; } }
+        margin-top: 200px; } }
   .Story.-airbnb .Chapter-3 .SingleImage + .CopyBlock {
-    margin-top: 3.75em; }
+    margin-top: 60px; }
     @media (min-width: 670px) {
       .Story.-airbnb .Chapter-3 .SingleImage + .CopyBlock {
-        margin-top: 9.25em; } }
+        margin-top: 148px; } }
 
 .Story.-airbnb .Chapter-4 {
-  margin-top: 6.25em; }
+  margin-top: 100px; }
   @media (min-width: 670px) {
     .Story.-airbnb .Chapter-4 {
-      margin-top: 21.125em; } }
+      margin-top: 258px; } }
   .Story.-airbnb .Chapter-4 .Section + .ImageGroup {
-    margin-top: -7.5em; }
+    margin-top: -120px; }
     @media (min-width: 670px) {
       .Story.-airbnb .Chapter-4 .Section + .ImageGroup {
-        margin-top: -10.875em; } }
+        margin-top: -174px; } }
   .Story.-airbnb .Chapter-4 .ImageGroup + .CopyBlock {
-    margin-top: 5em; }
+    margin-top: 80px; }
     @media (min-width: 670px) {
       .Story.-airbnb .Chapter-4 .ImageGroup + .CopyBlock {
-        margin-top: 13.875em; } }
+        margin-top: 142px; } }
 
 .Story.-airbnb .Chapter-5 {
-  margin-top: 6.25em; }
+  margin-top: 100px; }
   @media (min-width: 670px) {
     .Story.-airbnb .Chapter-5 {
-      margin-top: 17.1875em; } }
+      margin-top: 245px; } }
   .Story.-airbnb .Chapter-5 .Section + .PhotoGallery {
-    margin-top: -7.5em; }
+    margin-top: -150px; }
     @media (min-width: 670px) {
       .Story.-airbnb .Chapter-5 .Section + .PhotoGallery {
-        margin-top: -5.5em; } }
+        margin-top: -198px; } }
   .Story.-airbnb .Chapter-5 .PhotoGallery + .FullImage {
-    margin-top: 2.5em; }
+    margin-top: 40px; }
     @media (min-width: 670px) {
       .Story.-airbnb .Chapter-5 .PhotoGallery + .FullImage {
-        margin-top: 2.875em; } }
+        margin-top: 46px; } }
   .Story.-airbnb .Chapter-5 .FullImage + .CopyBlock {
-    margin-top: 5em; }
+    margin-top: 80px; }
     @media (min-width: 670px) {
       .Story.-airbnb .Chapter-5 .FullImage + .CopyBlock {
-        margin-top: 8.5em; } }
+        margin-top: 136px; } }
 
 .CopyHeader {
   position: relative; }
@@ -3563,6 +3563,9 @@ img {
   position: relative;
   z-index: 2; }
   @media (max-width: 669px) {
+    .CarouselFeature .panel {
+      padding-top: 30px; } }
+  @media (max-width: 669px) {
     .CarouselFeature .copy {
       font-size: 18px; } }
 
@@ -3621,16 +3624,27 @@ img {
   .Carousel .swiper-button-disabled {
     display: none; }
 
-.Carousel-pagination .swiper-pagination-bullet {
-  background-color: #fff;
-  border: 1px solid #979797;
-  height: 10px;
-  opacity: 1;
-  width: 10px; }
-
-.Carousel-pagination .swiper-pagination-bullet-active {
-  background-color: #ff5459;
-  border-color: #ff2127; }
+.Carousel-pagination {
+  margin-top: 20px; }
+  @media (min-width: 670px) {
+    .Carousel-pagination {
+      margin-top: 50px; } }
+  .Carousel-pagination .swiper-pagination-bullet {
+    background-color: #fff;
+    border: 1px solid #979797;
+    height: 6px;
+    opacity: 1;
+    margin: 0 3px;
+    width: 6px; }
+    @media (min-width: 670px) {
+      .Carousel-pagination .swiper-pagination-bullet {
+        height: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 10px; } }
+  .Carousel-pagination .swiper-pagination-bullet-active {
+    background-color: #ff5459;
+    border-color: #ff2127; }
 
 .Carousel-next,
 .Carousel-prev {
@@ -3642,7 +3656,7 @@ img {
   color: #979797;
   cursor: pointer;
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   height: 2.51852em;
   padding: 0;
   position: absolute;
@@ -3653,9 +3667,14 @@ img {
   @media (min-width: 670px) {
     .Carousel-next,
     .Carousel-prev {
+      font-size: 17px; } }
+  @media (min-width: 1024px) {
+    .Carousel-next,
+    .Carousel-prev {
       font-size: 27px; } }
   .Carousel-next .icon,
   .Carousel-prev .icon {
+    font-size: 10px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -3666,13 +3685,25 @@ img {
         font-size: 14px; } }
 
 .Carousel-next {
-  right: -34px; }
+  right: -15px; }
+  @media (min-width: 670px) {
+    .Carousel-next {
+      right: -21px; } }
+  @media (min-width: 1024px) {
+    .Carousel-next {
+      right: -34px; } }
   .Carousel-next .icon {
     left: 0;
     right: -3px; }
 
 .Carousel-prev {
-  left: -34px; }
+  left: -15px; }
+  @media (min-width: 670px) {
+    .Carousel-prev {
+      left: -21px; } }
+  @media (min-width: 1024px) {
+    .Carousel-prev {
+      left: -34px; } }
   .Carousel-prev .icon {
     left: -3px;
     right: 0; }

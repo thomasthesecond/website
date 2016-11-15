@@ -965,54 +965,53 @@
   // Airbnb Chapter 1 ------------------------------------------------------------
 
   .Intro + .Chapter-1 {
-    margin-top: #{(100 / $base-size)}em;
+    margin-top: 100px;
 
     @media (min-width: 670px) {
-      margin-top: #{(210 / $base-size)}em;
+      margin-top: 210px;
     }
   }
 
   .Chapter-1 {
     .Section {
-      // padding-bottom: #{(160 / $base-size)}em;
       padding-bottom: 0;
-      padding-top: #{(80 / $base-size)}em;
+      padding-top: 80px;
 
       @media (min-width: 670px) {
-        padding-bottom: #{(245 / $base-size)}em;
-        padding-top: #{(96 / $base-size)}em;
+        padding-bottom: 245px;
+        padding-top: 96px;
       }
     }
 
     .Section + .CarouselFeature {
-      margin-top: #{(45 / $base-size)}em;
+      margin-top: 45px;
 
       @media (min-width: 670px) {
-        margin-top: #{(-112 / $base-size)}em;
+        margin-top: -112px;
       }
     }
 
     .Carousel {
-      margin-top: #{(30 / $base-size)}em;
+      margin-top: 30px;
 
       @media (min-width: 670px) {
-        margin-top: #{(43 / $base-size)}em;
+        margin-top: 43px;
       }
     }
 
     .CarouselFeature + .CopyGroup {
-      margin-top: #{(80 / $base-size)}em;
+      margin-top: 20px;
 
       @media (min-width: 670px) {
-        margin-top: #{(122 / $base-size)}em;
+        margin-top: 0;
       }
     }
 
     .CopyBlock + .SingleImage {
-      margin-top: #{(80 / $base-size)}em;
+      margin-top: 30px;
 
       @media (min-width: 670px) {
-        margin-top: #{(140 / $base-size)}em;
+        margin-top: 54px;
       }
     }
   }
@@ -1020,48 +1019,48 @@
   // Airbnb Chapter 2 ------------------------------------------------------------
 
   .Chapter-2 {
-    margin-top: #{(80 / $base-size)}em;
+    margin-top: 60px;
 
     @media (min-width: 670px) {
-      margin-top: #{(165 / $base-size)}em;
+      margin-top: 60px;
     }
 
     .CopyGroup {
       .CopyBlock + .SingleImage {
-        margin-top: #{(40 / $base-size)}em;
+        margin-top: 40px;
 
         @media (min-width: 670px) {
-          margin-top: #{(88 / $base-size)}em;
+          margin-top: 60px;
         }
       }
     }
 
     .Section {
-      margin-top: #{(-80 / $base-size)}em;
-      padding-top: #{(150 / $base-size)}em;
+      margin-top: -80px;
+      padding-top: 150px;
 
       @media (max-width: 669px) {
-        padding-bottom: #{(100 / $base-size)}em;
+        padding-bottom: 100px;
       }
 
       @media (min-width: 670px) {
-        margin-top: #{(-285 / $base-size)}em;
-        padding-top: #{(425 / $base-size)}em;
+        margin-top: -285px;
+        padding-top: 425px;
       }
 
       .CopyBlock + .SingleImage {
-        margin-top: #{(60 / $base-size)}em;
+        margin-top: 60px;
 
         @media (min-width: 670px) {
-          margin-top: #{(82 / $base-size)}em;
+          margin-top: 112px;
         }
       }
 
       .SingleImage + .CopyBlock {
-        margin-top: #{(70 / $base-size)}em;
+        margin-top: 70px;
 
         @media (min-width: 670px) {
-          margin-top: #{(134 / $base-size)}em;
+          margin-top: 134px;
         }
       }
     }
@@ -1070,29 +1069,29 @@
   // Airbnb Chapter 3 ------------------------------------------------------------
 
   .Chapter-3 {
-    margin-top: #{(16 / $base-size)}em;
+    margin-top: 16px;
 
     .Section + .ImageGroup {
-      margin-top: #{(-130 / $base-size)}em;
+      margin-top: -130px;
 
       @media (min-width: 670px) {
-        margin-top: #{(-180 / $base-size)}em;
+        margin-top: -180px;
       }
     }
 
     .ImageGroup + .SingleImage {
-      margin-top: #{(80 / $base-size)}em;
+      margin-top: 80px;
 
       @media (min-width: 670px) {
-        margin-top: #{(200 / $base-size)}em;
+        margin-top: 200px;
       }
     }
 
     .SingleImage + .CopyBlock {
-      margin-top: #{(60 / $base-size)}em;
+      margin-top: 60px;
 
       @media (min-width: 670px) {
-        margin-top: #{(148 / $base-size)}em;
+        margin-top: 148px;
       }
     }
   }
@@ -1100,25 +1099,25 @@
   // Airbnb Chapter 4 ------------------------------------------------------------
 
   .Chapter-4 {
-    margin-top: #{(100 / $base-size)}em;
+    margin-top: 100px;
 
     @media (min-width: 670px) {
-      margin-top: #{(338 / $base-size)}em;
+      margin-top: 258px;
     }
 
     .Section + .ImageGroup {
-      margin-top: #{(-120 / $base-size)}em;
+      margin-top: -120px;
 
       @media (min-width: 670px) {
-        margin-top: #{(-174 / $base-size)}em;
+        margin-top: -174px;
       }
     }
 
     .ImageGroup + .CopyBlock {
-      margin-top: #{(80 / $base-size)}em;
+      margin-top: 80px;
 
       @media (min-width: 670px) {
-        margin-top: #{(222 / $base-size)}em;
+        margin-top: 142px;
       }
     }
   }
@@ -1126,33 +1125,33 @@
   // Airbnb Chapter 5 ------------------------------------------------------------
 
   .Chapter-5 {
-    margin-top: #{(100 / $base-size)}em;
+    margin-top: 100px;
 
     @media (min-width: 670px) {
-      margin-top: #{(275 / $base-size)}em;
+      margin-top: 245px;
     }
 
     .Section + .PhotoGallery {
-      margin-top: #{(-120 / $base-size)}em;
+      margin-top: -150px;
 
       @media (min-width: 670px) {
-        margin-top: #{(-88 / $base-size)}em;
+        margin-top: -198px;
       }
     }
 
     .PhotoGallery + .FullImage {
-      margin-top: #{(40 / $base-size)}em;
+      margin-top: 40px;
 
       @media (min-width: 670px) {
-        margin-top: #{(46 / $base-size)}em;
+        margin-top: 46px;
       }
     }
 
     .FullImage + .CopyBlock {
-      margin-top: #{(80 / $base-size)}em;
+      margin-top: 80px;
 
       @media (min-width: 670px) {
-        margin-top: #{(136 / $base-size)}em;
+        margin-top: 136px;
       }
     }
   }
@@ -2650,6 +2649,12 @@
   position: relative;
   z-index: 2;
 
+  .panel {
+    @media (max-width: 669px) {
+      padding-top: 30px;
+    }
+  }
+
   .copy {
     @media (max-width: 669px) {
       font-size: 18px;
@@ -2741,12 +2746,26 @@
 }
 
 .Carousel-pagination {
+  margin-top: 20px;
+
+  @media (min-width: 670px) {
+    margin-top: 50px;
+  }
+
   .swiper-pagination-bullet {
     background-color: color('White');
     border: 1px solid color('DustyGray');
-    height: 10px;
+    height: 6px;
     opacity: 1;
-    width: 10px;
+    margin: 0 3px;
+    width: 6px;
+
+    @media (min-width: 670px) {
+      height: 10px;
+      margin-left: 5px;
+      margin-right: 5px;
+      width: 10px;
+    }
   }
 
   .swiper-pagination-bullet-active {
@@ -2765,7 +2784,7 @@
   color: color('DustyGray');
   cursor: pointer;
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   height: #{(68 / 27)}em;
   // margin-bottom: auto;
   // margin-top: auto;
@@ -2778,10 +2797,15 @@
   width: #{(68 / 27)}em;
 
   @media (min-width: 670px) {
+    font-size: 17px;
+  }
+
+  @media (min-width: 1024px) {
     font-size: 27px;
   }
 
   .icon {
+    font-size: 10px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -2794,7 +2818,15 @@
 }
 
 .Carousel-next {
-  right: -34px;
+  right: -15px;
+
+  @media (min-width: 670px) {
+    right: -21px;
+  }
+
+  @media (min-width: 1024px) {
+    right: -34px;
+  }
 
   .icon {
     left: 0;
@@ -2803,7 +2835,15 @@
 }
 
 .Carousel-prev {
-  left: -34px;
+  left: -15px;
+
+  @media (min-width: 670px) {
+    left: -21px;
+  }
+
+  @media (min-width: 1024px) {
+    left: -34px;
+  }
 
   .icon {
     left: -3px;
