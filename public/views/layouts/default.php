@@ -12,8 +12,7 @@
 	));
 ?>
 
-<!-- <div class="Page<?php if ($preloader_image) echo ' is-loading'; ?>"> -->
-<div class="Page">
+<div class="Page<?php if ($preloader_image) echo ' is-loading'; ?>">
 	<?php
 		$this->render('shared/header', array(
 			'header_image' => $header_image,

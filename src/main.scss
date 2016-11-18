@@ -8,11 +8,11 @@
 @import './mixins';
 @import './base';
 
-.Home {
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-}
+// .Home {
+//   height: 100%;
+//   overflow: hidden;
+//   position: relative;
+// }
 
 .image {
   border: 1px solid color('DustyGray');
@@ -1173,10 +1173,10 @@
 }
 
 .Story .Intro {
-  margin-top: #{(80 / $base-size)}em;
+  padding-top: 80px;
 
   @media (min-width: 670px) {
-    margin-top: #{(195 / $base-size)}em;
+    padding-top: 195px;
   }
 }
 
@@ -1270,10 +1270,27 @@
 // Components
 
 .Story {
+  background-color: color('White');
+  backface-visibility: hidden;
   padding-bottom: #{(100 / $base-size)}em;
+  transition: transform 500ms ease-in-out;
+  transform: translateY(0);
 
   @media (min-width: 670px) {
     padding-bottom: #{(343 / $base-size)}em;
+  }
+
+  .Page.is-loading & {
+    transform: translateY(100vh);
+  }
+}
+
+.Nav {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+
+  .Page.is-loading & {
+    opacity: 0;
   }
 }
 
@@ -1950,6 +1967,10 @@
   // @media (max-width: 669px) {
   //   position: relative;
   // }
+}
+
+.FooterWrap {
+  background-color: color('White');
 }
 
 .Footer {
@@ -2663,7 +2684,7 @@
 }
 
 .HeaderImage {
-  background-color: color('MineShaft');
+  // background-color: color('MineShaft');
   // background-position: center center;
   // background-repeat: no-repeat;
   // background-size: cover;
@@ -2673,6 +2694,7 @@
 
   > img {
     display: block;
+    opacity: 0;
     width: 100%;
   }
 }
@@ -2988,33 +3010,40 @@
   height: 100vh;
   justify-content: center;
   left: 0;
-  opacity: 1;
+  // opacity: 1;
   position: fixed;
   right: 0;
   top: 0;
-  transition: opacity 500ms ease-in-out 500ms;
+  // transition: opacity 500ms ease-in-out 500ms;
   width: 100%;
+  z-index: 1;
 
-  display: none !important;
-
-  &.is-loading {
-    opacity: 0;
-  }
+  // &.is-loading {
+  //   opacity: 0;
+  // }
 
   .icon {
     font-size: 204px;
+    opacity: 1;
     position: relative;
+    transition: opacity 500ms ease-in-out 500ms;
     z-index: 2;
+  }
+
+  &.is-loading .icon {
+    opacity: 0;
   }
 }
 
 .Page {
-  opacity: 1;
-  transition: opacity 500ms ease-in-out;
+  // opacity: 1;
+  position: relative;
+  // transition: opacity 500ms ease-in-out;
+  z-index: 2;
 
-  &.is-loading {
-    opacity: 0;
-  }
+  // &.is-loading {
+  //   opacity: 0;
+  // }
 }
 
 .SingleImage {

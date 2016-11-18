@@ -1806,11 +1806,6 @@ img {
   display: block;
   max-width: 100%; }
 
-.Home {
-  height: 100%;
-  overflow: hidden;
-  position: relative; }
-
 .image {
   border: 1px solid #979797;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.5) inset; }
@@ -2534,10 +2529,10 @@ img {
         top: 5.625em; } }
 
 .Story .Intro {
-  margin-top: 5em; }
+  padding-top: 80px; }
   @media (min-width: 670px) {
     .Story .Intro {
-      margin-top: 12.1875em; } }
+      padding-top: 195px; } }
 
 .IntroHeader {
   text-align: center;
@@ -2659,10 +2654,22 @@ img {
     width: 100%; } }
 
 .Story {
-  padding-bottom: 6.25em; }
+  background-color: #fff;
+  backface-visibility: hidden;
+  padding-bottom: 6.25em;
+  transition: transform 500ms ease-in-out;
+  transform: translateY(0); }
   @media (min-width: 670px) {
     .Story {
       padding-bottom: 21.4375em; } }
+  .Page.is-loading .Story {
+    transform: translateY(100vh); }
+
+.Nav {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out; }
+  .Page.is-loading .Nav {
+    opacity: 0; }
 
 .Nav > .Header {
   overflow: hidden;
@@ -3068,6 +3075,9 @@ img {
     @media (min-width: 670px) {
       .animated .CaseStudy-description {
         transform: translateX(0); } }
+
+.FooterWrap {
+  background-color: #fff; }
 
 .Footer {
   padding-bottom: 6.25em; }
@@ -3570,10 +3580,10 @@ img {
       font-size: 18px; } }
 
 .HeaderImage {
-  background-color: #323232;
   max-height: 377px; }
   .HeaderImage > img {
     display: block;
+    opacity: 0;
     width: 100%; }
 
 .Section {
@@ -3817,25 +3827,23 @@ img {
   height: 100vh;
   justify-content: center;
   left: 0;
-  opacity: 1;
   position: fixed;
   right: 0;
   top: 0;
-  transition: opacity 500ms ease-in-out 500ms;
   width: 100%;
-  display: none !important; }
-  .Preloader.is-loading {
-    opacity: 0; }
+  z-index: 1; }
   .Preloader .icon {
     font-size: 204px;
+    opacity: 1;
     position: relative;
+    transition: opacity 500ms ease-in-out 500ms;
     z-index: 2; }
+  .Preloader.is-loading .icon {
+    opacity: 0; }
 
 .Page {
-  opacity: 1;
-  transition: opacity 500ms ease-in-out; }
-  .Page.is-loading {
-    opacity: 0; }
+  position: relative;
+  z-index: 2; }
 
 @media (min-width: 1400px) {
   .SingleImage.-wide img {

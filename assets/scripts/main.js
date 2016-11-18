@@ -32,6 +32,7 @@ function toggleClass(el, className) {
 }
 
 function homePage() {
+  console.log("Home page");
   var nav = document.querySelector(".js-nav");
 
   var swiper = new Swiper(".HomeSwiper", {
@@ -201,6 +202,7 @@ function isScrolledIntoView(el) {
 
 function preloader() {
   var preloader = document.querySelector(".Preloader");
+  var preloaderIcon = preloader.querySelector(".icon");
   var page = document.querySelector(".Page");
 
   if (hasClass(page, "is-loading") && hasClass(preloader, "is-loading")) {
@@ -210,13 +212,12 @@ function preloader() {
 
     setTimeout(function() {
       addClass(preloader, "is-loading");
-      // addClass(preloader, "slide-up");
     }, 3000);
 
     setTimeout(function() {
       noScroll.off();
       removeClass(page, "is-loading");
-      preloader.style.display = "none";
+      preloaderIcon.style.display = "none";
     }, 4500);
   }
 }
@@ -257,7 +258,7 @@ function airbnb() {
 (function() {
   "use strict";
 
-  if (hasClass(document.documentElement, "Home")) homePage();
+  // if (hasClass(document.documentElement, "Home")) homePage();
   if (hasClass(document.body, "Contact")) contactPage();
   if (hasClass(document.body, "LonelyPlanet")) lonelyPlanet();
   if (hasClass(document.body, "Airbnb")) airbnb();
