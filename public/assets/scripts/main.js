@@ -218,6 +218,7 @@ function preloader() {
     setTimeout(function() {
       noScroll.off();
       removeClass(page, "is-loading");
+      addClass(preloader, "slide-up");
       preloaderIcon.style.display = "none";
     }, 4500);
   }

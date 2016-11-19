@@ -32,7 +32,6 @@ function toggleClass(el, className) {
 }
 
 function homePage() {
-  console.log("Home page");
   var nav = document.querySelector(".js-nav");
 
   var swiper = new Swiper(".HomeSwiper", {
@@ -219,6 +218,7 @@ function preloader() {
     setTimeout(function() {
       noScroll.off();
       removeClass(page, "is-loading");
+      addClass(preloader, "slide-up");
       preloaderIcon.style.display = "none";
     }, 4500);
   }

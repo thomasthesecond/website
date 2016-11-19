@@ -2,8 +2,12 @@
   @return 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
+// @function sans-serif($weight: 'Book') {
+//   @return 'sans-#{$weight}', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+// }
+
 @function sans-serif($weight: 'Book') {
-  @return 'sans-#{$weight}', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  @return 'open-sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
 @function serif() {

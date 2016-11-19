@@ -16,7 +16,7 @@
 <section class="Intro wrap">
 	<div class="container span-10">
 		<header class="IntroHeader">
-			<div class="heading -tiny -light">
+			<div class="heading -tiny">
 				<?php echo $page_title; ?>
 			</div>
 
