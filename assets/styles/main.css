@@ -1812,15 +1812,17 @@ img {
 
 .Masthead {
   transition: background-image 200ms ease-in-out, color 200ms ease-in-out, text-shadow 200ms ease-in-out; }
-  .Masthead a:hover,
-  .Masthead a:active,
-  .Masthead a:focus {
-    background-image: linear-gradient(to top, transparent, transparent 2px, rgba(41, 124, 188, 0.8) 3px, rgba(41, 124, 188, 0.8) 4px, transparent 4px);
-    color: rgba(41, 124, 188, 0.8);
-    position: relative;
-    text-decoration: none;
-    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-    transition: color 200ms ease; }
+  .Masthead a {
+    color: #3aa7e8; }
+    .Masthead a:hover,
+    .Masthead a:active,
+    .Masthead a:focus {
+      background-image: linear-gradient(to top, transparent, transparent 2px, rgba(41, 124, 188, 0.8) 3px, rgba(41, 124, 188, 0.8) 4px, transparent 4px);
+      color: rgba(41, 124, 188, 0.8);
+      position: relative;
+      text-decoration: none;
+      text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+      transition: color 200ms ease; }
 
 .wrap {
   margin-left: auto;
@@ -2417,7 +2419,7 @@ img {
   margin-top: 30px; }
   @media (min-width: 670px) {
     .Story.-airbnb .Chapter-1 .Carousel {
-      margin-top: 43px; } }
+      margin-top: 83px; } }
 
 .Story.-airbnb .Chapter-1 .CarouselFeature + .CopyGroup {
   margin-top: 20px; }
@@ -2440,7 +2442,7 @@ img {
     margin-top: 40px; }
     @media (min-width: 670px) {
       .Story.-airbnb .Chapter-2 .CopyGroup .CopyBlock + .SingleImage {
-        margin-top: 60px; } }
+        margin-top: 100px; } }
   .Story.-airbnb .Chapter-2 .Section {
     margin-top: -80px;
     padding-top: 150px; }
@@ -2465,10 +2467,10 @@ img {
 .Story.-airbnb .Chapter-3 {
   margin-top: 16px; }
   .Story.-airbnb .Chapter-3 .Section + .ImageGroup {
-    margin-top: -130px; }
+    margin-top: -80px; }
     @media (min-width: 670px) {
       .Story.-airbnb .Chapter-3 .Section + .ImageGroup {
-        margin-top: -180px; } }
+        margin-top: -130px; } }
   .Story.-airbnb .Chapter-3 .ImageGroup + .SingleImage {
     margin-top: 80px; }
     @media (min-width: 670px) {
@@ -2489,7 +2491,7 @@ img {
     margin-top: -120px; }
     @media (min-width: 670px) {
       .Story.-airbnb .Chapter-4 .Section + .ImageGroup {
-        margin-top: -174px; } }
+        margin-top: -134px; } }
   .Story.-airbnb .Chapter-4 .ImageGroup + .CopyBlock {
     margin-top: 80px; }
     @media (min-width: 670px) {
@@ -2502,10 +2504,10 @@ img {
     .Story.-airbnb .Chapter-5 {
       margin-top: 245px; } }
   .Story.-airbnb .Chapter-5 .Section + .PhotoGallery {
-    margin-top: -150px; }
+    margin-top: -100px; }
     @media (min-width: 670px) {
       .Story.-airbnb .Chapter-5 .Section + .PhotoGallery {
-        margin-top: -198px; } }
+        margin-top: -148px; } }
   .Story.-airbnb .Chapter-5 .PhotoGallery + .FullImage {
     margin-top: 40px; }
     @media (min-width: 670px) {
@@ -2881,6 +2883,7 @@ img {
 .Masthead {
   align-items: center;
   display: flex;
+  height: 100vh;
   justify-content: center; }
 
 .Masthead-wrap h1 {
@@ -2911,6 +2914,7 @@ img {
   right: 57.41325vh;
   transition: opacity 400ms ease-in-out 400ms, transform 400ms ease-in-out 400ms;
   z-index: 2;
+  max-width: 410px;
   height: auto; }
   @media (max-width: 669px) {
     .image-LonelyPlanet-1,
@@ -2924,12 +2928,8 @@ img {
     .image-Airbnb-1 {
       right: 25.55205%;
       top: 50%;
+      transform: translateY(-50%);
       width: 23.34385%; } }
-  @media (min-width: 1400px) {
-    .image-LonelyPlanet-1,
-    .image-Airbnb-1 {
-      width: 31.8612%;
-      right: 34.0694%; } }
   .not-animated .image-LonelyPlanet-1,
   .not-animated .image-Airbnb-1 {
     opacity: 0;
@@ -2957,6 +2957,7 @@ img {
   right: 0;
   transition: opacity 400ms ease-in-out 800ms, transform 400ms ease-in-out 800ms;
   z-index: 1;
+  max-width: 886px;
   height: auto; }
   @media (max-width: 669px) {
     .image-LonelyPlanet-2,
@@ -2968,12 +2969,8 @@ img {
     .image-Airbnb-2 {
       right: -256px;
       top: 50%;
+      transform: translateY(-50%);
       width: calc(40.37855% + 256px); } }
-  @media (min-width: 1400px) {
-    .image-LonelyPlanet-2,
-    .image-Airbnb-2 {
-      width: calc(48.8959% + 256px);
-      right: -256px; } }
   .not-animated .image-LonelyPlanet-2,
   .not-animated .image-Airbnb-2 {
     opacity: 0;
@@ -2994,15 +2991,19 @@ img {
 .image-Salesforce {
   display: block;
   max-height: 1116px;
-  position: absolute;
+  position: relative;
+  right: -20px;
   transition: opacity 400ms ease-in-out 400ms, transform 400ms ease-in-out 400ms;
   height: auto;
-  max-width: 1092px;
-  width: calc(65.9306% + 256px); }
+  max-width: 836px;
+  width: 100%; }
   @media (min-width: 670px) {
     .image-Salesforce {
       right: -256px;
-      top: 50%; } }
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 65.9306%; } }
   .not-animated .image-Salesforce {
     opacity: 0;
     transform: translateX(40px); }
@@ -3017,8 +3018,18 @@ img {
       .animated .image-Salesforce {
         transform: translateX(0) translateY(-50%); } }
 
+@media (min-width: 670px) {
+  .CaseStudy.-lp + .CaseStudy.-airbnb {
+    margin-top: 49.87113vh; } }
+
+@media (min-width: 670px) {
+  .CaseStudy.-airbnb + .CaseStudy.-salesforce {
+    margin-top: 44.20103vh; } }
+
 .CaseStudy {
   padding-top: 70px; }
+  .CaseStudy.first {
+    background-color: gray; }
   @media (min-width: 446px) {
     .CaseStudy {
       padding-top: 78px; } }
@@ -3028,7 +3039,8 @@ img {
   @media (min-width: 670px) {
     .CaseStudy {
       align-items: center;
-      display: flex; } }
+      display: flex;
+      height: 100vh; } }
 
 @media (max-width: 445px) {
   .CaseStudy-wrap {
@@ -3047,6 +3059,12 @@ img {
     text-align: center;
     width: auto; } }
 
+@media (min-width: 670px) {
+  .CaseStudy-wrap {
+    align-items: center;
+    display: flex;
+    height: 100%; } }
+
 .CaseStudy-description {
   transition: opacity 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 200ms, transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 200ms; }
   @media (max-width: 669px) {
@@ -3056,9 +3074,6 @@ img {
     .CaseStudy-description {
       padding-right: 8.51735%;
       width: 34.0694%; } }
-  @media (min-width: 1400px) {
-    .CaseStudy-description {
-      width: 25.55205%; } }
   .not-animated .CaseStudy-description {
     opacity: 0; }
     @media (max-width: 669px) {
@@ -3091,6 +3106,8 @@ img {
     height: 4px;
     margin: 0 auto 5.4375em;
     width: 30px; }
+    .Home .Footer.-tick::before {
+      background-color: #3aa7e8; }
     .LonelyPlanet.StoryPage .Footer.-tick::before {
       background-color: #297cbc; }
     @media (min-width: 670px) {
@@ -3106,16 +3123,6 @@ img {
   .Home .Footer header {
     position: relative;
     text-align: center; }
-    .Home .Footer header::before {
-      background-color: #3aa7e8;
-      content: '';
-      display: block;
-      height: 4px;
-      left: 50%;
-      margin-left: -15px;
-      position: absolute;
-      top: -94px;
-      width: 30px; }
   .Home .Footer h2 {
     color: #323232;
     font-family: "sans-Book", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -3179,10 +3186,17 @@ img {
     padding: 0.875em 1.25em;
     transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out;
     width: 100%; }
+    .Home .ContactForm input,
+    .Home .ContactForm textarea {
+      background-color: #fff; }
     .ContactForm input:focus,
     .ContactForm textarea:focus {
       background-color: #f5f4f6;
       border-color: #e9e7ec; }
+      .Home .ContactForm input:focus,
+      .Home .ContactForm textarea:focus {
+        background-color: #fff;
+        border-color: #fff; }
     .ContactForm input:focus,
     .ContactForm input.is-filled,
     .ContactForm textarea:focus,
@@ -3216,12 +3230,18 @@ img {
     text-align: center;
     transition: background-color 100ms ease-in-out, box-shadow 100ms ease-in-out, transform 100ms ease-in-out;
     width: 100%; }
+    .Home .ContactForm button {
+      background-color: #3aa7e8; }
     .LonelyPlanet.StoryPage .ContactForm button {
       background-color: #297cbc; }
     .ContactForm button:hover,
     .ContactForm button:focus,
     .ContactForm button:active {
       background-color: #ff6e72; }
+      .Home .ContactForm button:hover,
+      .Home .ContactForm button:focus,
+      .Home .ContactForm button:active {
+        background-color: #51b1eb; }
       .LonelyPlanet.StoryPage .ContactForm button:hover,
       .LonelyPlanet.StoryPage .ContactForm button:focus,
       .LonelyPlanet.StoryPage .ContactForm button:active {
@@ -3256,7 +3276,7 @@ img {
   .panel.-column {
     box-shadow: 0 2.1875em 4.375em rgba(0, 0, 0, 0.13); }
   .panel.-image {
-    border: 1px solid rgba(151, 151, 151, 0.51);
+    border: 1px solid rgba(151, 151, 151, 0.1);
     box-shadow: 0 38px 45px rgba(0, 0, 0, 0.2); }
     @media (min-width: 670px) {
       .panel.-image {
@@ -3405,7 +3425,7 @@ img {
     .PhotoGallery img:nth-child(2),
     .PhotoGallery img:nth-child(6),
     .PhotoGallery img:nth-child(8) {
-      width: 57.41325%; }
+      width: calc(57.41325% - 13px); }
     .PhotoGallery img:nth-child(2),
     .PhotoGallery img:nth-child(5),
     .PhotoGallery img:nth-child(8) {
@@ -3413,7 +3433,7 @@ img {
     .PhotoGallery img:nth-child(3),
     .PhotoGallery img:nth-child(5),
     .PhotoGallery img:nth-child(9) {
-      width: 40.37855%; }
+      width: calc(40.37855% + 13px); }
 
 .AppPromotion {
   margin: 68px auto 0;
@@ -3578,6 +3598,10 @@ img {
   @media (max-width: 669px) {
     .CarouselFeature .copy {
       font-size: 18px; } }
+  @media (min-width: 670px) {
+    .CarouselFeature .copy {
+      width: 80%;
+      margin: auto; } }
 
 .HeaderImage {
   max-height: 377px; }
@@ -3630,7 +3654,8 @@ img {
   position: relative; }
   .Carousel img {
     display: block;
-    width: 100%; }
+    width: 85%;
+    margin: auto; }
   .Carousel .swiper-button-disabled {
     display: none; }
 

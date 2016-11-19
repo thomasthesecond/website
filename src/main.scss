@@ -24,10 +24,14 @@
     color 200ms ease-in-out,
     text-shadow 200ms ease-in-out;
 
-  a:hover,
-  a:active,
-  a:focus {
-    @include underlined-link;
+  a {
+    color: color('PictonBlue');
+
+    &:hover,
+    &:active,
+    &:focus {
+      @include underlined-link;
+    }
   }
 }
 
@@ -995,7 +999,7 @@
       margin-top: 30px;
 
       @media (min-width: 670px) {
-        margin-top: 43px;
+        margin-top: 83px;
       }
     }
 
@@ -1030,7 +1034,7 @@
         margin-top: 40px;
 
         @media (min-width: 670px) {
-          margin-top: 60px;
+          margin-top: 100px;
         }
       }
     }
@@ -1072,10 +1076,10 @@
     margin-top: 16px;
 
     .Section + .ImageGroup {
-      margin-top: -130px;
+      margin-top: -80px;
 
       @media (min-width: 670px) {
-        margin-top: -180px;
+        margin-top: -130px;
       }
     }
 
@@ -1109,7 +1113,7 @@
       margin-top: -120px;
 
       @media (min-width: 670px) {
-        margin-top: -174px;
+        margin-top: -134px;
       }
     }
 
@@ -1132,10 +1136,10 @@
     }
 
     .Section + .PhotoGallery {
-      margin-top: -150px;
+      margin-top: -100px;
 
       @media (min-width: 670px) {
-        margin-top: -198px;
+        margin-top: -148px;
       }
     }
 
@@ -1685,6 +1689,7 @@
 .Masthead {
   align-items: center;
   display: flex;
+  height: 100vh;
   justify-content: center;
 }
 
@@ -1730,6 +1735,7 @@
     transform 400ms ease-in-out 400ms;
   z-index: 2;
 
+  max-width: 410px;
   height: auto;
 
   @media (max-width: 669px) {
@@ -1744,12 +1750,13 @@
   @media (min-width: 670px) {
     right: span(3) + gutter();
     top: 50%;
+    transform: translateY(-50%);
     width: span(3);
   }
 
   @media (min-width: 1400px) {
-    width: span(4);
-    right: span(4) + gutter();
+    // width: span(4);
+    // right: span(4) + gutter();
   }
 
   .not-animated & {
@@ -1788,6 +1795,8 @@
     transform 400ms ease-in-out 800ms;
   z-index: 1;
 
+  max-width: 886px;
+  // max-width: 80vh;
   height: auto;
 
   @media (max-width: 669px) {
@@ -1800,12 +1809,16 @@
   @media (min-width: 670px) {
     right: -256px;
     top: 50%;
+    transform: translateY(-50%);
+    // width: calc(#{span(5)} + 256px);
     width: calc(#{span(5)} + 256px);
+    // width: span(5);
   }
 
   @media (min-width: 1400px) {
-    width: calc(#{span(6)} + 256px);
-    right: -256px;
+    // width: calc(#{span(6)} + 256px);
+    // // width: span(6);
+    // right: -256px;
   }
 
   .not-animated & {
@@ -1831,7 +1844,8 @@
   display: block;
   // height: 100vh - 10;
   max-height: 1116px;
-  position: absolute;
+  position: relative;
+  right: -20px;
   // right: 0;
   // top: 152px;
   // top: 5vh;
@@ -1840,8 +1854,9 @@
   // z-index: 1;
 
   height: auto;
-  max-width: span(8 static) + 256px;
-  width: calc(#{span(8)} + 256px);
+  // max-width: span(8 static) + 256px;
+  max-width: span(8 static);
+  width: 100%;
 
   @media (max-width: 669px) {
     // bottom: 0;
@@ -1849,7 +1864,11 @@
 
   @media (min-width: 670px) {
     right: -256px;
+    position: absolute;
     top: 50%;
+    transform: translateY(-50%);
+    // width: calc(#{span(8)} + 256px);
+    width: span(8);
   }
 
   .not-animated & {
@@ -1873,7 +1892,29 @@
   }
 }
 
+// .CaseStudy.-lp,
+// .CaseStudy.-airbnb {
+//   overflow: hidden;
+// }
+
+.CaseStudy.-lp + .CaseStudy.-airbnb {
+  @media (min-width: 670px) {
+    // margin-top: 387px;
+    margin-top: #{(387 / 776) * 100}vh;
+  }
+}
+
+.CaseStudy.-airbnb + .CaseStudy.-salesforce {
+  @media (min-width: 670px) {
+    // margin-top: 343px;
+    margin-top: #{(343 / 776) * 100}vh;
+  }
+}
+
 .CaseStudy {
+  &.first {
+    background-color: gray;
+  }
   // align-items: center;
   // display: flex;
   padding-top: 70px;
@@ -1889,6 +1930,7 @@
   @media (min-width: 670px) {
     align-items: center;
     display: flex;
+    height: 100vh;
     // justify-content: center;
   }
 }
@@ -1914,6 +1956,13 @@
     text-align: center;
     width: auto;
   }
+
+  @media (min-width: 670px) {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    // justify-content: center;
+  }
 }
 
 .CaseStudy-description {
@@ -1934,9 +1983,9 @@
     width: span(4) + gutter();
   }
 
-  @media (min-width: 1400px) {
-    width: span(3) + gutter();
-  }
+  // @media (min-width: 1400px) {
+  //   width: span(3) + gutter();
+  // }
 
   .not-animated & {
     opacity: 0;
@@ -1989,6 +2038,10 @@
       margin: 0 auto #{(87 / $base-size)}em;
       width: 30px;
 
+      .Home & {
+        background-color: color('PictonBlue');
+      }
+
       .LonelyPlanet.StoryPage & {
         background-color: color('Mariner');
       }
@@ -2019,17 +2072,17 @@
     position: relative;
     text-align: center;
 
-    &::before {
-      background-color: color('PictonBlue');
-      content: '';
-      display: block;
-      height: 4px;
-      left: 50%;
-      margin-left: -15px;
-      position: absolute;
-      top: -94px;
-      width: 30px;
-    }
+    // &::before {
+    //   background-color: color('PictonBlue');
+    //   content: '';
+    //   display: block;
+    //   height: 4px;
+    //   left: 50%;
+    //   margin-left: -15px;
+    //   position: absolute;
+    //   top: -94px;
+    //   width: 30px;
+    // }
   }
 
   h2 {
@@ -2122,9 +2175,18 @@
       border-color 200ms ease-in-out;
     width: 100%;
 
+    .Home & {
+      background-color: color('White');
+    }
+
     &:focus {
       background-color: lighten(color('AthensGray'), 1.5);
       border-color: darken(color('AthensGray'), 3);
+
+      .Home & {
+        background-color: color('White');
+        border-color: color('White');
+      }
     }
 
     &:focus,
@@ -2173,6 +2235,10 @@
       transform 100ms ease-in-out;
     width: 100%;
 
+    .Home & {
+      background-color: color('PictonBlue');
+    }
+
     .LonelyPlanet.StoryPage & {
       background-color: color('Mariner');
     }
@@ -2181,6 +2247,10 @@
     &:focus,
     &:active {
       background-color: lighten(color('Persimmon'), 5);
+
+      .Home & {
+        background-color: lighten(color('PictonBlue'), 5);
+      }
 
       .LonelyPlanet.StoryPage & {
         background-color: lighten(color('Mariner'), 5);
@@ -2237,7 +2307,7 @@
 
   // 0 35px 70px black, .17
   &.-image {
-    border: 1px solid rgba(color('DustyGray'), .51);
+    border: 1px solid rgba(color('DustyGray'), .1);
     box-shadow: 0 38px 45px rgba(color('Black'), .2);
 
     @media (min-width: 670px) {
@@ -2452,7 +2522,7 @@
     &:nth-child(2),
     &:nth-child(6),
     &:nth-child(8) {
-      width: span(7)
+      width: calc(#{span(7)} - 13px);
     }
 
     &:nth-child(2),
@@ -2464,7 +2534,7 @@
     &:nth-child(3),
     &:nth-child(5),
     &:nth-child(9) {
-      width: span(5);
+      width: calc(#{span(5)} + 13px);
     }
   }
 }
@@ -2680,6 +2750,11 @@
     @media (max-width: 669px) {
       font-size: 18px;
     }
+
+    @media (min-width: 670px) {
+      width: 80%;
+      margin: auto;
+    }
   }
 }
 
@@ -2759,7 +2834,8 @@
 
   img {
     display: block;
-    width: 100%;
+    width: 85%;
+    margin: auto;
   }
 
   .swiper-button-disabled {

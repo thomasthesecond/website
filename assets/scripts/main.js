@@ -112,7 +112,9 @@ function navigation() {
   var menu = document.querySelector(".js-menu");
   var logo = document.querySelector(".js-logo");
 
-  if (nav) {
+  var isHomePage = hasClass(document.body, "Home");
+
+  if (nav && !isHomePage) {
     var headroom = new Headroom(nav, {
       // offset: 205,
       // tolerance: 5

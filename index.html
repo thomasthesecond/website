@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html class="no-js Home" lang="en">
+<html class="no-js" lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -26,6 +26,9 @@
 		<meta name="msapplication-TileColor" content="#32425c">
 
 		<link rel="stylesheet" href="assets/styles/main.css">
+
+		<script src="https://use.typekit.net/sdp5xcj.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 					<script src="assets/scripts/eqcss.js"></script>
 
@@ -91,16 +94,17 @@
 	    </script>
 			</head>
 
-	<body>
+	<body class="Home">
 
 <nav class="Nav">
-	<header class="Header Header-fixed headroom js-nav">
+	<header class="Header">
 		<a class="Logo js-logo" href="/">
 			<svg class="icon" viewBox="0 0 32 32">
 				<path d="M16.229 14.781c-0.99 0-1.829 0.762-1.829 2.057s0.762 2.133 1.829 2.133c1.067 0 1.829-0.762 1.829-2.133 0-1.295-0.762-2.057-1.829-2.057z" />
 				<path d="M16 0c-8.838 0-16 7.162-16 16s7.162 16 16 16 16-7.162 16-16c0-8.838-7.162-16-16-16zM16.533 20.419c-0.914 0-1.676-0.381-2.057-1.067v0.914h-1.524v-9.905h1.524v4.038c0.305-0.533 1.067-0.99 2.133-0.99 1.981 0 3.124 1.524 3.124 3.505-0.076 1.981-1.295 3.505-3.2 3.505z" />
 			</svg>
 		</a>
+
 
 		<button class="NavButton hamburger hamburger--elastic js-hamburger">
       <div class="hamburger-box">
@@ -113,14 +117,14 @@
 		<div class="Menu-container">
 			<h4 class="heading -tiny">Case Studies</h4>
 			<ul class="MenuPrimary">
-				<li><a href="lonely-planet.html">Lonely Planet</a></li>
-				<li><a href="airbnb.html">Airbnb</a></li>
+				<li><a href="http://localhost/lonely-planet">Lonely Planet</a></li>
+				<li><a href="http://localhost/airbnb">Airbnb</a></li>
 				<li><span>Salesforce</span></li>
 			</ul>
 
 			<ul class="MenuSecondary">
-				<li><a href="about.html">About</a></li>
-				<li><a href="contact.html">Contact</a></li>
+				<li><a href="http://localhost/about">About</a></li>
+				<li><a href="http://localhost/contact">Contact</a></li>
 			</ul>
 
 			<ul class="MenuSocial">
@@ -155,93 +159,134 @@
 
 <main class="Main">
 
-<div class="HomeSwiper swiper-container">
-	<div class="swiper-wrapper">
-		<div class="Masthead swiper-slide slide-0" data-index="0">
-			<div class="Masthead-wrap wrap">
-				<h1>I design apps and websites for global brands and startups.</h1>
-				<p>
-					Recent projects include
-					<a href="lonely-planet.html">Lonely Planet</a>,
-					<a href="airbnb.html">Airbnb</a>, and Salesforce.
-				</p>
-			</div>
-		</div>
-
-		<div class="CaseStudy swiper-slide slide-1 not-animated" data-index="1">
-			<div class="CaseStudy-wrap wrap">
-				<div class="CaseStudy-description">
-					<time class="date" datetime="2015-12">December 2015</time>
-					<h2 class="title">Lonely Planet Destinations &amp; Guides</h2>
-					<p class="intro">
-						Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id
-						ligula porta felis euismod semper.
-					</p>
-					<a href="lonely-planet.html" role="button" class="Button t-lonelyPlanet">
-						Read case study
-					</a>
-				</div>
-
-				<img class="image-LonelyPlanet-1"
-					src="assets/images/lp-mobile.jpg"
-					alt="Lonely Planet Guides app home screen" />
-
-				<img class="image-LonelyPlanet-2"
-					src="assets/images/lp-website.jpg"
-					alt="Lonely Planet Asia landing page" />
-			</div>
-		</div>
-
-		<div class="CaseStudy swiper-slide slide-2 not-animated" data-index="2">
-			<div class="CaseStudy-wrap wrap">
-				<div class="CaseStudy-description">
-					<time class="date" datetime="2014-08">August 2014</time>
-					<h2 class="title">Airbnb Rebrand</h2>
-					<p class="intro">
-						Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id
-						ligula porta felis euismod semper.
-					</p>
-					<a href="airbnb.html" role="button" class="Button t-airbnb">
-						Read case study
-					</a>
-				</div>
-
-				<img class="image-Airbnb-1"
-					src="assets/images/airbnb-mobile.jpg"
-					alt="Airbnb mobile app home screen" />
-
-				<img class="image-Airbnb-2"
-					src="assets/images/airbnb-website.jpg"
-					alt="Airbnb home page" />
-			</div>
-		</div>
-
-		<div class="CaseStudy swiper-slide slide-3 not-animated" data-index="3">
-			<div class="CaseStudy-wrap wrap">
-				<div class="CaseStudy-description">
-					<time class="date" datetime="2013-11">November 2013</time>
-					<h2 class="title">Salesforce1 &amp; Styleguide</h2>
-					<p class="intro">
-						Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id
-						ligula porta felis euismod semper.
-					</p>
-					<!-- <a href="http://localhost/salesforce" role="button" class="Button t-salesforce">
-						Read case study
-					</a> -->
-				</div>
-
-				<img class="image-Salesforce"
-					src="assets/images/salesforce.png"
-					alt="Salesforce" />
-			</div>
-		</div>
+<div class="Masthead">
+	<div class="Masthead-wrap wrap">
+		<h1>I design apps and websites for global brands and startups.</h1>
+		<p>
+			Recent projects include
+			<a href="http://localhost/lonely-planet">Lonely Planet</a>,
+			<a href="http://localhost/airbnb">Airbnb</a>, and Salesforce.
+		</p>
 	</div>
+</div>
 
-	<div class="swiper-pagination"></div>
+<div class="CaseStudy -lp">
+	<div class="CaseStudy-wrap wrap">
+		<div class="CaseStudy-description">
+			<time class="date" datetime="2015-12">December 2015</time>
+			<h2 class="title">Lonely Planet Destinations &amp; Guides</h2>
+			<p class="intro">
+				Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id
+				ligula porta felis euismod semper.
+			</p>
+			<a href="http://localhost/lonely-planet" role="button" class="Button t-lonelyPlanet">
+				Read case study
+			</a>
+		</div>
+
+		<img class="image-LonelyPlanet-1"
+			src="assets/images/lp-mobile.jpg"
+			alt="Lonely Planet Guides app home screen" />
+
+		<img class="image-LonelyPlanet-2"
+			src="assets/images/lp-website.jpg"
+			alt="Lonely Planet Asia landing page" />
+	</div>
+</div>
+
+<div class="CaseStudy -airbnb">
+	<div class="CaseStudy-wrap wrap">
+		<div class="CaseStudy-description">
+			<time class="date" datetime="2014-08">August 2014</time>
+			<h2 class="title">Airbnb Rebrand</h2>
+			<p class="intro">
+				Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id
+				ligula porta felis euismod semper.
+			</p>
+			<a href="http://localhost/airbnb" role="button" class="Button t-airbnb">
+				Read case study
+			</a>
+		</div>
+
+		<img class="image-Airbnb-1"
+			src="assets/images/airbnb-mobile.jpg"
+			alt="Airbnb mobile app home screen" />
+
+		<img class="image-Airbnb-2"
+			src="assets/images/airbnb-website.jpg"
+			alt="Airbnb home page" />
+	</div>
+</div>
+
+<div class="CaseStudy -salesforce">
+	<div class="CaseStudy-wrap wrap">
+		<div class="CaseStudy-description">
+			<time class="date" datetime="2013-11">November 2013</time>
+			<h2 class="title">Salesforce1 &amp; Styleguide</h2>
+			<p class="intro">
+				Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id
+				ligula porta felis euismod semper.
+			</p>
+			<!-- <a href="http://localhost/salesforce" role="button" class="Button t-salesforce">
+				Read case study
+			</a> -->
+		</div>
+
+		<img class="image-Salesforce"
+			src="assets/images/salesforce.png"
+			alt="Salesforce" />
+	</div>
 </div>
 </main>
 
+<div class="FooterWrap">
 
+		  <footer class="Footer -tick">
+	    <div class="ContactFooter u-centered">
+				<div class="wrap">
+  <header class="ContactHeader container u-centered">
+    <h1 class="heading -large">Let’s work together</h1>
+    <p class="copy">
+      Just tell me a little bit about the project at hand.
+    </p>
+  </header>
+</div>
+
+<div class="wrap">
+  <form class="ContactForm container js-form" action="" method="POST">
+
+    <fieldset>
+      <legend>Contact information</legend>
+      <div class="field -half">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" required>
+        <span class="label">Your name</span>
+      </div>
+
+      <div class="field -half">
+        <label for="email">Your email address</label>
+        <input type="email" id="email" name="email" required>
+        <span class="label">Your email address</span>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Project information</legend>
+      <div class="field">
+        <label for="description">Project description</label>
+        <textarea id="description" name="description" required></textarea>
+        <span class="label">Project description</span>
+      </div>
+    </fieldset>
+
+    <button class="js-submit" type="submit" name="submit" id="submit">
+      Let’s get started!
+    </button>
+  </form>
+</div>
+	    </div>
+	  </footer>
+	</div>
 
     <script src="assets/scripts/headroom.js"></script>
     <script src="assets/scripts/noScroll.js"></script>

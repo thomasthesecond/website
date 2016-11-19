@@ -1,6 +1,6 @@
 <?php
 	$this->render('shared/document-header', array(
-		'html_class' => $html_class,
+		'body_class' => $body_class,
 		'page_title' => $page_title,
 	));
 ?>

@@ -32,7 +32,6 @@ function toggleClass(el, className) {
 }
 
 function homePage() {
-  console.log("Home page");
   var nav = document.querySelector(".js-nav");
 
   var swiper = new Swiper(".HomeSwiper", {
@@ -112,7 +111,9 @@ function navigation() {
   var menu = document.querySelector(".js-menu");
   var logo = document.querySelector(".js-logo");
 
-  if (nav) {
+  var isHomePage = hasClass(document.body, "Home");
+
+  if (nav && !isHomePage) {
     var headroom = new Headroom(nav, {
       // offset: 205,
       // tolerance: 5
