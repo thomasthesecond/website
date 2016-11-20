@@ -14,6 +14,7 @@
 			<a href="<?php $this->route('lonely-planet'); ?>">Lonely Planet</a>,
 			<a href="<?php $this->route('airbnb'); ?>">Airbnb</a>, and Salesforce.
 		</p>
+		<img class="Signature" src="assets/images/sig.png" alt="">
 	</div>
 </div>
 
@@ -79,8 +80,12 @@
 			</a> -->
 		</div>
 
-		<img class="image-Salesforce"
+		<!-- <img class="image-Salesforce"
 			src="assets/images/salesforce.png"
-			alt="Salesforce" />
+			alt="Salesforce" /> -->
 	</div>
+
+	<img class="image-Salesforce"
+		src="assets/images/salesforce.png"
+		alt="Salesforce" />
 </div>

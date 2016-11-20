@@ -25,13 +25,8 @@
     text-shadow 200ms ease-in-out;
 
   a {
-    color: color('PictonBlue');
-
-    &:hover,
-    &:active,
-    &:focus {
-      @include underlined-link;
-    }
+    @include underlined-link();
+    color: color('DoveGray');
   }
 }
 
@@ -124,7 +119,8 @@
   color: color('MineShaft');
   font-family: sans-serif('Book');
   font-size: 42px;
-  letter-spacing: -.4px;
+  font-weight: 600;
+  letter-spacing: -2px;
   line-height: (44 / 42);
   margin: #{(10 / 42)}em 0 #{(27 / 42)}em;
 
@@ -452,6 +448,7 @@
 
   color: color('MineShaft');
   font-family: sans-serif('Book');
+  font-weight: 600;
   margin: 0;
 
   // sizes ---------------------------------------------------------------------
@@ -462,7 +459,6 @@
     // line-height: (71 / $heading-huge);
 
     font-size: 50px; // 3.8em;
-    font-weight: 600;
     letter-spacing: -2px;
     line-height: 1.05;
 
@@ -477,7 +473,6 @@
     // line-height: (54 / $heading-large);
     line-height: 1.18;
     font-size: 42px;
-    font-weight: 600;
 
     color: #424242;
     letter-spacing: -1.5px;
@@ -494,7 +489,6 @@
 
     color: #585858;
     font-size: 38px;
-    font-weight: 600;
 
     @media (max-width: 669px) {
       font-size: #{($heading-small / $base-size)}em;
@@ -514,7 +508,6 @@
   &.-tiny {
     color: #787878;
     font-size: 14px;
-    font-weight: 600;
     letter-spacing: 1px;
     line-height: 1;
     text-transform: uppercase;
@@ -876,10 +869,10 @@
 }
 
 .Contact .Story {
-  padding-top: #{(88 / $base-size)}em;
+  padding-top: 88px;
 
   @media (min-width: 670px) {
-    padding-top: #{(188 / $base-size)}em;
+    padding-top: 108px;
   }
 
   .copy {
@@ -889,15 +882,17 @@
 }
 
 .About .Story {
-  padding-bottom: #{(96 / $base-size)}em;
-  padding-top: #{(88 / $base-size)}em;
+  padding-bottom: 96px;
+  padding-top: 88px;
 
   @media (min-width: 670px) {
-    padding-bottom: #{(156 / $base-size)}em;
-    padding-top: #{(188 / $base-size)}em;
+    padding-bottom: 156px;
+    padding-top: 188px;
   }
 
   .AboutBrad {
+    width: span(8);
+
     .heading {
       @media (min-width: 980px) {
         width: span(10);
@@ -927,6 +922,8 @@
   }
 
   .Services {
+    width: span(8);
+
     .heading {}
     .ServicesList {}
   }
@@ -1320,13 +1317,13 @@
 
   // @media (min-width: 572px) {
   @media (min-width: 670px) {
-    padding-left: #{(60 / 1600) * 100%};
-    padding-right: #{(60 / 1600) * 100%};
+    padding-left: 30px; // #{(60 / 1600) * 100%};
+    padding-right: 30px; // #{(60 / 1600) * 100%};
   }
 
   @media (min-width: 616px) {
-    padding-bottom: #{(30 / 1600) * 100%};
-    padding-top: #{(28 / 1600) * 100%};
+    padding-bottom: 30px; // #{(30 / 1600) * 100%};
+    padding-top: 28px; // #{(28 / 1600) * 100%};
   }
 
   @media (min-width: 1600px) {
@@ -1357,6 +1354,11 @@
 
   @media (min-width: 572px) {
     font-size: 42px;
+  }
+
+  .LonelyPlanet &,
+  .Airbnb & {
+    color: color('MineShaft');
   }
 
   &.-white {
@@ -1598,7 +1600,7 @@
 }
 
 .MenuSecondary {
-  color: rgba(color('MineShaft'), .57);
+  color: color('MineShaft');
   // font-size: #{(40 / $base-size)}em;
   // letter-spacing: -1.78px;
   font-size: #{(24 / $base-size)}em;
@@ -1717,11 +1719,16 @@
 }
 
 .Masthead-wrap {
+  @media (min-width: 670px) {
+    margin-top: -15vh;
+  }
+
   h1 {
     color: color('MineShaft');
     font-family: sans-serif('Book');
     font-size: 50px;
-    letter-spacing: -.4px;
+    font-weight: 600;
+    letter-spacing: -2px;
     line-height: 1.1;
     margin: 0;
 
@@ -1741,6 +1748,11 @@
     line-height: (48 / $copy-size);
     margin: 18px 0 0;
   }
+}
+
+.Signature {
+  margin-top: 26px;
+  width: 280px;
 }
 
 .image-LonelyPlanet-1,
@@ -1889,7 +1901,7 @@
   }
 
   @media (min-width: 670px) {
-    right: -256px;
+    right: 0;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1938,6 +1950,7 @@
 }
 
 .CaseStudy {
+  position: relative;
   &.first {
     background-color: gray;
   }
@@ -2005,7 +2018,7 @@
   }
 
   @media (min-width: 670px) {
-    padding-right: span(1) + gutter();
+    // padding-right: span(1) + gutter();
     width: span(4) + gutter();
   }
 
@@ -2080,9 +2093,8 @@
 }
 
 .Home .Footer {
-  background-color: color('Seashell');
   padding-bottom: 124px;
-  padding-top: 230px;
+  padding-top: 70px;
 
   // position: fixed;
   // width: 100%;
@@ -2159,19 +2171,21 @@
     width: span(10);
   }
 
-  // ::-webkit-input-placeholder { color: rgba(color('Tundora'), .5); }
-  // ::-moz-placeholder { color: rgba(color('Tundora'), .5); }
-  // :-ms-input-placeholder { color: rgba(color('Tundora'), .5); }
-  // :-moz-placeholder { color: rgba(color('Tundora'), .5); }
+  ::-webkit-input-placeholder { color: rgba(color('Tundora'), .3); }
+  ::-moz-placeholder { color: rgba(color('Tundora'), .3); }
+  :-ms-input-placeholder { color: rgba(color('Tundora'), .3); }
+  :-moz-placeholder { color: rgba(color('Tundora'), .3); }
 
   .label {
     color: rgba(color('Tundora'), .5);
-    font-size: 1em;
+    font-size: 11px;
     display: block;
-    left: #{(30 / 24)}em;
+    left: 32px; // #{(30 / 24)}em;
+    letter-spacing: 1.3px;
     pointer-events: none;
     position: absolute;
-    top: #{(21 / 24)}em;
+    text-transform: uppercase;
+    top: 16px; // #{(21 / 24)}em;
   }
 
   fieldset {
@@ -2196,36 +2210,27 @@
     border: 1px solid transparent;
     display: block;
     outline: none;
-    padding: #{(21 / 24)}em #{(30 / 24)}em;
+    padding: 29px 30px 13px; // #{(21 / 24)}em #{(30 / 24)}em;
     transition: background-color 200ms ease-in-out,
       border-color 200ms ease-in-out;
     width: 100%;
 
-    .Home & {
-      background-color: color('White');
-    }
-
     &:focus {
       background-color: lighten(color('AthensGray'), 1.5);
       border-color: darken(color('AthensGray'), 3);
-
-      .Home & {
-        background-color: color('White');
-        border-color: color('White');
-      }
     }
 
-    &:focus,
-    &.is-filled {
-      padding-bottom: #{(15 / 24)}em;
-      padding-top: #{(27 / 24)}em;
-    }
-
-    &:focus ~ .label,
-    &.is-filled ~ .label {
-      transform: translate(1px, -18px) scale(.5);
-      transform-origin: 0;
-    }
+    // &:focus,
+    // &.is-filled {
+    //   padding-bottom: #{(15 / 24)}em;
+    //   padding-top: #{(27 / 24)}em;
+    // }
+    //
+    // &:focus ~ .label,
+    // &.is-filled ~ .label {
+    //   transform: translate(1px, -18px) scale(.5);
+    //   transform-origin: 0;
+    // }
   }
 
   textarea {
@@ -2520,12 +2525,12 @@
 }
 
 .ServicesList {
-  -webkit-columns: span(3 static) 3;
-     -moz-columns: span(3 static) 3;
-          columns: span(3 static) 3;
-  -webkit-column-gap: span(1 static) + gutter(static) + gutter(static);
-     -moz-column-gap: span(1 static) + gutter(static) + gutter(static);
-          column-gap: span(1 static) + gutter(static) + gutter(static);
+  -webkit-columns: 222px 3;
+     -moz-columns: 222px 3;
+          columns: 222px 3;
+  -webkit-column-gap: 102px;
+     -moz-column-gap: 102px;
+          column-gap: 102px;
 }
 
 .ServicesList-column {

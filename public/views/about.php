@@ -1,9 +1,7 @@
 <?php
 	$this->layout('default', array(
     'body_class' => 'About',
-    'footer' => true,
-    'footer_link_next' => 'Lonely Planet',
-    'footer_link_prev' => 'Salesforce',
+    'footer' => false,
     'page_title' => 'Product designer and  creative director',
 	));
 ?>

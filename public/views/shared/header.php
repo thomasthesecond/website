@@ -13,7 +13,7 @@
 			</div>
 		<?php endif; ?>
 
-		<button class="NavButton<?php if (isset($header_image)) { echo ' -white'; } ?> hamburger hamburger--elastic js-hamburger">
+		<button class="NavButton<?php if (isset($header_image)) { echo ' -white'; } ?> hamburger hamburger--boring js-hamburger">
       <div class="hamburger-box">
         <div class="hamburger-inner"></div>
       </div>

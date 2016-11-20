@@ -33,18 +33,46 @@
     to top,
     transparent,
     transparent 2px,
-    rgba(color('Mariner'), .8) 3px,
-    rgba(color('Mariner'), .8) (3px + 1px),
-    transparent (3px + 1px)
+    rgba(color('DoveGray'), .8) 2px,
+    rgba(color('DoveGray'), .8) (2px + 1px),
+    transparent (2px + 1px)
   );
-  color: rgba(color('Mariner'), .8);
+  color: rgba(color('DoveGray'), .8);
   position: relative;
   text-decoration: none;
   text-shadow: -1px -1px 0 color('White'),
      1px -1px 0 color('White'),
      -1px 1px 0 color('White'),
      1px 1px 0 color('White');
-  transition: color 200ms ease;
+  transition: color 200ms ease,
+    background-image 200ms ease
+    text-shadow 200ms ease;
+
+  &:before {
+    background: #f4f4f4;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scaleY(0);
+    transform-origin: 50% 100%;
+    transition: transform 200ms ease,
+      border-bottom 200ms ease;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-image: none;
+    text-shadow: none;
+
+    &:before {
+      transform: scaleY(1);
+    }
+  }
 
   // &:hover,
   // &:active,

@@ -30,24 +30,24 @@
     <fieldset>
       <legend>Contact information</legend>
       <div class="field -half">
-        <label for="name">Your name</label>
-        <input type="text" id="name" name="name" required>
-        <span class="label">Your name</span>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Brad" required>
+        <span class="label">Name</span>
       </div>
 
       <div class="field -half">
-        <label for="email">Your email address</label>
-        <input type="email" id="email" name="email" required>
-        <span class="label">Your email address</span>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="name@email.com" required>
+        <span class="label">Email</span>
       </div>
     </fieldset>
 
     <fieldset>
       <legend>Project information</legend>
       <div class="field">
-        <label for="description">Project description</label>
-        <textarea id="description" name="description" required></textarea>
-        <span class="label">Project description</span>
+        <label for="description">Comments</label>
+        <textarea id="comments" name="comments" placeholder="My project..." required></textarea>
+        <span class="label">Comments</span>
       </div>
     </fieldset>
 

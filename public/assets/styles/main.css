@@ -1813,16 +1813,34 @@ img {
 .Masthead {
   transition: background-image 200ms ease-in-out, color 200ms ease-in-out, text-shadow 200ms ease-in-out; }
   .Masthead a {
-    color: #3aa7e8; }
+    background-image: linear-gradient(to top, transparent, transparent 2px, rgba(101, 101, 101, 0.8) 2px, rgba(101, 101, 101, 0.8) 3px, transparent 3px);
+    color: rgba(101, 101, 101, 0.8);
+    position: relative;
+    text-decoration: none;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    transition: color 200ms ease, background-image 200ms ease text-shadow 200ms ease;
+    color: #656565; }
+    .Masthead a:before {
+      background: #f4f4f4;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: scaleY(0);
+      transform-origin: 50% 100%;
+      transition: transform 200ms ease, border-bottom 200ms ease;
+      z-index: -1; }
     .Masthead a:hover,
     .Masthead a:active,
     .Masthead a:focus {
-      background-image: linear-gradient(to top, transparent, transparent 2px, rgba(41, 124, 188, 0.8) 3px, rgba(41, 124, 188, 0.8) 4px, transparent 4px);
-      color: rgba(41, 124, 188, 0.8);
-      position: relative;
-      text-decoration: none;
-      text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-      transition: color 200ms ease; }
+      background-image: none;
+      text-shadow: none; }
+      .Masthead a:hover:before,
+      .Masthead a:active:before,
+      .Masthead a:focus:before {
+        transform: scaleY(1); }
 
 .wrap {
   margin-left: auto;
@@ -1870,7 +1888,8 @@ img {
   color: #323232;
   font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 42px;
-  letter-spacing: -.4px;
+  font-weight: 600;
+  letter-spacing: -2px;
   line-height: 1.04762;
   margin: 0.2381em 0 0.64286em; }
   @media (max-width: 445px) {
@@ -2096,10 +2115,10 @@ img {
 .heading {
   color: #323232;
   font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 600;
   margin: 0; }
   .heading.-huge {
     font-size: 50px;
-    font-weight: 600;
     letter-spacing: -2px;
     line-height: 1.05; }
     @media (max-width: 669px) {
@@ -2108,7 +2127,6 @@ img {
   .heading.-large {
     line-height: 1.18;
     font-size: 42px;
-    font-weight: 600;
     color: #424242;
     letter-spacing: -1.5px; }
     @media (max-width: 669px) {
@@ -2118,22 +2136,20 @@ img {
     letter-spacing: -1.34px;
     line-height: 1.28571;
     color: #585858;
-    font-size: 38px;
-    font-weight: 600; }
+    font-size: 38px; }
     @media (max-width: 669px) {
       .heading.-medium {
-        font-size: 2em; } }
+        font-size: 1.5em; } }
   .heading.-small {
-    font-size: 2em;
+    font-size: 1.5em;
     letter-spacing: -1.42px;
-    line-height: 1.5; }
+    line-height: 2; }
     @media (max-width: 669px) {
       .heading.-small {
         font-size: 1.75em; } }
   .heading.-tiny {
     color: #787878;
     font-size: 14px;
-    font-weight: 600;
     letter-spacing: 1px;
     line-height: 1;
     text-transform: uppercase; }
@@ -2343,39 +2359,43 @@ img {
         margin-top: 10.25em; } }
 
 .Contact .Story {
-  padding-top: 5.5em; }
+  padding-top: 88px; }
   @media (min-width: 670px) {
     .Contact .Story {
-      padding-top: 11.75em; } }
+      padding-top: 108px; } }
   .Contact .Story .copy {
     margin-bottom: 0.89286em;
     margin-top: 0.89286em; }
 
 .About .Story {
-  padding-bottom: 6em;
-  padding-top: 5.5em; }
+  padding-bottom: 96px;
+  padding-top: 88px; }
   @media (min-width: 670px) {
     .About .Story {
-      padding-bottom: 9.75em;
-      padding-top: 11.75em; } }
-  @media (min-width: 980px) {
-    .About .Story .AboutBrad .heading {
-      width: 82.9653%; } }
-  @media (min-width: 1160px) {
-    .About .Story .AboutBrad .heading {
-      width: 65.9306%; } }
-  @media (min-width: 1460px) {
-    .About .Story .AboutBrad .heading {
-      width: 48.8959%; } }
-  .About .Story .AboutBrad .copy {
-    margin-bottom: 2.10714em;
-    margin-top: 2.10714em; }
+      padding-bottom: 156px;
+      padding-top: 188px; } }
+  .About .Story .AboutBrad {
+    width: 65.9306%; }
     @media (min-width: 980px) {
-      .About .Story .AboutBrad .copy {
+      .About .Story .AboutBrad .heading {
         width: 82.9653%; } }
     @media (min-width: 1160px) {
-      .About .Story .AboutBrad .copy {
+      .About .Story .AboutBrad .heading {
         width: 65.9306%; } }
+    @media (min-width: 1460px) {
+      .About .Story .AboutBrad .heading {
+        width: 48.8959%; } }
+    .About .Story .AboutBrad .copy {
+      margin-bottom: 2.10714em;
+      margin-top: 2.10714em; }
+      @media (min-width: 980px) {
+        .About .Story .AboutBrad .copy {
+          width: 82.9653%; } }
+      @media (min-width: 1160px) {
+        .About .Story .AboutBrad .copy {
+          width: 65.9306%; } }
+  .About .Story .Services {
+    width: 65.9306%; }
 
 .Services.-tick {
   margin-top: 7.375em; }
@@ -2691,12 +2711,12 @@ img {
   z-index: 10; }
   @media (min-width: 670px) {
     .Nav > .Header {
-      padding-left: 3.75%;
-      padding-right: 3.75%; } }
+      padding-left: 30px;
+      padding-right: 30px; } }
   @media (min-width: 616px) {
     .Nav > .Header {
-      padding-bottom: 1.875%;
-      padding-top: 1.75%; } }
+      padding-bottom: 30px;
+      padding-top: 28px; } }
   @media (min-width: 1600px) {
     .Nav > .Header {
       padding: 28px 60px 30px; } }
@@ -2721,6 +2741,9 @@ img {
   @media (min-width: 572px) {
     .Logo {
       font-size: 42px; } }
+  .LonelyPlanet .Logo,
+  .Airbnb .Logo {
+    color: #323232; }
   .Logo.-white {
     color: #fff; }
   .Nav .Logo {
@@ -2815,7 +2838,7 @@ img {
     color: #dedede; }
 
 .MenuSecondary {
-  color: rgba(50, 50, 50, 0.57);
+  color: #323232;
   font-size: 1.5em;
   letter-spacing: -.78px;
   line-height: 1.5; }
@@ -2901,11 +2924,16 @@ img {
   height: 100vh;
   justify-content: center; }
 
+@media (min-width: 670px) {
+  .Masthead-wrap {
+    margin-top: -15vh; } }
+
 .Masthead-wrap h1 {
   color: #323232;
   font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 50px;
-  letter-spacing: -.4px;
+  font-weight: 600;
+  letter-spacing: -2px;
   line-height: 1.1;
   margin: 0;
   padding-right: 350px; }
@@ -2919,6 +2947,10 @@ img {
   font-weight: 300;
   line-height: 1.71429;
   margin: 18px 0 0; }
+
+.Signature {
+  margin-top: 26px;
+  width: 280px; }
 
 .image-LonelyPlanet-1,
 .image-Airbnb-1 {
@@ -3015,7 +3047,7 @@ img {
   width: 100%; }
   @media (min-width: 670px) {
     .image-Salesforce {
-      right: -256px;
+      right: 0;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -3043,6 +3075,7 @@ img {
     margin-top: 44.20103vh; } }
 
 .CaseStudy {
+  position: relative;
   padding-top: 70px; }
   .CaseStudy.first {
     background-color: gray; }
@@ -3088,7 +3121,6 @@ img {
       margin-bottom: 50px; } }
   @media (min-width: 670px) {
     .CaseStudy-description {
-      padding-right: 8.51735%;
       width: 34.0694%; } }
   .not-animated .CaseStudy-description {
     opacity: 0; }
@@ -3131,9 +3163,8 @@ img {
         margin-bottom: 5.4375em; } }
 
 .Home .Footer {
-  background-color: #f1f1f1;
   padding-bottom: 124px;
-  padding-top: 230px; }
+  padding-top: 70px; }
   .Home .Footer .wrap {
     max-width: 82.9653%; }
   .Home .Footer header {
@@ -3175,14 +3206,24 @@ img {
   @media (min-width: 1024px) {
     .ContactForm {
       width: 82.9653%; } }
+  .ContactForm ::-webkit-input-placeholder {
+    color: rgba(66, 66, 66, 0.3); }
+  .ContactForm ::-moz-placeholder {
+    color: rgba(66, 66, 66, 0.3); }
+  .ContactForm :-ms-input-placeholder {
+    color: rgba(66, 66, 66, 0.3); }
+  .ContactForm :-moz-placeholder {
+    color: rgba(66, 66, 66, 0.3); }
   .ContactForm .label {
     color: rgba(66, 66, 66, 0.5);
-    font-size: 1em;
+    font-size: 11px;
     display: block;
-    left: 1.25em;
+    left: 32px;
+    letter-spacing: 1.3px;
     pointer-events: none;
     position: absolute;
-    top: 0.875em; }
+    text-transform: uppercase;
+    top: 16px; }
   .ContactForm fieldset {
     border: 0;
     margin: 0;
@@ -3199,32 +3240,13 @@ img {
     border: 1px solid transparent;
     display: block;
     outline: none;
-    padding: 0.875em 1.25em;
+    padding: 29px 30px 13px;
     transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out;
     width: 100%; }
-    .Home .ContactForm input,
-    .Home .ContactForm textarea {
-      background-color: #fff; }
     .ContactForm input:focus,
     .ContactForm textarea:focus {
       background-color: #f5f4f6;
       border-color: #e9e7ec; }
-      .Home .ContactForm input:focus,
-      .Home .ContactForm textarea:focus {
-        background-color: #fff;
-        border-color: #fff; }
-    .ContactForm input:focus,
-    .ContactForm input.is-filled,
-    .ContactForm textarea:focus,
-    .ContactForm textarea.is-filled {
-      padding-bottom: 0.625em;
-      padding-top: 1.125em; }
-    .ContactForm input:focus ~ .label,
-    .ContactForm input.is-filled ~ .label,
-    .ContactForm textarea:focus ~ .label,
-    .ContactForm textarea.is-filled ~ .label {
-      transform: translate(1px, -18px) scale(0.5);
-      transform-origin: 0; }
   .ContactForm textarea {
     height: 13.16667em;
     resize: none; }
@@ -3421,12 +3443,12 @@ img {
     width: 23.34385%; }
 
 .ServicesList {
-  -webkit-columns: 296px 3;
-  -moz-columns: 296px 3;
-  columns: 296px 3;
-  -webkit-column-gap: 136px;
-  -moz-column-gap: 136px;
-  column-gap: 136px; }
+  -webkit-columns: 222px 3;
+  -moz-columns: 222px 3;
+  columns: 222px 3;
+  -webkit-column-gap: 102px;
+  -moz-column-gap: 102px;
+  column-gap: 102px; }
 
 .ServicesList-column {
   display: inline-block; }
